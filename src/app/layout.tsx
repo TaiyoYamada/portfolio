@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: "Portfolio of TaiyoYamada",
 };
 
-import Header from "@/components/Header";
+import Header from "@/components/layout/Header";
 
 export default function RootLayout({
   children,

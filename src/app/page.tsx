@@ -1,14 +1,15 @@
-import StarBackground from "@/components/StarBackground";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import Research from "@/components/Research";
-import Experience from "@/components/Experience";
-import Awards from "@/components/Awards";
-import Articles from "@/components/Articles";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import Header from "@/components/layout/Header";
+import StarBackground from "@/components/effects/StarBackground";
+import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
+import Skills from "@/components/sections/Skills";
+import Projects from "@/components/sections/Projects";
+import Research from "@/components/sections/Research";
+import Experience from "@/components/sections/Experience";
+import Awards from "@/components/sections/Awards";
+import Articles from "@/components/sections/Articles";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (

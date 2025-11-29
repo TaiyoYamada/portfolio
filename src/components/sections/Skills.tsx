@@ -1,7 +1,7 @@
 "use client";
 
 import Section from "./Section";
-import { Card } from "./ui/Card";
+import { Card } from "../ui/Card";
 
 const skills = {
     Languages: ["TypeScript", "JavaScript", "Python", "Swift", "HTML/CSS"],

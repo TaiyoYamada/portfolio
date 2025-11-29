@@ -1,5 +1,5 @@
 import Section from "./Section";
-import { Card } from "./ui/Card";
+import { Card } from "../ui/Card";
 import { BookOpen, Heart } from "lucide-react";
 import { getUser, getTopArticlesByLikes } from "@/lib/qiita";
 

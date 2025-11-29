@@ -2,7 +2,7 @@
 
 import Section from "./Section";
 import { Github, Mail } from "lucide-react";
-import { QiitaIcon } from "./icons/QiitaIcon";
+import { QiitaIcon } from "../icons/QiitaIcon";
 
 export default function Contact() {
     return (

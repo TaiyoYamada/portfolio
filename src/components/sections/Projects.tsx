@@ -1,7 +1,7 @@
 "use client";
 
 import Section from "./Section";
-import { Card } from "./ui/Card";
+import { Card } from "../ui/Card";
 import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
