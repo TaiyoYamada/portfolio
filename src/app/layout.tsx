@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   description: "Portfolio of TaiyoYamada",
 };
 
+import Header from "@/components/Header";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${inter.variable} ${outfit.variable} antialiased bg-background text-text`}>
+        <Header />
         {children}
       </body>
     </html>
