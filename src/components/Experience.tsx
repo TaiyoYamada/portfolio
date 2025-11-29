@@ -5,16 +5,33 @@ import { Card } from "./ui/Card";
 
 const experiences = [
     {
-        company: "[ Company Name ]",
-        period: "YYYY.MM - YYYY.MM",
-        role: "[ Job Title / Position ]",
+        company: "ソーイ株式会社",
+        period: "2025.01 - 2025.12",
+        role: "Web / Mobile Engineer (Intern)",
         details: [
-            "[ Specific Responsibility 1 ]",
-            "[ Specific Responsibility 2 ]",
+            "Laravel・Vue・Flutter を用いた業務システムの開発",
+            "フロントエンドの UI 実装やバックエンド API 設計・実装",
+            "バッチ処理の作成、既存コードの改善・デバッグ対応",
+            "API ドキュメント作成や仕様整理など開発フロー全体を担当",
         ],
-        growth: "[ Skills and mindset gained from this experience ]",
+        growth:
+            "フルスタック的な視点を獲得。業務開発ならではのタスク管理・仕様理解・チーム開発の基礎が身についた。",
+    },
+    {
+        company: "株式会社ゆめみ",
+        period: "2025.10 - 2025.11",
+        role: "iOS Engineer Intern",
+        details: [
+            "SwiftUI・Clean Architecture を用いた機能開発・UI改善",
+            "既存コードのリファクタリングや命名・責務分離の改善",
+            "テスタブルな設計とアーキテクチャ設計の基礎理解",
+            "レビュー文化・ペアプロを通したチーム開発の経験",
+        ],
+        growth:
+            "iOS アプリ開発の設計力が大幅に向上し、アーキテクチャと品質の重要性を理解。プロとして必要なコードの読み書き・改善視点が身についた。",
     },
 ];
+
 
 export default function Experience() {
     return (

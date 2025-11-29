@@ -13,10 +13,10 @@ export default function Hero() {
                     className="mb-6"
                 >
                     <h2 className="text-xl md:text-2xl font-light text-primary mb-2 tracking-[0.2em] uppercase">
-                        Web Developer / UI Designer
+                        Developer / Student
                     </h2>
                     <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 tracking-tighter drop-shadow-lg">
-                        [ Name ]
+                        TaiyoYamada
                     </h1>
                 </motion.div>
 
@@ -36,8 +36,8 @@ export default function Hero() {
                     className="flex gap-6"
                 >
                     {[
-                        { Icon: Github, href: "#" },
-                        { Icon: Linkedin, href: "#" },
+                        { Icon: Github, href: "https://github.com/TaiyoYamada" },
+                        { Icon: Linkedin, href: "https://qiita.com/TaiyoYamada" },
                         { Icon: Mail, href: "#" },
                     ].map(({ Icon, href }, index) => (
                         <a

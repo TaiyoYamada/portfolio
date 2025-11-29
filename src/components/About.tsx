@@ -2,6 +2,7 @@
 
 import Section from "./Section";
 import { Card } from "./ui/Card";
+import Image from "next/image";
 
 export default function About() {
     return (
@@ -9,19 +10,32 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-gradient">
                 About Me
             </h2>
+
             <div className="grid md:grid-cols-2 gap-10 items-center">
-                <Card className="p-8 backdrop-blur-md bg-white/5 border-white/10">
-                    <p className="text-lg leading-relaxed text-gray-300">
-                        [ Here is a brief introduction about myself. Summarize my background, what I am currently focusing on, and my future goals in about 100-200 characters. ]
+                {/* LEFT: Profile Info */}
+                <Card className="p-8 backdrop-blur-md bg-white/5 border-white/10 space-y-4">
+                    <h3 className="text-3xl font-bold text-secondary">Taiyo Yamada</h3>
+                    <p className="text-gray-300 text-lg">熊本県立大学 / 総合管理学部</p>
+                    <p className="text-gray-300">専攻：量子アルゴリズム・最適化</p>
+                    <p className="text-gray-300">Birth: 2005 / 09 / 26</p>
+
+                    <p className="text-gray-400 leading-relaxed mt-4">
+                        現在、フリーランスエンジニアとして活動しつつ、
+                        Swift を中心としたアプリ・SDK 開発、量子アルゴリズム研究に取り組んでいます。
                     </p>
                 </Card>
-                <div className="space-y-4">
-                    {[1, 2, 3].map((i) => (
-                        <Card key={i} className="p-6 hover:bg-white/10 transition-colors duration-300">
-                            <h3 className="text-xl font-bold mb-2 text-secondary">[ Strength {i} ]</h3>
-                            <p className="text-gray-400">[ Brief explanation supporting this strength ]</p>
-                        </Card>
-                    ))}
+
+                {/* RIGHT: Photo */}
+                <div className="flex justify-center">
+                    <div className="overflow-hidden rounded-3xl border border-white/10 shadow-xl w-64 h-64 md:w-80 md:h-80">
+                        <Image
+                            src="/me.jpg" // 画像パスに変更
+                            alt="Profile Photo"
+                            width={400}
+                            height={400}
+                            className="object-cover w-full h-full"
+                        />
+                    </div>
                 </div>
             </div>
         </Section>

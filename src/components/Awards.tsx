@@ -6,14 +6,9 @@ import { Trophy } from "lucide-react";
 
 const awards = [
     {
-        title: "[ Award Name ]",
-        date: "[ Date ]",
-        desc: "Details of the contest and points evaluated.",
-    },
-    {
-        title: "[ Award Name ]",
-        date: "[ Date ]",
-        desc: "Details of the contest and points evaluated.",
+        title: "SPAJAM 九州予選 2025・優秀賞",
+        date: "2025.09.25",
+        desc: "48時間でアプリを企画・開発するハッカソンにて、技術力・UX・完成度が評価され優秀賞を受賞。限られた時間での設計、実装、チーム開発力が高く評価された。",
     },
 ];
 
@@ -23,7 +18,7 @@ export default function Awards() {
             <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-gradient">
                 Awards
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 place-items-center gap-6">
                 {awards.map((award, index) => (
                     <Card key={index} className="flex items-start gap-4 p-6 hover:scale-105 transition-transform">
                         <div className="p-3 bg-primary/20 rounded-full text-primary shadow-[0_0_10px_rgba(124,58,237,0.3)]">
