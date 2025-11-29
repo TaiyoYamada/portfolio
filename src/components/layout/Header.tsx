@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, Mail } from "lucide-react";
-import { QiitaIcon } from "./icons/QiitaIcon";
+import { QiitaIcon } from "../icons/QiitaIcon";
 import Link from "next/link";
 
 export default function Header() {
