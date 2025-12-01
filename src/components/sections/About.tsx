@@ -2,7 +2,6 @@
 
 import Section from "./Section";
 import { Card } from "../ui/Card";
-import Image from "next/image";
 
 export default function About() {
     return (

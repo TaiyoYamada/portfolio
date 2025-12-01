@@ -1,4 +1,3 @@
-import Header from "@/components/layout/Header";
 import StarBackground from "@/components/effects/StarBackground";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";

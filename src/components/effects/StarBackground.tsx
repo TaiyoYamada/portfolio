@@ -3,6 +3,7 @@
 import React, { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
+import type { Points as PointsType } from "three";
 
 const generateStars = (count: number, radius: number) => {
     const points = new Float32Array(count * 3);
@@ -22,8 +23,8 @@ const generateStars = (count: number, radius: number) => {
     return points;
 };
 
-const StarBackground = (props: any) => {
-    const ref = useRef<any>(null);
+const StarBackground = () => {
+    const ref = useRef<PointsType>(null);
     const [sphere] = useState(() => generateStars(5000, 1.2));
 
     useFrame((state, delta) => {
@@ -40,7 +41,6 @@ const StarBackground = (props: any) => {
                 positions={sphere}
                 stride={3}
                 frustumCulled
-                {...props}
             >
                 <PointMaterial
                     transparent
