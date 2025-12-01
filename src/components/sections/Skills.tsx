@@ -4,10 +4,9 @@ import Section from "./Section";
 import { Card } from "../ui/Card";
 
 const skills = {
-    Languages: ["TypeScript", "JavaScript", "Python", "Swift", "HTML/CSS"],
-    "Frameworks / Libraries": ["Next.js", "React", "Tailwind CSS", "Three.js", "Framer Motion"],
-    "Tools / Infrastructure": ["Git", "Docker", "AWS", "Vercel", "Figma"],
-    "Design / Others": ["UI/UX Design", "3D Modeling", "Motion Graphics", "Accessibility"],
+    Languages: ["Swift", "TypeScript", "JavaScript", "Python", "PHP", "Dart", "HTML/CSS"],
+    "Frameworks / Libraries": ["Next.js", "Vue.js", "Laravel", "SwiftUI", "Flutter"],
+    "Infrastructure": ["Github", "Docker", "AWS", "GCP", "Supabase", "Vercel"],
 };
 
 export default function Skills() {
@@ -16,7 +15,7 @@ export default function Skills() {
             <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-gradient">
                 Skills
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {Object.entries(skills).map(([category, items], index) => (
                     <Card key={category} className="hover:scale-105 transition-transform duration-300">
                         <h3 className="text-xl font-bold mb-6 text-primary border-b border-white/10 pb-4">

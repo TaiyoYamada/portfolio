@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Mail } from "lucide-react";
+import { SiQiita } from "react-icons/si";
+
 export default function Hero() {
     return (
         <div className="relative flex flex-col h-screen w-full" id="about-me">
@@ -37,8 +39,8 @@ export default function Hero() {
                 >
                     {[
                         { Icon: Github, href: "https://github.com/TaiyoYamada" },
-                        { Icon: Linkedin, href: "https://qiita.com/TaiyoYamada" },
-                        { Icon: Mail, href: "#" },
+                        { Icon: SiQiita, href: "https://qiita.com/TaiyoYamada" },
+                        { Icon: Mail, href: "mailto:t-yamada@ilab.pu-kumamoto.ac.jp" },
                     ].map(({ Icon, href }, index) => (
                         <a
                             key={index}

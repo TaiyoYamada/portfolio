@@ -1,33 +1,27 @@
 "use client";
 
+import Image from "next/image";
 import Section from "./Section";
 import { Card } from "../ui/Card";
 import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
     {
-        title: "[ Project Name 1 ]",
-        tech: ["React", "Next.js", "TypeScript"],
+        title: "[ KUMATOMO ]",
+        tech: ["Swift", "Laravel", "Vue.js", "TypeScript"],
         desc: "What I built and what problems I solved. Detailed description goes here.",
-        role: "Leader / Frontend",
-        link: "#",
-        github: "#",
+        role: "Frontend / Backend / Infra",
+        github: "https://github.com/TaiyoYamada/kumatomo",
+        image: "/kumatomo.png",
     },
     {
-        title: "[ Project Name 2 ]",
-        tech: ["Python", "FastAPI", "Docker"],
+        title: "[ Portfolio ]",
+        tech: ["Next.js", "TypeScript", "Tailwind CSS"],
         desc: "What I built and what problems I solved. Detailed description goes here.",
-        role: "Backend / Infra",
-        link: "#",
-        github: "#",
-    },
-    {
-        title: "[ Project Name 3 ]",
-        tech: ["Swift", "SwiftUI", "Firebase"],
-        desc: "What I built and what problems I solved. Detailed description goes here.",
-        role: "Mobile App",
-        link: "#",
-        github: "#",
+        role: "Frontend / Backend / Infra",
+        link: "https://portfolio-seven-mocha-29.vercel.app/",
+        github: "https://github.com/TaiyoYamada/portfolio",
+        image: "/portfolio.png",
     },
 ];
 
@@ -37,12 +31,19 @@ export default function Projects() {
             <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-gradient">
                 Projects
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
                 {projects.map((project, index) => (
                     <Card key={index} className="group overflow-hidden hover:-translate-y-2 p-0 bg-surface border-white/5">
-                        <div className="h-48 bg-white/5 flex items-center justify-center text-gray-500 relative overflow-hidden">
+                        <div className="h-48 bg-white/5 flex items-center justify-center relative overflow-hidden">
+                            {project.image && (
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover"
+                                />
+                            )}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            <span>Thumbnail</span>
                         </div>
                         <div className="p-6">
                             <h3 className="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">

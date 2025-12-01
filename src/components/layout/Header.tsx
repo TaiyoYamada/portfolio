@@ -25,7 +25,7 @@ export default function Header() {
                         "About Me",
                         "Skills",
                         "Projects",
-                        "Research",
+                        // "Research",
                         "Experience",
                         "Awards",
                         "Articles",
