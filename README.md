@@ -18,26 +18,18 @@
 - **Skills**: 開発スキルとテクノロジースタック
 - **Projects**: 個人プロジェクトの紹介
 - **Awards**: 受賞歴と実績
-- **Articles**: Qiita記事
+- **Articles**: Qiita 記事
 - **Experience**: 職務経験とインターンシップ
-- **Contact**: 連絡先とSNSリンク
+- **Contact**: 連絡先と SNS リンク
 
 ## 技術スタック
 
 ### フロントエンド
 
-| 技術 | 用途 |
-|------|------|
-| [Next.js 16](https://nextjs.org/) | Reactフレームワーク（App Router） |
-| [React 19](https://react.dev/) | UIライブラリ |
-| [TypeScript](https://www.typescriptlang.org/) | 型安全な開発 |
-| [Tailwind CSS](https://tailwindcss.com/) | CSSフレームワーク |
-| [Framer Motion](https://www.framer.com/motion/) | アニメーションライブラリ |
-
-### デプロイ・CI/CD
-
-| 技術 | 用途 |
-|------|------|
-| [Vercel](https://vercel.com/) | ホスティング・デプロイ |
-| [GitHub Actions](https://github.com/features/actions) | CI/CDパイプライン |
-
+| 技術                                            | 用途                               |
+| ----------------------------------------------- | ---------------------------------- |
+| [Next.js 16](https://nextjs.org/)               | React フレームワーク（App Router） |
+| [React 19](https://react.dev/)                  | UI ライブラリ                      |
+| [TypeScript](https://www.typescriptlang.org/)   | 型安全な開発                       |
+| [Tailwind CSS](https://tailwindcss.com/)        | CSS フレームワーク                 |
+| [Framer Motion](https://www.framer.com/motion/) | アニメーションライブラリ           |
