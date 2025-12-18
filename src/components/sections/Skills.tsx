@@ -1,7 +1,6 @@
 "use client";
 
 import Section from "./Section";
-import { Card } from "../ui/Card";
 import { motion } from "framer-motion";
 import {
     SiSwift,
@@ -34,7 +33,6 @@ import { IconType } from "react-icons";
 
 interface Skill {
     name: string;
-    level: number;
     icon: IconType;
     color: string;
 }
@@ -45,62 +43,65 @@ interface SkillCategories {
 
 const skills: SkillCategories = {
     Languages: [
-        { name: "Swift", level: 90, icon: SiSwift, color: "#F05138" },
-        { name: "TypeScript", level: 85, icon: SiTypescript, color: "#3178C6" },
-        { name: "JavaScript", level: 85, icon: SiJavascript, color: "#F7DF1E" },
-        { name: "Python", level: 75, icon: SiPython, color: "#3776AB" },
-        { name: "PHP", level: 70, icon: SiPhp, color: "#777BB4" },
-        { name: "Dart", level: 65, icon: SiDart, color: "#0175C2" },
-        { name: "HTML/CSS", level: 90, icon: SiHtml5, color: "#E34F26" },
+        { name: "Swift", icon: SiSwift, color: "#F05138" },
+        { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+        { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+        { name: "Python", icon: SiPython, color: "#3776AB" },
+        { name: "PHP", icon: SiPhp, color: "#777BB4" },
+        { name: "Dart", icon: SiDart, color: "#0175C2" },
+        { name: "HTML/CSS", icon: SiHtml5, color: "#E34F26" },
     ],
     "Frameworks / Libraries": [
-        { name: "Next.js", level: 85, icon: SiNextdotjs, color: "#FFFFFF" },
-        { name: "Vue.js", level: 75, icon: SiVuedotjs, color: "#4FC08D" },
-        { name: "Laravel", level: 80, icon: SiLaravel, color: "#FF2D20" },
-        { name: "Flutter", level: 65, icon: SiFlutter, color: "#02569B" },
+        { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+        { name: "Vue.js", icon: SiVuedotjs, color: "#4FC08D" },
+        { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
+        { name: "Flutter", icon: SiFlutter, color: "#02569B" },
     ],
     Databases: [
-        { name: "PostgreSQL", level: 80, icon: SiPostgresql, color: "#4169E1" },
-        { name: "MySQL", level: 75, icon: SiMysql, color: "#4479A1" },
-        { name: "DynamoDB", level: 70, icon: SiAmazondynamodb, color: "#4053D6" },
+        { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+        { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+        { name: "DynamoDB", icon: SiAmazondynamodb, color: "#4053D6" },
     ],
     Infrastructure: [
-        { name: "Docker", level: 75, icon: SiDocker, color: "#2496ED" },
-        { name: "AWS", level: 70, icon: SiAmazonwebservices, color: "#FF9900" },
-        { name: "XServer", level: 80, icon: SiVercel, color: "#FF6A00" },
-        { name: "Supabase", level: 80, icon: SiSupabase, color: "#3FCF8E" },
-        { name: "Vercel", level: 85, icon: SiVercel, color: "#FFFFFF" },
+        { name: "Docker", icon: SiDocker, color: "#2496ED" },
+        { name: "AWS", icon: SiAmazonwebservices, color: "#FF9900" },
+        { name: "XServer", icon: SiVercel, color: "#FF6A00" },
+        { name: "Supabase", icon: SiSupabase, color: "#3FCF8E" },
+        { name: "Vercel", icon: SiVercel, color: "#FFFFFF" },
     ],
     Tools: [
-        { name: "Xcode", level: 90, icon: FaApple, color: "#147EFB" },
-        { name: "VSCode", level: 90, icon: VscVscode, color: "#007ACC" },
-        { name: "Git", level: 85, icon: SiGit, color: "#F05032" },
-        { name: "GitHub", level: 90, icon: SiGithub, color: "#FFFFFF" },
-        { name: "Figma", level: 60, icon: SiFigma, color: "#F24E1E" },
-        { name: "Postman", level: 80, icon: SiPostman, color: "#FF6C37" },
-        { name: "Sequel Ace", level: 75, icon: FaDatabase, color: "#F8C51C" },
-        { name: "Postico 2", level: 75, icon: FaDatabase, color: "#4169E1" },
+        { name: "Xcode", icon: FaApple, color: "#147EFB" },
+        { name: "VSCode", icon: VscVscode, color: "#007ACC" },
+        { name: "Git", icon: SiGit, color: "#F05032" },
+        { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
+        { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+        { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+        { name: "Sequel Ace", icon: FaDatabase, color: "#F8C51C" },
+        { name: "Postico 2", icon: FaDatabase, color: "#4169E1" },
     ],
 };
 
-function SkillItem({ skill, index }: { skill: Skill; index: number }) {
+function SkillTile({ skill, index }: { skill: Skill; index: number }) {
     const Icon = skill.icon;
 
     return (
         <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.05, duration: 0.4 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: index * 0.05, duration: 0.3 }}
             viewport={{ once: true }}
-            className="group flex items-center gap-3 py-2"
+            whileHover={{ y: -3, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+            className="flex flex-col items-center justify-center p-3 rounded-lg bg-white/5 border border-white/5 transition-all duration-300 group"
         >
             <div
-                className="p-2 rounded-lg bg-white/5 group-hover:bg-white/10 transition-colors"
+                className="mb-2 text-2xl transition-transform duration-300 group-hover:scale-110"
                 style={{ color: skill.color }}
             >
-                <Icon size={20} />
+                <Icon />
             </div>
-            <span className="text-gray-300 font-medium group-hover:text-white transition-colors">{skill.name}</span>
+            <span className="text-xs font-medium text-gray-300 group-hover:text-white text-center">
+                {skill.name}
+            </span>
         </motion.div>
     );
 }
@@ -111,26 +112,26 @@ export default function Skills() {
             <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-gradient">
                 Skills
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div className="space-y-12">
                 {Object.entries(skills).map(([category, items], categoryIndex) => (
-                    <motion.div
-                        key={category}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: categoryIndex * 0.1, duration: 0.5 }}
-                        viewport={{ once: true }}
-                    >
-                        <Card className="h-full hover:border-primary/30 transition-all duration-300">
-                            <h3 className="text-xl font-bold mb-6 text-primary border-b border-white/10 pb-4">
-                                {category}
-                            </h3>
-                            <div className="space-y-1">
-                                {items.map((skill, index) => (
-                                    <SkillItem key={skill.name} skill={skill} index={index} />
-                                ))}
-                            </div>
-                        </Card>
-                    </motion.div>
+                    <div key={category}>
+                        <motion.h3
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ delay: categoryIndex * 0.1, duration: 0.5 }}
+                            viewport={{ once: true }}
+                            className="text-2xl font-bold mb-6 text-white pl-4 border-l-4 border-primary"
+                        >
+                            {category}
+                        </motion.h3>
+
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+                            {items.map((skill, index) => (
+                                <SkillTile key={skill.name} skill={skill} index={index} />
+                            ))}
+                        </div>
+                    </div>
                 ))}
             </div>
         </Section>
