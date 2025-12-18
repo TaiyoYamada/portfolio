@@ -33,7 +33,7 @@
 - 🌌 **インタラクティブな背景**: Three.js による星空エフェクト
 - 📱 **レスポンシブデザイン**: モバイル・タブレット・デスクトップに完全対応
 - ⚡ **高速パフォーマンス**: Vercel Edge Network によるグローバル配信
-- 📝 **Qiita API連携**: 技術記事を自動取得・表示
+- 📝 **Qiita API連携**: サーバーサイド（SSR）で技術記事を自動取得・表示
 
 ---
 
@@ -54,7 +54,7 @@
 
 ## 技術スタック
 
-### フロントエンド
+### コア技術
 
 | 技術 | バージョン | 用途 |
 |------|------------|------|
@@ -66,6 +66,20 @@
 | [Three.js](https://threejs.org/) | 0.181 | 3Dグラフィックス（星空背景） |
 | [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) | 9.4 | React向けThree.jsバインディング |
 | [Lucide React](https://lucide.dev/) | 0.555 | アイコンライブラリ |
+<<<<<<< Updated upstream
+=======
+
+### 外部API連携
+
+| API | 用途 |
+|-----|------|
+| [Qiita API v2](https://qiita.com/api/v2/docs) | 技術記事の取得（SSR時にサーバーサイドで呼び出し） |
+
+### インフラ・デプロイ
+
+| 技術 | 用途 |
+|------|------|
+>>>>>>> Stashed changes
 | [Vercel](https://vercel.com/) | ホスティング・デプロイ |
 | [GitHub Actions](https://github.com/features/actions) | CI/CDパイプライン |
 
