@@ -26,6 +26,7 @@ import {
     SiGit,
     SiFigma,
     SiPostman,
+    SiXcode,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { FaApple, FaDatabase } from "react-icons/fa";
@@ -70,7 +71,7 @@ const skills: SkillCategories = {
         { name: "Vercel", icon: SiVercel, color: "#FFFFFF" },
     ],
     Tools: [
-        { name: "Xcode", icon: FaApple, color: "#147EFB" },
+        { name: "Xcode", icon: SiXcode, color: "#147EFB" },
         { name: "VSCode", icon: VscVscode, color: "#007ACC" },
         { name: "Git", icon: SiGit, color: "#F05032" },
         { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
