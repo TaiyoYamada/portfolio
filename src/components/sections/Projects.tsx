@@ -68,7 +68,7 @@ export default function Projects() {
                                     </span>
                                 ))}
                             </div>
-                            <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                            <p className="text-gray-400 text-sm mb-4">
                                 {project.desc}
                             </p>
                             <div className="flex justify-between items-center mt-auto pt-4 border-t border-white/10">

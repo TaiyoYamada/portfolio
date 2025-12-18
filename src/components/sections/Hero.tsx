@@ -28,7 +28,7 @@ export default function Hero() {
                     transition={{ delay: 0.5, duration: 0.8 }}
                     className="text-lg md:text-xl text-gray-300 max-w-2xl mb-10 leading-relaxed font-light"
                 >
-                    Creating digital experiences that matter.
+                    Building products that work reliably and deliver value.
                 </motion.p>
 
                 <motion.div
