@@ -6,13 +6,13 @@ import { Card } from "../ui/Card";
 const experiences = [
     {
         company: "ソーイ株式会社",
-        period: "2025.01 - 2025.12",
+        period: "2025.02 - 2025.12",
         role: "Web / Mobile Engineer (Intern)",
         details: [
-            "Laravel・Vue・Flutter を用いた業務システムの開発",
+            "Laravel・Vue.js・Flutter を用いた業務システムの開発",
             "フロントエンドの UI 実装やバックエンド API 設計・実装",
             "バッチ処理の作成、既存コードの改善・デバッグ対応",
-            "API ドキュメント作成や仕様整理など開発フロー全体を担当",
+            "API ドキュメント作成やテストなど開発フロー全体を担当",
         ],
         growth:
             "フルスタック的な視点を獲得。業務開発ならではのタスク管理・仕様理解・チーム開発の基礎が身についた。",

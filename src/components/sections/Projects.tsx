@@ -9,7 +9,7 @@ const projects = [
     {
         title: "KUMATOMO",
         tech: ["Swift", "Laravel", "Vue.js", "TypeScript"],
-        desc: "熊本県SNSアプリです。",
+        desc: "熊本県に特化した地域密着型SNSアプリ。（開発中）地元店舗やユーザー同士のつながりを促進することを目的に、モバイルアプリからバックエンドまで一貫して設計・開発しています。",
         role: "Frontend / Backend / Infra",
         github: "https://github.com/TaiyoYamada/kumatomo",
         image: "/kumatomo.png",
@@ -17,11 +17,20 @@ const projects = [
     {
         title: "Portfolio",
         tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-        desc: "山田大陽のポートフォリオ",
+        desc: "山田大陽のポートフォリオサイト。これまでに取り組んできたプロジェクトや技術スタックを整理し、自身の関心領域や開発スタイルが伝わるよう設計しました。",
         role: "Frontend / Backend / Infra",
         link: "https://portfolio-seven-mocha-29.vercel.app/",
         github: "https://github.com/TaiyoYamada/portfolio",
         image: "/portfolio.png",
+    },
+    {
+        title: "SeatCraft",
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "AWS Lambda", "AWS DynamoDB", "AWS API Gateway"],
+        desc: "飲み会の席決めをテーマに、友人と5時間程度のハッカソンで開発したWebアプリ。",
+        role: "Frontend / Backend / Infra",
+        link: "https://seat-craft.vercel.app/",
+        github: "https://github.com/TaiyoYamada/SeatCraft",
+        image: "/seatcraft.png",
     },
 ];
 

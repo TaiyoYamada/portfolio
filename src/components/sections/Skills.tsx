@@ -6,7 +6,7 @@ import { Card } from "../ui/Card";
 const skills = {
     Languages: ["Swift", "TypeScript", "JavaScript", "Python", "PHP", "Dart", "HTML/CSS"],
     "Frameworks / Libraries": ["Next.js", "Vue.js", "Laravel", "SwiftUI", "Flutter"],
-    "Infrastructure": ["Github", "Docker", "AWS", "GCP", "Supabase", "Vercel"],
+    "Infrastructure": ["Github", "Docker", "AWS", "GCP", "XServer", "Supabase", "Vercel"],
 };
 
 export default function Skills() {

@@ -5,6 +5,7 @@ import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 // import Research from "@/components/sections/Research";
 import Experience from "@/components/sections/Experience";
+import Certifications from "@/components/sections/Certifications";
 import Awards from "@/components/sections/Awards";
 import Articles from "@/components/sections/Articles";
 import Contact from "@/components/sections/Contact";
@@ -20,6 +21,7 @@ export default function Home() {
       <Projects />
       {/* <Research /> */}
       <Experience />
+      <Certifications />
       <Awards />
       <Articles />
       <Contact />
