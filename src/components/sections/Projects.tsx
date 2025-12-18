@@ -7,17 +7,17 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
     {
-        title: "[ KUMATOMO ]",
+        title: "KUMATOMO",
         tech: ["Swift", "Laravel", "Vue.js", "TypeScript"],
-        desc: "What I built and what problems I solved. Detailed description goes here.",
+        desc: "熊本県SNSアプリです。",
         role: "Frontend / Backend / Infra",
         github: "https://github.com/TaiyoYamada/kumatomo",
         image: "/kumatomo.png",
     },
     {
-        title: "[ Portfolio ]",
+        title: "Portfolio",
         tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-        desc: "What I built and what problems I solved. Detailed description goes here.",
+        desc: "山田大陽のポートフォリオ",
         role: "Frontend / Backend / Infra",
         link: "https://portfolio-seven-mocha-29.vercel.app/",
         github: "https://github.com/TaiyoYamada/portfolio",
