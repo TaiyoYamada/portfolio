@@ -6,12 +6,10 @@ import { getUser, getTopArticlesByLikes } from "@/lib/qiita";
 const QIITA_USER_ID = "TaiyoYamada";
 
 export default async function Articles() {
-    // Handle data fetching and errors before JSX construction
     let userData;
     let topArticles;
 
     try {
-        // Fetch user data and top articles concurrently
         [userData, topArticles] = await Promise.all([
             getUser(QIITA_USER_ID),
             getTopArticlesByLikes(QIITA_USER_ID, 3),
@@ -19,7 +17,6 @@ export default async function Articles() {
     } catch (error) {
         console.error("Failed to fetch Qiita articles:", error);
 
-        // Return error UI if data fetching failed
         return (
             <Section id="articles" className="relative z-10">
                 <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-gradient">
@@ -44,14 +41,12 @@ export default async function Articles() {
         );
     }
 
-    // Return success UI
     return (
         <Section id="articles" className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-gradient">
                 Articles
             </h2>
 
-            {/* Articles Count */}
             <div className="text-center mb-12">
                 <p className="text-gray-400 text-lg">
                     Qiita Articles：{" "}
@@ -62,7 +57,6 @@ export default async function Articles() {
                 </p>
             </div>
 
-            {/* Top 3 Articles by Likes */}
             <div className="space-y-4">
                 {topArticles.map((article) => (
                     <a
@@ -104,7 +98,6 @@ export default async function Articles() {
                 ))}
             </div>
 
-            {/* Link to Qiita Profile */}
             <div className="text-center mt-8">
                 <a
                     href={`https://qiita.com/${QIITA_USER_ID}`}

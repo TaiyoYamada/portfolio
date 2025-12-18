@@ -10,19 +10,6 @@ export default function About() {
                 About Me
             </h2>
 
-            {/* Photo
-            <div className="flex justify-center">
-                <div className="overflow-hidden rounded-3xl border border-white/10 shadow-xl w-64 h-64 md:w-80 md:h-80">
-                    <Image
-                        src="/me.jpg"
-                        alt="Profile Photo"
-                        width={400}
-                        height={400}
-                        className="object-cover w-full h-full"
-                    />
-                </div>
-            </div> */}
-
             <div className="grid md:grid-cols-1 gap-10 items-center">
                 <Card className="p-8 backdrop-blur-md bg-white/5 border-white/10 space-y-4">
                     <h3 className="text-3xl font-bold text-secondary">山田 大陽</h3>
