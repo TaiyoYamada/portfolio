@@ -82,15 +82,11 @@ const skills: SkillCategories = {
     ],
 };
 
-function SkillTile({ skill, index }: { skill: Skill; index: number }) {
+function SkillTile({ skill }: { skill: Skill }) {
     const Icon = skill.icon;
 
     return (
         <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.05, duration: 0.3 }}
-            viewport={{ once: true }}
             whileHover={{ y: -3, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
             className="flex flex-col items-center justify-center p-3 rounded-lg bg-white/5 border border-white/5 transition-all duration-300 group"
         >
@@ -127,11 +123,17 @@ export default function Skills() {
                             {category}
                         </motion.h3>
 
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-                            {items.map((skill, index) => (
-                                <SkillTile key={skill.name} skill={skill} index={index} />
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: categoryIndex * 0.1 + 0.1, duration: 0.5 }}
+                            viewport={{ once: true }}
+                            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4"
+                        >
+                            {items.map((skill) => (
+                                <SkillTile key={skill.name} skill={skill} />
                             ))}
-                        </div>
+                        </motion.div>
                     </div>
                 ))}
             </div>
