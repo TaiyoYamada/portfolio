@@ -21,7 +21,7 @@ export default function Research() {
             </h2>
             <div className="space-y-6">
                 {researches.map((item, index) => (
-                    <Card key={index} className="p-8 hover:bg-white/10 transition-colors">
+                    <Card key={index} className="p-6 hover:bg-white/10 transition-colors">
                         <div className="flex items-center gap-3 mb-4">
                             {item.status === "ongoing" && (
                                 <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30">
@@ -29,27 +29,27 @@ export default function Research() {
                                 </span>
                             )}
                         </div>
-                        <h3 className="text-xl md:text-2xl font-bold mb-4 text-white leading-relaxed">
+                        <h3 className="text-lg font-bold mb-2 text-white">
                             {item.title}
                         </h3>
-                        <p className="text-gray-300 mb-6 leading-relaxed">{item.desc}</p>
+                        <p className="text-gray-400 text-sm mb-4">{item.desc}</p>
 
-                        <div className="flex flex-wrap gap-2 mb-6">
+                        <div className="flex flex-wrap gap-2 mb-4">
                             {item.tech.map((t, i) => (
                                 <span
                                     key={i}
-                                    className="text-xs px-3 py-1 rounded-full bg-surface border border-white/10 text-gray-300"
+                                    className="text-xs px-2 py-0.5 rounded-full bg-surface border border-white/10 text-gray-400"
                                 >
                                     {t}
                                 </span>
                             ))}
                         </div>
 
-                        <div className="bg-surface p-4 rounded-lg border border-white/5">
-                            <span className="text-secondary font-bold block mb-1 uppercase tracking-wider text-xs">
+                        <div className="bg-surface p-3 rounded-lg border border-white/5">
+                            <span className="text-secondary font-semibold block mb-1 uppercase tracking-wider text-xs">
                                 Output
                             </span>
-                            <span className="text-gray-400">{item.output}</span>
+                            <span className="text-gray-400 text-sm">{item.output}</span>
                         </div>
                     </Card>
                 ))}

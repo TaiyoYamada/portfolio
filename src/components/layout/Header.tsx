@@ -9,7 +9,7 @@ const navItems = [
     "About Me",
     "Skills",
     "Projects",
-    // "Research",
+    "Research",
     "Experience",
     "Certifications",
     "Awards",
