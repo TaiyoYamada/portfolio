@@ -25,7 +25,7 @@ const certifications: Certification[] = [
     },
     {
         title: "量子エンジニア（アニーリング式）エントリー資格",
-        issuer: "日本量子コンピューティング協会（JQCA）/ ZebraQuantum",
+        issuer: "日本量子コンピューティング協会（JQCA）",
         date: "2025.05",
         type: "certification",
         desc: "量子アニーリングに関する基礎知識とQUBO（二次制約なし二値最適化）実装スキルを証明する資格。組合せ最適化問題への量子コンピュータ適用能力を認定。",
