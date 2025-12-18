@@ -31,7 +31,7 @@ export default function About() {
                     <p className="text-gray-300">研究室：飯村研究室（B2）</p>
                     <p className="text-gray-300">生年月日: 2005 / 09 / 26</p>
                     <p className="text-gray-400 leading-relaxed mt-4">
-                        大学では、法律や経済、情報を勉強する傍ら、研究室では、量子アルゴリズムの研究やSwiftを中心としたアプリ・SDK開発に取り組んでいます。大学では法律・経済・情報を横断的に学びながら、研究室では量子アルゴリズムの研究と、Swiftを中心としたアプリ・SDK開発に取り組んでいます。
+                        大学では、法律や経済、情報を勉強する傍ら、研究室では、量子アルゴリズムの研究やSwiftを中心としたアプリ・SDK開発に取り組んでいます。
                     </p>
                 </Card>
             </div>
