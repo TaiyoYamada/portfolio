@@ -1,43 +1,167 @@
 <div align="center">
 
-# Portfolio - Taiyo Yamada
+# 🌟 Portfolio - Taiyo Yamada
 
-**個人ポートフォリオサイト**
+**山田大陽 のポートフォリオサイト**
 
-[🔗 Link](https://portfolio-seven-mocha-29.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61dafb?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06b6d4?logo=tailwindcss)](https://tailwindcss.com/)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://vercel.com/)
+
+[🔗 **Live Demo**](https://taiyoyamada.com)
+
+<img src="docs/screenshot.png" alt="Portfolio Screenshot" width="700">
 
 </div>
 
-## 概要
+---
 
-研究・開発経験・作品・受賞歴・技術記事など、私の活動をまとめた個人ポートフォリオサイトです。
+## 📋 概要
 
-### 主な掲載内容
+熊本県立大学 総合管理学部 B2 の山田大陽です。研究・開発経験・個人プロジェクト・受賞歴・技術記事など、私のすべての活動をまとめた個人ポートフォリオサイトです。
 
-- **About Me**: プロフィールと自己紹介
-- **Skills**: 開発スキルとテクノロジースタック
-- **Projects**: 個人プロジェクトの紹介
-- **Awards**: 受賞歴と実績
-- **Articles**: Qiita記事
-- **Experience**: 職務経験とインターンシップ
-- **Contact**: 連絡先とSNSリンク
+量子アルゴリズムの研究から、Swift/TypeScriptを用いたアプリ開発まで、幅広い技術分野での活動を発信しています。
 
-## 技術スタック
+---
+
+## ✨ 特徴
+
+- 🚀 **モダンな技術スタック**: Next.js 16 (App Router) + React 19 + TypeScript
+- 🎨 **洗練されたUI/UX**: Tailwind CSS + Framer Motion によるスムーズなアニメーション
+- 🌌 **インタラクティブな背景**: Three.js による星空エフェクト
+- 📱 **レスポンシブデザイン**: モバイル・タブレット・デスクトップに完全対応
+- ⚡ **高速パフォーマンス**: Vercel Edge Network によるグローバル配信
+- 📝 **Qiita API連携**: 技術記事を自動取得・表示
+
+---
+
+## 📑 セクション構成
+
+| セクション | 説明 |
+|------------|------|
+| **Hero** | ファーストビュー、SNSリンク |
+| **About** | プロフィール・自己紹介 |
+| **Skills** | 開発スキル・テクノロジースタック |
+| **Projects** | 個人プロジェクトの紹介 |
+| **Research** | 量子アルゴリズムに関する研究活動 |
+| **Experience** | 職務経験・インターンシップ |
+| **Certifications** | 資格・認定プログラム |
+| **Awards** | 受賞歴・実績 |
+| **Articles** | Qiita技術記事（API連携） |
+| **Contact** | 連絡先・SNSリンク |
+
+---
+
+## 🛠️ 技術スタック
 
 ### フロントエンド
 
-| 技術 | 用途 |
-|------|------|
-| [Next.js 16](https://nextjs.org/) | Reactフレームワーク（App Router） |
-| [React 19](https://react.dev/) | UIライブラリ |
-| [TypeScript](https://www.typescriptlang.org/) | 型安全な開発 |
-| [Tailwind CSS](https://tailwindcss.com/) | CSSフレームワーク |
-| [Framer Motion](https://www.framer.com/motion/) | アニメーションライブラリ |
+| 技術 | バージョン | 用途 |
+|------|------------|------|
+| [Next.js](https://nextjs.org/) | 16.0 | Reactフレームワーク（App Router） |
+| [React](https://react.dev/) | 19.2 | UIライブラリ |
+| [TypeScript](https://www.typescriptlang.org/) | 5.x | 型安全な開発 |
+| [Tailwind CSS](https://tailwindcss.com/) | 3.4 | ユーティリティファーストCSS |
+| [Framer Motion](https://www.framer.com/motion/) | 12.x | アニメーションライブラリ |
+| [Three.js](https://threejs.org/) | 0.181 | 3Dグラフィックス（星空背景） |
+| [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) | 9.4 | React向けThree.jsバインディング |
+| [Lucide React](https://lucide.dev/) | 0.555 | アイコンライブラリ |
 
-### デプロイ・CI/CD
+### インフラ・デプロイ
 
 | 技術 | 用途 |
 |------|------|
 | [Vercel](https://vercel.com/) | ホスティング・デプロイ |
 | [GitHub Actions](https://github.com/features/actions) | CI/CDパイプライン |
+| [Yarn](https://yarnpkg.com/) | パッケージマネージャー（Plug'n'Play） |
 
+---
+
+## 🚀 ローカル開発
+
+### 必要要件
+
+- Node.js 18.x 以上
+- Yarn 4.x（または npm）
+
+### セットアップ
+
+```bash
+# リポジトリをクローン
+git clone https://github.com/TaiyoYamada/portfolio.git
+cd portfolio
+
+# 依存関係をインストール
+yarn install
+
+# 開発サーバーを起動
+yarn dev
+```
+
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いてください。
+
+### 利用可能なスクリプト
+
+| コマンド | 説明 |
+|----------|------|
+| `yarn dev` | 開発サーバーを起動 |
+| `yarn build` | プロダクションビルドを作成 |
+| `yarn start` | プロダクションサーバーを起動 |
+| `yarn lint` | ESLintでコードをチェック |
+
+---
+
+## 📂 プロジェクト構成
+
+```
+portfolio/
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── layout.tsx          # ルートレイアウト
+│   │   ├── page.tsx            # メインページ
+│   │   └── globals.css         # グローバルスタイル
+│   ├── components/
+│   │   ├── effects/            # エフェクトコンポーネント
+│   │   │   └── StarBackground.tsx
+│   │   ├── icons/              # カスタムアイコン
+│   │   ├── layout/             # レイアウトコンポーネント
+│   │   │   ├── Header.tsx
+│   │   │   └── Footer.tsx
+│   │   ├── sections/           # セクションコンポーネント
+│   │   │   ├── Hero.tsx
+│   │   │   ├── About.tsx
+│   │   │   ├── Skills.tsx
+│   │   │   ├── Projects.tsx
+│   │   │   ├── Research.tsx
+│   │   │   ├── Experience.tsx
+│   │   │   ├── Certifications.tsx
+│   │   │   ├── Awards.tsx
+│   │   │   ├── Articles.tsx
+│   │   │   └── Contact.tsx
+│   │   └── ui/                 # 共通UIコンポーネント
+│   └── lib/                    # ユーティリティ・API
+│       └── qiita.ts            # Qiita API クライアント
+├── public/                     # 静的ファイル
+├── tailwind.config.ts          # Tailwind CSS設定
+├── next.config.ts              # Next.js設定
+└── package.json
+```
+
+---
+
+## 📬 連絡先
+
+- **GitHub**: [@TaiyoYamada](https://github.com/TaiyoYamada)
+- **Qiita**: [@TaiyoYamada](https://qiita.com/TaiyoYamada)
+- **Email**: t-yamada@ilab.pu-kumamoto.ac.jp
+
+---
+
+## 📄 ライセンス
+
+© 2024-2025 Taiyo Yamada. All Rights Reserved.
+
+このプロジェクトのソースコード、デザイン、コンテンツは無断転載・使用を禁止しています。  
+詳細は [LICENSE](./LICENSE) をご確認ください。

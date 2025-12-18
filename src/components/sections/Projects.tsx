@@ -19,7 +19,7 @@ const projects = [
         tech: ["Next.js", "TypeScript", "Tailwind CSS"],
         desc: "山田大陽のポートフォリオサイト。これまでに取り組んできたプロジェクトや技術スタックを整理し、自身の関心領域や開発スタイルが伝わるよう設計しました。",
         role: "Frontend / Backend / Infra",
-        link: "https://portfolio-seven-mocha-29.vercel.app/",
+        link: "https://taiyoyamada.com/",
         github: "https://github.com/TaiyoYamada/portfolio",
         image: "/portfolio.png",
     },
