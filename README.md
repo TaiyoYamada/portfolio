@@ -22,16 +22,16 @@
 
 ### コア技術
 
-| 技術 | バージョン | 用途 |
-|------|------------|------|
-| [Next.js](https://nextjs.org/) | 16.0 | Reactフレームワーク（App Router） |
-| [React](https://react.dev/) | 19.2 | UIライブラリ |
-| [TypeScript](https://www.typescriptlang.org/) | 5.x | 型安全な開発 |
-| [Tailwind CSS](https://tailwindcss.com/) | 3.4 | ユーティリティファーストCSS |
-| [Framer Motion](https://www.framer.com/motion/) | 12.x | アニメーションライブラリ |
-| [Three.js](https://threejs.org/) | 0.181 | 3Dグラフィックス（星空背景） |
-| [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) | 9.4 | React向けThree.jsバインディング |
-| [Lucide React](https://lucide.dev/) | 0.555 | アイコンライブラリ |
+| 技術 | 用途 |
+|------|------|
+| [Next.js](https://nextjs.org/) | Reactフレームワーク（App Router） |
+| [React](https://react.dev/) | UIライブラリ |
+| [TypeScript](https://www.typescriptlang.org/) | 型安全な開発 |
+| [Tailwind CSS](https://tailwindcss.com/) | ユーティリティファーストCSS |
+| [Framer Motion](https://www.framer.com/motion/) | アニメーションライブラリ |
+| [Three.js](https://threejs.org/) | 3Dグラフィックス（星空背景） |
+| [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) | React向けThree.jsバインディング |
+| [Lucide React](https://lucide.dev/) | アイコンライブラリ |
 | [Qiita API v2](https://qiita.com/api/v2/docs) | 技術記事の取得（SSR時にサーバーサイドで呼び出し） |
 | [Vercel](https://vercel.com/) | ホスティング・デプロイ |
 | [GitHub Actions](https://github.com/features/actions) | CI/CDパイプライン |
