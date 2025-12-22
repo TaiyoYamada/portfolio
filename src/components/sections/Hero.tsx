@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, Mail } from "lucide-react";
-import { SiQiita } from "react-icons/si";
+import { SiQiita, SiX } from "react-icons/si";
 
 export default function Hero() {
     return (
@@ -40,6 +40,7 @@ export default function Hero() {
                     {[
                         { Icon: Github, href: "https://github.com/TaiyoYamada" },
                         { Icon: SiQiita, href: "https://qiita.com/TaiyoYamada" },
+                        { Icon: SiX, href: "https://x.com/taiyo_sunsun05" },
                         { Icon: Mail, href: "mailto:t-yamada@ilab.pu-kumamoto.ac.jp" },
                     ].map(({ Icon, href }, index) => (
                         <a
