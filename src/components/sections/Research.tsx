@@ -5,7 +5,7 @@ import { Card } from "../ui/Card";
 
 const researches = [
     {
-        title: "変分量子固有値法におけるABC最適化手法のノイズ下初期探索ロバスト性評価",
+        title: "ABCアルゴリズムをオプティマイザとするVQEのノイズ下におけるロバスト性初期評価",
         desc: "量子コンピューティングにおける変分量子固有値法（VQE）の精度向上を目的とした研究。人工蜂コロニー（ABC）アルゴリズムを活用した最適化手法により、ノイズ環境下での初期探索のロバスト性を評価・改善するアプローチを提案。",
         tech: ["Python", "Qiskit", "Quantum Computing", "VQE", "ABC Algorithm"],
         output: "電気学会 全国大会（2026年3月）発表予定",
