@@ -20,13 +20,23 @@ const experiences = [
     {
         company: "株式会社ゆめみ",
         period: "2025.10 - 2025.11",
-        role: "iOS Engineer Intern",
+        role: "iOS Engineer (Intern)",
         details: [
             "SwiftUIを用いた研修アプリの開発",
             "テスタブルな設計とアーキテクチャ設計の基礎理解",
         ],
         growth:
             "iOSアプリ開発の設計力が向上し、アーキテクチャと品質の重要性を理解。",
+    },
+    {
+        company: "株式会社松尾研究所",
+        period: "2026.02 - ",
+        role: "AI Engineer (Intern)",
+        details: [
+            "coming soon",
+        ],
+        growth:
+            "coming soon",
     },
 ];
 
