@@ -9,7 +9,7 @@ const projects = [
     {
         title: "KUMATOMO",
         tech: ["Swift", "Laravel", "Vue.js", "TypeScript"],
-        desc: "熊本県に特化した地域密着型SNSアプリ。（開発中）地元店舗やユーザー同士のつながりを促進することを目的に、モバイルアプリからバックエンドまで一貫して設計・開発しています。",
+        desc: "熊本県に特化した地域密着型SNSアプリ。（開発中）地元店舗やユーザー同士のつながりを促進することを目的に、モバイルアプリからバックエンドまで一貫して設計・開発。",
         role: "Frontend / Backend / Infra",
         github: "https://github.com/TaiyoYamada/kumatomo",
         image: "/kumatomo.png",
@@ -17,7 +17,7 @@ const projects = [
     {
         title: "Portfolio",
         tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-        desc: "山田大陽のポートフォリオサイト。これまでに取り組んできたプロジェクトや技術スタックを整理し、自身の関心領域や開発スタイルが伝わるよう設計しました。",
+        desc: "山田大陽のポートフォリオサイト。これまでに取り組んできたプロジェクトや技術スタックを整理し、自身の関心領域や開発スタイルが伝わるよう設計。",
         role: "Frontend / Backend / Infra",
         link: "https://taiyoyamada.com/",
         github: "https://github.com/TaiyoYamada/portfolio",

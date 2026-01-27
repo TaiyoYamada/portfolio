@@ -30,13 +30,12 @@ const experiences = [
     },
     {
         company: "株式会社松尾研究所",
-        period: "2026.02 - ",
+        period: "2026.02 - present",
         role: "AI Engineer (Intern)",
         details: [
-            "coming soon",
         ],
         growth:
-            "coming soon",
+            "",
     },
 ];
 
