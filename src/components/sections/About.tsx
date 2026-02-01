@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Section from "./Section";
 import Image from "next/image";
+import { School, Building2 } from "lucide-react";
 
 export default function About() {
     return (
@@ -53,10 +54,22 @@ export default function About() {
                                 </p>
                             </div>
 
-                            <div className="space-y-2 text-black font-medium leading-relaxed">
+                            <div className="space-y-4 text-black font-medium leading-relaxed">
+                                <ul className="space-y-2">
+                                    <li className="flex items-center gap-3">
+                                        <div className="bg-primary text-white p-1.5 border-2 border-black shadow-[2px_2px_0_#000]">
+                                            <School size={16} strokeWidth={3} />
+                                        </div>
+                                        <span className="font-black text-lg">熊本県立大学 総合管理学部 B2</span>
+                                    </li>
+                                    <li className="flex items-center gap-3">
+                                        <div className="bg-accent text-white p-1.5 border-2 border-black shadow-[2px_2px_0_#000]">
+                                            <Building2 size={16} strokeWidth={3} />
+                                        </div>
+                                        <span className="font-black text-lg">松尾研究所 共同研究インターン</span>
+                                    </li>
+                                </ul>
                                 <p>
-                                    熊本県立大学 総合管理学部 B2。<br />
-                                    松尾研究所 共同研究インターン生。<br />
                                     大学では、法律・経済・情報を学びながら、研究室では <span className="underline decoration-4 decoration-primary/30 underline-offset-2">量子アルゴリズム</span> の研究や <span className="underline decoration-4 decoration-primary/30 underline-offset-2">Swift</span> を中心としたアプリやSDKの開発を行っています。
                                 </p>
                                 <p className="text-sm text-gray-600">
