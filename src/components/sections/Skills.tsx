@@ -105,38 +105,54 @@ function SkillTile({ skill }: { skill: Skill }) {
 
 export default function Skills() {
     return (
-        <Section id="skills" className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-gradient">
-                Skills
+        <Section id="skills" className="relative z-10 py-20">
+            <h2 className="text-6xl md:text-8xl font-black mb-16 text-center text-transparent text-outline tracking-tighter hover:text-primary transition-colors cursor-default">
+                SKILLS
             </h2>
 
-            <div className="space-y-12">
-                {Object.entries(skills).map(([category, items], categoryIndex) => (
-                    <div key={category}>
-                        <motion.h3
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: categoryIndex * 0.1, duration: 0.5 }}
-                            viewport={{ once: true }}
-                            className="text-2xl font-bold mb-6 text-white pl-4 border-l-4 border-primary"
-                        >
-                            {category}
-                        </motion.h3>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: categoryIndex * 0.1 + 0.1, duration: 0.5 }}
-                            viewport={{ once: true }}
-                            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4"
-                        >
-                            {items.map((skill) => (
-                                <SkillTile key={skill.name} skill={skill} />
-                            ))}
-                        </motion.div>
-                    </div>
-                ))}
+            <div className="max-w-6xl mx-auto px-4">
+                <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+                    {Object.entries(skills).flatMap(([category, items]) =>
+                        items.map((skill, index) => (
+                            <motion.div
+                                key={skill.name}
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.05 }}
+                                className="group relative"
+                            >
+                                <motion.div
+                                    animate={{
+                                        y: [0, -8 - Math.random() * 5, 0],
+                                        rotate: [0, Math.random() * 5 - 2.5, 0]
+                                    }}
+                                    transition={{
+                                        duration: 2 + Math.random() * 2,
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                        delay: Math.random() * 2
+                                    }}
+                                    whileHover={{ scale: 1.1, rotate: 0, zIndex: 10 }}
+                                    className="flex items-center gap-3 px-6 py-4 bg-white border-2 border-black shadow-pop rounded-full cursor-default hover:shadow-pop-hover transition-shadow"
+                                >
+                                    <skill.icon className="text-2xl" style={{ color: skill.color }} />
+                                    <span className="text-sm md:text-base font-black text-black uppercase tracking-wide">
+                                        {skill.name}
+                                    </span>
+                                </motion.div>
+                            </motion.div>
+                        ))
+                    )}
+                </div>
             </div>
+
+            {/* Decoration */}
+            <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute top-10 right-10 w-24 h-24 border-4 border-dashed border-black rounded-full opacity-20 pointer-events-none"
+            />
         </Section>
     );
 }
