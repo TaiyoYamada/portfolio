@@ -24,79 +24,76 @@ export default function Header() {
     const closeMenu = () => setIsOpen(false);
 
     return (
-        <motion.header
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/30 border-b border-white/10"
-        >
-            <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                {/* Logo / Name */}
-                <Link
-                    href="/"
-                    className="text-xl font-bold text-white tracking-wider hover:text-primary transition-colors"
-                >
-                    TaiyoYamada
-                </Link>
+        <>
+            <motion.header
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: "spring", stiffness: 100, damping: 20 }}
+                className="fixed top-4 left-0 right-0 max-w-5xl mx-auto z-50 px-4"
+            >
+                <div className="bg-white border-2 border-black shadow-pop rounded-full px-6 h-16 flex items-center justify-between relative z-50">
+                    {/* Logo / Name */}
+                    <Link
+                        href="/"
+                        className="text-xl font-black text-black tracking-tight hover:text-primary transition-colors flex items-center gap-2"
+                    >
+                        <span className="w-3 h-3 bg-accent rounded-full border border-black" />
+                        TaiyoYamada
+                    </Link>
 
-                {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center gap-8">
-                    {navItems.map((item, index) => (
-                        <motion.a
-                            key={item}
-                            href={`#${item.toLowerCase().replace(" ", "-")}`}
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="text-sm font-medium text-gray-300 hover:text-primary transition-colors tracking-wide"
-                        >
-                            {item}
-                        </motion.a>
-                    ))}
-                </nav>
+                    {/* Desktop Navigation */}
+                    <nav className="hidden md:flex items-center gap-1">
+                        {navItems.map((item, index) => (
+                            <motion.a
+                                key={item}
+                                href={`#${item.toLowerCase().replace(" ", "-")}`}
+                                whileHover={{ scale: 1.1, rotate: Math.random() * 4 - 2 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="px-4 py-2 text-sm font-bold text-black border border-transparent hover:bg-secondary hover:border-black hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-full transition-all"
+                            >
+                                {item}
+                            </motion.a>
+                        ))}
+                    </nav>
 
-                {/* Mobile Menu Button */}
-                <button
-                    onClick={toggleMenu}
-                    className="md:hidden p-2 text-gray-300 hover:text-primary transition-colors"
-                    aria-label={isOpen ? "Close menu" : "Open menu"}
-                >
-                    {isOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
-            </div>
+                    {/* Mobile Menu Button */}
+                    <button
+                        onClick={toggleMenu}
+                        className="md:hidden p-2 text-black hover:bg-secondary rounded-full border border-transparent hover:border-black transition-all"
+                        aria-label={isOpen ? "Close menu" : "Open menu"}
+                    >
+                        {isOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
+            </motion.header>
 
             {/* Mobile Navigation Overlay */}
             <AnimatePresence>
                 {isOpen && (
                     <>
-                        {/* Backdrop */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="fixed inset-0 top-16 bg-black/60 backdrop-blur-sm md:hidden"
+                            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden"
                             onClick={closeMenu}
                         />
-
-                        {/* Mobile Menu */}
                         <motion.nav
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.2 }}
-                            className="absolute top-16 left-0 w-full bg-background/95 backdrop-blur-lg border-b border-white/10 md:hidden"
+                            initial={{ y: -20, opacity: 0, scale: 0.95 }}
+                            animate={{ y: 0, opacity: 1, scale: 1 }}
+                            exit={{ y: -20, opacity: 0, scale: 0.95 }}
+                            className="fixed top-24 left-4 right-4 bg-white border-2 border-black shadow-pop rounded-2xl z-50 p-4 md:hidden overflow-hidden"
                         >
-                            <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-2">
+                            <div className="flex flex-col gap-2">
                                 {navItems.map((item, index) => (
                                     <motion.a
                                         key={item}
                                         href={`#${item.toLowerCase().replace(" ", "-")}`}
                                         onClick={closeMenu}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ duration: 0.2, delay: index * 0.05 }}
-                                        className="py-3 px-4 text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg transition-colors font-medium"
+                                        initial={{ x: -20, opacity: 0 }}
+                                        animate={{ x: 0, opacity: 1 }}
+                                        transition={{ delay: index * 0.05 }}
+                                        className="p-3 text-lg font-bold text-black hover:bg-primary hover:text-white rounded-xl border-2 border-transparent hover:border-black hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
                                     >
                                         {item}
                                     </motion.a>
@@ -106,6 +103,6 @@ export default function Header() {
                     </>
                 )}
             </AnimatePresence>
-        </motion.header>
+        </>
     );
 }
