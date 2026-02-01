@@ -15,7 +15,7 @@ export default function Contact() {
 
             <div className="relative z-10 max-w-4xl mx-auto px-4">
                 <h2 className="text-6xl md:text-9xl font-black mb-12 text-black tracking-tighter leading-none">
-                    LET'S<br />TALK?
+                    LET&apos;S<br />TALK?
                 </h2>
 
                 <p className="text-xl md:text-2xl font-bold text-black mb-16 max-w-2xl mx-auto leading-relaxed">

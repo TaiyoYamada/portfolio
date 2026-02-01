@@ -47,7 +47,7 @@ export default function Header() {
                             <motion.a
                                 key={item}
                                 href={`#${item.toLowerCase().replace(" ", "-")}`}
-                                whileHover={{ scale: 1.1, rotate: Math.random() * 4 - 2 }}
+                                whileHover={{ scale: 1.1, rotate: ((index % 5) - 2) * 2 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="px-3 py-2 text-xs font-bold text-black border border-transparent hover:bg-secondary hover:border-black hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-full transition-all"
                             >

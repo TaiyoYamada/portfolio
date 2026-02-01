@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Section from "./Section";
-import { Card } from "../ui/Card";
+
 import { ExternalLink, Github } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -106,7 +106,7 @@ export default function Projects() {
                             </p>
 
                             <div className="mt-auto flex flex-wrap gap-2">
-                                {project.tech.map((t, i) => (
+                                {project.tech.map((t) => (
                                     <span
                                         key={t}
                                         className="text-xs font-black px-3 py-1 rounded-full border border-black bg-secondary text-black"

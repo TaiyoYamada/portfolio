@@ -22,14 +22,14 @@ import {
     SiPostgresql,
     SiMysql,
     SiAmazondynamodb,
-    SiFirebase,
+
     SiGit,
     SiFigma,
     SiPostman,
     SiXcode,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
-import { FaApple, FaDatabase } from "react-icons/fa";
+import { FaDatabase } from "react-icons/fa";
 import { IconType } from "react-icons";
 
 interface Skill {
@@ -82,26 +82,7 @@ const skills: SkillCategories = {
     ],
 };
 
-function SkillTile({ skill }: { skill: Skill }) {
-    const Icon = skill.icon;
 
-    return (
-        <motion.div
-            whileHover={{ y: -3, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
-            className="flex flex-col items-center justify-center p-3 rounded-lg bg-white/5 border border-white/5 transition-all duration-300 group"
-        >
-            <div
-                className="mb-2 text-2xl transition-transform duration-300 group-hover:scale-110"
-                style={{ color: skill.color }}
-            >
-                <Icon />
-            </div>
-            <span className="text-xs font-medium text-gray-300 group-hover:text-white text-center">
-                {skill.name}
-            </span>
-        </motion.div>
-    );
-}
 
 export default function Skills() {
     return (
@@ -112,37 +93,40 @@ export default function Skills() {
 
             <div className="max-w-6xl mx-auto px-4">
                 <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-                    {Object.entries(skills).flatMap(([category, items]) =>
-                        items.map((skill, index) => (
-                            <motion.div
-                                key={skill.name}
-                                initial={{ opacity: 0, scale: 0 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.05 }}
-                                className="group relative"
-                            >
+                    {Object.values(skills).flatMap((items) =>
+                        items.map((skill, index) => {
+                            const randomSeed = skill.name.charCodeAt(0) + index;
+                            return (
                                 <motion.div
-                                    animate={{
-                                        y: [0, -8 - Math.random() * 5, 0],
-                                        rotate: [0, Math.random() * 5 - 2.5, 0]
-                                    }}
-                                    transition={{
-                                        duration: 2 + Math.random() * 2,
-                                        repeat: Infinity,
-                                        ease: "easeInOut",
-                                        delay: Math.random() * 2
-                                    }}
-                                    whileHover={{ scale: 1.1, rotate: 0, zIndex: 10 }}
-                                    className="flex items-center gap-2 md:gap-3 px-4 py-2 md:px-6 md:py-4 bg-white border-2 border-black shadow-pop rounded-full cursor-default hover:shadow-pop-hover transition-shadow"
+                                    key={skill.name}
+                                    initial={{ opacity: 0, scale: 0 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.05 }}
+                                    className="group relative"
                                 >
-                                    <skill.icon className="text-xl md:text-2xl" style={{ color: skill.color }} />
-                                    <span className="text-xs md:text-base font-black text-black uppercase tracking-wide">
-                                        {skill.name}
-                                    </span>
+                                    <motion.div
+                                        animate={{
+                                            y: [0, -8 - (randomSeed % 5), 0],
+                                            rotate: [0, (randomSeed % 5) - 2.5, 0]
+                                        }}
+                                        transition={{
+                                            duration: 2 + (randomSeed % 2),
+                                            repeat: Infinity,
+                                            ease: "easeInOut",
+                                            delay: (randomSeed % 20) / 10
+                                        }}
+                                        whileHover={{ scale: 1.1, rotate: 0, zIndex: 10 }}
+                                        className="flex items-center gap-2 md:gap-3 px-4 py-2 md:px-6 md:py-4 bg-white border-2 border-black shadow-pop rounded-full cursor-default hover:shadow-pop-hover transition-shadow"
+                                    >
+                                        <skill.icon className="text-xl md:text-2xl" style={{ color: skill.color }} />
+                                        <span className="text-xs md:text-base font-black text-black uppercase tracking-wide">
+                                            {skill.name}
+                                        </span>
+                                    </motion.div>
                                 </motion.div>
-                            </motion.div>
-                        ))
+                            )
+                        })
                     )}
                 </div>
             </div>
