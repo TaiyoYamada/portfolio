@@ -10,31 +10,35 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                background: "#050505", // Deep Space Black
-                surface: "#121212", // Dark Gray for cards
-                primary: "#7c3aed", // Neon Purple
-                secondary: "#a78bfa", // Lighter Purple
-                accent: "#ec4899", // Pink for gradients
-                text: "#f3f4f6", // Off-white text
-                muted: "#9ca3af", // Muted text
+                background: "#ffffff",
+                surface: "#f9f9f9", // Light Grey/White
+                text: "#202020", // Deep Charcoal
+                primary: "#007CC7", // Electric Blue
+                secondary: "#FFDD44", // Sunny Yellow
+                accent: "#DE354C", // Fiery Red
+                success: "#4CAF50", // Verdant Green
+                muted: "#9ca3af",
             },
             fontFamily: {
                 sans: ["var(--font-inter)", "sans-serif"],
                 heading: ["var(--font-outfit)", "sans-serif"],
             },
+            boxShadow: {
+                "pop": "4px 4px 0px 0px #202020",
+                "pop-hover": "6px 6px 0px 0px #202020",
+                "pop-bold": "8px 8px 0px 0px #202020",
+            },
             backgroundImage: {
-                "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-                "gradient-conic":
-                    "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+                "grid-pattern": "linear-gradient(to right, #f0f0f0 1px, transparent 1px), linear-gradient(to bottom, #f0f0f0 1px, transparent 1px)",
             },
             animation: {
-                "spin-slow": "spin 8s linear infinite",
+                "bounce-slow": "bounce 3s infinite",
                 "float": "float 6s ease-in-out infinite",
             },
             keyframes: {
                 float: {
                     "0%, 100%": { transform: "translateY(0)" },
-                    "50%": { transform: "translateY(-20px)" },
+                    "50%": { transform: "translateY(-10px)" },
                 },
             },
         },

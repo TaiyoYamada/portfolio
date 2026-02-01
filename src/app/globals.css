@@ -3,32 +3,34 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 5, 5, 5;
-  --background-end-rgb: 5, 5, 5;
+  --foreground-rgb: 32, 32, 32;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
 }
 
 @layer base {
   body {
-    @apply bg-background text-text antialiased;
+    @apply bg-background text-text antialiased selection:bg-secondary selection:text-black;
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, #f2f2f2 1px, transparent 1px),
+      linear-gradient(to bottom, #f2f2f2 1px, transparent 1px);
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading font-bold;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-black tracking-tight;
   }
 }
 
 @layer utilities {
-  .glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  .text-outline {
+    text-shadow: 2px 2px 0px #000;
+  }
+  
+  .text-pop {
+     @apply font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-[2px_2px_0px_rgba(0,0,0,1)];
   }
 
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent pb-1;
+  .card-pop {
+    @apply bg-white border-2 border-black shadow-pop transition-all duration-200 hover:shadow-pop-hover hover:-translate-y-1;
   }
 }
