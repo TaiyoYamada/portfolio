@@ -53,7 +53,7 @@ export default function About() {
                             <div className="space-y-2 text-black font-medium leading-relaxed">
                                 <p>
                                     熊本県立大学 総合管理学部 B2。<br />
-                                    松尾研究所共同研究インターン生。 <br />
+                                    松尾研究所 共同研究インターン生。<br />
                                     大学では、法律・経済・情報を学びながら、研究室では <span className="underline decoration-4 decoration-primary/30 underline-offset-2">量子アルゴリズム</span> の研究や <span className="underline decoration-4 decoration-primary/30 underline-offset-2">Swift</span> を中心としたアプリやSDKの開発を行っています。
                                 </p>
                                 <p className="text-sm text-gray-600">

@@ -50,7 +50,7 @@ export default function Projects() {
             <h2 className="text-6xl md:text-8xl font-black mb-20 text-center text-transparent text-outline tracking-tighter hover:text-primary transition-colors cursor-default">
                 PROJECTS
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[400px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projects.map((project, index) => (
                     <motion.div
                         key={index}
@@ -58,12 +58,10 @@ export default function Projects() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className={`group relative bg-white border-2 border-black shadow-pop rounded-3xl overflow-hidden hover:shadow-pop-bold hover:-translate-y-2 transition-all duration-300 ${index === 0 ? "md:col-span-2 md:row-span-1" :
-                            index === 3 ? "md:col-span-2 md:row-span-1" : "md:col-span-2 lg:col-span-1"
-                            }`}
+                        className="group relative bg-white border-2 border-black shadow-pop rounded-3xl overflow-hidden hover:shadow-pop-bold hover:-translate-y-2 transition-all duration-300 h-full flex flex-col"
                     >
                         {/* Image Area */}
-                        <div className="h-1/2 w-full relative overflow-hidden border-b-2 border-black">
+                        <div className="h-48 w-full relative overflow-hidden border-b-2 border-black shrink-0">
                             {project.image && (
                                 <Image
                                     src={project.image}
@@ -76,12 +74,12 @@ export default function Projects() {
                         </div>
 
                         {/* Content Area */}
-                        <div className="p-6 flex flex-col h-1/2">
+                        <div className="p-6 flex flex-col flex-1">
                             <div className="flex justify-between items-start mb-2">
                                 <h3 className="text-2xl font-black text-black group-hover:text-primary transition-colors uppercase">
                                     {project.title}
                                 </h3>
-                                <div className="flex gap-2">
+                                <div className="flex gap-2 shrink-0">
                                     <a
                                         href={project.github}
                                         target="_blank"
@@ -111,8 +109,7 @@ export default function Projects() {
                                 {project.tech.map((t, i) => (
                                     <span
                                         key={t}
-                                        className={`text-xs font-black px-3 py-1 rounded-full border border-black ${i % 2 === 0 ? "bg-secondary text-black" : "bg-pop-green text-white"
-                                            }`}
+                                        className="text-xs font-black px-3 py-1 rounded-full border border-black bg-secondary text-black"
                                     >
                                         {t.toUpperCase()}
                                     </span>

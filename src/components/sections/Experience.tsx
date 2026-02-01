@@ -48,7 +48,7 @@ export default function Experience() {
 
             <div className="max-w-4xl mx-auto relative px-4">
                 {/* Subway Line */}
-                <div className="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-4 bg-black rounded-full shadow-[4px_0_0_rgba(0,0,0,0.2)]" />
+                <div className="absolute left-8 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-4 bg-black rounded-full" />
 
                 <div className="space-y-24">
                     {experiences.map((exp, index) => (
@@ -58,24 +58,20 @@ export default function Experience() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className={`relative flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-0 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                            className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-0 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
                                 }`}
                         >
-                            {/* Station Node */}
-                            <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-14 h-14 rounded-full border-4 border-black bg-white z-10 flex items-center justify-center hover:scale-125 transition-transform duration-300 shadow-pop">
+                            {/* Station Node - Vertically Centered */}
+                            <div className="absolute left-8 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 w-14 h-14 rounded-full border-4 border-black bg-white z-20 flex items-center justify-center hover:scale-125 transition-transform duration-300 shadow-pop">
                                 <div className={`w-6 h-6 rounded-full ${exp.color} border-2 border-black`} />
                             </div>
 
                             {/* Content Side */}
-                            <div className="w-full md:w-1/2 pl-20 md:pl-0 md:px-12">
-                                <div className={`bg-white border-2 border-black shadow-pop p-6 rounded-2xl relative group hover:shadow-pop-bold hover:-translate-y-1 transition-all duration-300 ${index % 2 === 0 ? "md:text-right" : "md:text-left"
-                                    }`}>
-                                    {/* Connector Line for Desktop */}
-                                    <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-12 h-1 bg-black ${index % 2 === 0 ? "-right-12" : "-left-12"
-                                        }`} />
+                            <div className={`w-full md:w-1/2 min-w-0 pl-20 md:pl-0 ${index % 2 === 0 ? "md:pl-20 md:pr-10" : "md:pr-20 md:pl-10"
+                                }`}>
+                                <div className={`bg-white border-2 border-black shadow-pop p-6 rounded-2xl relative group hover:shadow-pop-bold hover:-translate-y-1 transition-all duration-300 text-left`}>
 
-                                    <div className={`flex flex-col gap-2 mb-4 ${index % 2 === 0 ? "md:items-end" : "md:items-start"
-                                        }`}>
+                                    <div className="flex flex-col gap-2 mb-4 items-start">
                                         <span className={`px-4 py-1 text-xs font-black text-white ${exp.color} border-2 border-black rounded-full inline-block shadow-[2px_2px_0_#000]`}>
                                             {exp.period}
                                         </span>
@@ -89,10 +85,9 @@ export default function Experience() {
                                     </div>
 
                                     {exp.details.length > 0 && (
-                                        <ul className={`text-sm font-medium text-gray-600 space-y-2 mb-4 ${index % 2 === 0 ? "md:text-right" : "md:text-left"
-                                            }`}>
+                                        <ul className="text-sm font-medium text-gray-600 space-y-1 mb-4 text-left list-disc pl-5">
                                             {exp.details.map((d, i) => (
-                                                <li key={i} className="leading-relaxed">
+                                                <li key={i} className="leading-relaxed pl-1">
                                                     {d}
                                                 </li>
                                             ))}
@@ -100,8 +95,7 @@ export default function Experience() {
                                     )}
 
                                     {exp.growth && (
-                                        <div className={`mt-4 pt-4 border-t-2 border-gray-100 ${index % 2 === 0 ? "md:text-right" : "md:text-left"
-                                            }`}>
+                                        <div className="mt-4 pt-4 border-t-2 border-gray-100 text-left">
                                             <span className="text-xs font-black text-primary uppercase tracking-wider block mb-1">
                                                 Key Takeaways
                                             </span>
@@ -119,6 +113,6 @@ export default function Experience() {
                     ))}
                 </div>
             </div>
-        </Section>
+        </Section >
     );
 }

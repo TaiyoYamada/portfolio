@@ -35,21 +35,21 @@ export default function Header() {
                     {/* Logo / Name */}
                     <Link
                         href="/"
-                        className="text-xl font-black text-black tracking-tight hover:text-primary transition-colors flex items-center gap-2"
+                        className="text-lg md:text-xl font-black text-black tracking-tight hover:text-primary transition-colors flex items-center gap-2"
                     >
                         <span className="w-3 h-3 bg-accent rounded-full border border-black" />
                         TaiyoYamada
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden md:flex items-center gap-1">
+                    <nav className="hidden xl:flex items-center gap-1">
                         {navItems.map((item, index) => (
                             <motion.a
                                 key={item}
                                 href={`#${item.toLowerCase().replace(" ", "-")}`}
                                 whileHover={{ scale: 1.1, rotate: Math.random() * 4 - 2 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-4 py-2 text-sm font-bold text-black border border-transparent hover:bg-secondary hover:border-black hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-full transition-all"
+                                className="px-3 py-2 text-xs font-bold text-black border border-transparent hover:bg-secondary hover:border-black hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-full transition-all"
                             >
                                 {item}
                             </motion.a>
@@ -59,7 +59,7 @@ export default function Header() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={toggleMenu}
-                        className="md:hidden p-2 text-black hover:bg-secondary rounded-full border border-transparent hover:border-black transition-all"
+                        className="xl:hidden p-2 text-black hover:bg-secondary rounded-full border border-transparent hover:border-black transition-all"
                         aria-label={isOpen ? "Close menu" : "Open menu"}
                     >
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,14 +75,14 @@ export default function Header() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden"
+                            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 xl:hidden"
                             onClick={closeMenu}
                         />
                         <motion.nav
                             initial={{ y: -20, opacity: 0, scale: 0.95 }}
                             animate={{ y: 0, opacity: 1, scale: 1 }}
                             exit={{ y: -20, opacity: 0, scale: 0.95 }}
-                            className="fixed top-24 left-4 right-4 bg-white border-2 border-black shadow-pop rounded-2xl z-50 p-4 md:hidden overflow-hidden"
+                            className="fixed top-24 left-4 right-4 bg-white border-2 border-black shadow-pop rounded-2xl z-50 p-4 xl:hidden max-h-[80vh] overflow-y-auto"
                         >
                             <div className="flex flex-col gap-2">
                                 {navItems.map((item, index) => (

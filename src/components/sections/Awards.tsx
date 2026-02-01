@@ -48,8 +48,8 @@ export default function Awards() {
                                 <div className="absolute top-2 right-4 w-4 h-4 bg-white rounded-full opacity-50" />
                             </motion.div>
 
-                            {/* Label Card popping out on hover */}
-                            <div className="absolute top-full mt-6 w-64 md:w-80 bg-white border-2 border-black p-4 shadow-pop rounded-xl opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transition-all duration-300 z-20 pointer-events-none">
+                            {/* Label Card - Always visible */}
+                            <div className="absolute top-full mt-6 w-64 md:w-80 bg-white border-2 border-black p-4 shadow-pop rounded-xl z-20 cursor-default">
                                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t-2 border-l-2 border-black rotate-45" />
                                 <span className="block text-xs font-black text-primary mb-1 text-center">
                                     {award.date}

@@ -83,7 +83,7 @@ export default async function Articles() {
                                     </div>
                                 </div>
 
-                                <h3 className={`font-black text-black leading-tight mb-4 group-hover:underline decoration-4 decoration-black underline-offset-4 ${index === 0 ? "text-3xl md:text-5xl" : "text-xl md:text-2xl"
+                                <h3 className={`font-black text-black leading-tight mb-4 group-hover:underline decoration-4 decoration-black underline-offset-4 ${"text-3xl md:text-5xl"
                                     }`}>
                                     {article.title}
                                 </h3>
@@ -112,7 +112,7 @@ export default async function Articles() {
                         target="_blank"
                         className="inline-block px-12 py-4 bg-black text-white font-black text-xl border-2 border-transparent hover:bg-white hover:text-black hover:border-black hover:shadow-pop transition-all duration-300"
                     >
-                        READ MORE ISSUES &rarr;
+                        READ MORE ARTICLES &rarr;
                     </Link>
                 </div>
             </div>
