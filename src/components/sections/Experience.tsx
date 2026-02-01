@@ -47,8 +47,8 @@ export default function Experience() {
             </h2>
 
             <div className="max-w-4xl mx-auto relative px-4">
-                {/* Subway Line */}
-                <div className="absolute left-8 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-4 bg-black rounded-full" />
+                {/* Subway Line - Mobile: centered at 32px (px-4 + node radius), Desktop: center */}
+                <div className="absolute left-[32px] md:left-1/2 top-0 bottom-0 w-4 -translate-x-1/2 md:-translate-x-1/2 bg-black rounded-full" />
 
                 <div className="space-y-24">
                     {experiences.map((exp, index) => (
@@ -58,16 +58,16 @@ export default function Experience() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-0 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                            className={`relative flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-0 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
                                 }`}
                         >
-                            {/* Station Node - Vertically Centered */}
-                            <div className="absolute left-8 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 w-14 h-14 rounded-full border-4 border-black bg-white z-20 flex items-center justify-center hover:scale-125 transition-transform duration-300 shadow-pop">
+                            {/* Station Node - Mobile: centered at 30px, Desktop: center */}
+                            <div className="absolute left-[10px] md:left-1/2 -translate-x-1/2 md:-translate-x-1/2 top-6 md:top-1/2 md:-translate-y-1/2 w-14 h-14 rounded-full border-4 border-black bg-white z-20 flex items-center justify-center hover:scale-125 transition-transform duration-300 shadow-pop">
                                 <div className={`w-6 h-6 rounded-full ${exp.color} border-2 border-black`} />
                             </div>
 
                             {/* Content Side */}
-                            <div className={`w-full md:w-1/2 min-w-0 pl-20 md:pl-0 ${index % 2 === 0 ? "md:pl-20 md:pr-10" : "md:pr-20 md:pl-10"
+                            <div className={`w-full md:w-1/2 min-w-0 pl-[72px] md:pl-0 ${index % 2 === 0 ? "md:pl-20 md:pr-10" : "md:pr-20 md:pl-10"
                                 }`}>
                                 <div className={`bg-white border-2 border-black shadow-pop p-6 rounded-2xl relative group hover:shadow-pop-bold hover:-translate-y-1 transition-all duration-300 text-left`}>
 

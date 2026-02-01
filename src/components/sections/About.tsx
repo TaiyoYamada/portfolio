@@ -46,8 +46,8 @@ export default function About() {
 
                         <div className="space-y-4 flex-1">
                             <div>
-                                <h3 className="text-4xl font-black text-black leading-none mb-1">
-                                    Taiyo Yamada
+                                <h3 className="text-3xl font-black text-black leading-none mb-1 mt-3">
+                                    山田 大陽
                                 </h3>
                                 <p className="text-gray-500 font-bold text-sm tracking-wider uppercase">
                                     Developer / Student / Researcher
