@@ -13,7 +13,7 @@ export default function About() {
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.5, type: "spring" }}
-                    className="absolute -top-12 -left-12 z-20"
+                    className="absolute -top-10 left-0 md:-top-12 md:-left-12 z-20"
                 >
                     <span className="block bg-accent text-white font-black text-xl px-4 py-2 -rotate-12 border-4 border-black shadow-[4px_4px_0_#000]">
                         WHO IS HE?
