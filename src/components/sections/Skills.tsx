@@ -134,10 +134,10 @@ export default function Skills() {
                                         delay: Math.random() * 2
                                     }}
                                     whileHover={{ scale: 1.1, rotate: 0, zIndex: 10 }}
-                                    className="flex items-center gap-3 px-6 py-4 bg-white border-2 border-black shadow-pop rounded-full cursor-default hover:shadow-pop-hover transition-shadow"
+                                    className="flex items-center gap-2 md:gap-3 px-4 py-2 md:px-6 md:py-4 bg-white border-2 border-black shadow-pop rounded-full cursor-default hover:shadow-pop-hover transition-shadow"
                                 >
-                                    <skill.icon className="text-2xl" style={{ color: skill.color }} />
-                                    <span className="text-sm md:text-base font-black text-black uppercase tracking-wide">
+                                    <skill.icon className="text-xl md:text-2xl" style={{ color: skill.color }} />
+                                    <span className="text-xs md:text-base font-black text-black uppercase tracking-wide">
                                         {skill.name}
                                     </span>
                                 </motion.div>

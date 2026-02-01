@@ -12,17 +12,23 @@ export default function Hero() {
             <motion.div
                 drag
                 dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
-                className="absolute top-20 left-10 md:left-20 w-24 h-24 md:w-32 md:h-32 bg-secondary rounded-full border-4 border-black shadow-pop cursor-grab active:cursor-grabbing z-10 hidden md:block"
+                animate={{ y: [0, -30, 0], x: [0, 20, 0], rotate: [0, 10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-24 left-4 md:top-20 md:left-20 w-16 h-16 md:w-32 md:h-32 bg-secondary rounded-full border-4 border-black shadow-pop cursor-grab active:cursor-grabbing z-10"
             />
             <motion.div
                 drag
                 dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
-                className="absolute bottom-40 right-10 md:right-20 w-32 h-32 md:w-40 md:h-40 bg-primary rotate-12 border-4 border-black shadow-pop cursor-grab active:cursor-grabbing z-10 hidden md:block"
+                animate={{ y: [0, 40, 0], x: [0, -20, 0], rotate: [12, 24, 12] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute bottom-24 right-4 md:bottom-40 md:right-20 w-24 h-24 md:w-40 md:h-40 bg-primary rotate-12 border-4 border-black shadow-pop cursor-grab active:cursor-grabbing z-10"
             />
             <motion.div
                 drag
                 dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
-                className="absolute top-40 right-32 w-20 h-20 bg-accent rotate-45 border-4 border-black shadow-pop cursor-grab active:cursor-grabbing z-10 hidden md:block"
+                animate={{ y: [0, -20, 0], x: [0, -30, 0], rotate: [45, 90, 45] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                className="absolute top-32 right-8 md:top-40 md:right-32 w-12 h-12 md:w-20 md:h-20 bg-accent rotate-45 border-4 border-black shadow-pop cursor-grab active:cursor-grabbing z-10"
             />
 
             {/* Main Content */}
