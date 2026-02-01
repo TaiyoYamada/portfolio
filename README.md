@@ -14,27 +14,28 @@
 
 </div>
 
-## 概要
-
-研究・開発経験・個人プロジェクト・受賞歴・技術記事など、私の活動をまとめた個人ポートフォリオサイトです。
-
 ## 技術スタック
 
-### コア技術
-
+### フロントエンド
 | 技術 | 用途 |
 |------|------|
-| [Next.js](https://nextjs.org/) | Reactフレームワーク（App Router） |
-| [React](https://react.dev/) | UIライブラリ |
-| [TypeScript](https://www.typescriptlang.org/) | 型安全な開発 |
-| [Tailwind CSS](https://tailwindcss.com/) | ユーティリティファーストCSS |
-| [Framer Motion](https://www.framer.com/motion/) | アニメーションライブラリ |
-| [Three.js](https://threejs.org/) | 3Dグラフィックス（星空背景） |
-| [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) | React向けThree.jsバインディング |
-| [Lucide React](https://lucide.dev/) | アイコンライブラリ |
-| [Qiita API v2](https://qiita.com/api/v2/docs) | 技術記事の取得（SSR時にサーバーサイドで呼び出し） |
-| [Vercel](https://vercel.com/) | ホスティング・デプロイ |
-| [GitHub Actions](https://github.com/features/actions) | CI/CDパイプライン |
+| [Next.js 15](https://nextjs.org/) | App Router を採用した最新のフレームワーク |
+| [React 19](https://react.dev/) | UIライブラリ |
+| [TypeScript](https://www.typescriptlang.org/) | 型安全性と開発体験の向上 |
+| [Tailwind CSS](https://tailwindcss.com/) | ユーティリティファーストなスタイリング |
+| [Framer Motion](https://www.framer.com/motion/) | 滑らかなページ遷移と複雑なアニメーション |
+| [Lucide React](https://lucide.dev/) | シンプルで美しいアイコン |
+
+### データ・バックエンド
+| 技術 | 用途 |
+|------|------|
+| [Qiita API v2](https://qiita.com/api/v2/docs) | 技術記事の自動取得・表示 |
+
+### インフラ・その他
+| 技術 | 用途 |
+|------|------|
+| [Vercel](https://vercel.com/) | ホスティング |
+| [GitHub Actions](https://github.com/features/actions) | CI/CD |
 
 ## ライセンス
 詳細は [LICENSE](./LICENSE) をご確認ください。
