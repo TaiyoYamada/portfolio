@@ -32,12 +32,15 @@ export default function About() {
                     <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-32 h-12 bg-gray-200/80 rotate-1 shadow-sm backdrop-blur-sm z-10" />
 
                     <div className="flex flex-col md:flex-row gap-8 items-start">
-                        {/* Profile Image Area (Placeholder for now) */}
-                        <div className="w-full md:w-48 aspect-square bg-surface border-2 border-black border-dashed flex items-center justify-center relative overflow-hidden group">
-                            <span className="text-gray-400 font-bold text-xs uppercase tracking-widest group-hover:hidden">
-                                NO IMAGE
-                            </span>
-                            <div className="absolute inset-0 bg-secondary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                        {/* Profile Image Area */}
+                        <div className="w-full md:w-48 aspect-square bg-surface border-2 border-black relative overflow-hidden group">
+                            <Image
+                                src="/me.png"
+                                alt="Taiyo Yamada"
+                                fill
+                                className="object-cover transition-all duration-300"
+                            />
+                            <div className="absolute inset-0 bg-secondary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-10" />
                         </div>
 
                         <div className="space-y-4 flex-1">
