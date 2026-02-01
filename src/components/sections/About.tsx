@@ -46,10 +46,14 @@ export default function About() {
 
                         <div className="space-y-4 flex-1">
                             <div>
-                                <h3 className="text-3xl font-black text-black leading-none mb-1 mt-3">
-                                    山田 大陽
+                                <span className="block text-xs font-black text-gray-400 tracking-[0.2em] mb-1 mt-2">
+                                    TAIYO YAMADA
+                                </span>
+                                <h3 className="text-4xl font-black text-black leading-none mb-2 relative inline-block">
+                                    <span className="relative z-10">山田 大陽</span>
+                                    <span className="absolute bottom-1 left-0 w-full h-3 bg-accent/30 -rotate-1 -z-10" />
                                 </h3>
-                                <p className="text-gray-500 font-bold text-sm tracking-wider uppercase">
+                                <p className="text-gray-500 font-bold text-sm tracking-wider uppercase mt-1">
                                     Developer / Student / Researcher
                                 </p>
                             </div>
