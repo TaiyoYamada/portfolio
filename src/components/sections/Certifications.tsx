@@ -1,7 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Section from "./Section";
-import { Card } from "../ui/Card";
 import { Award, GraduationCap } from "lucide-react";
 
 type CertificationType = "certification" | "program";
@@ -53,47 +53,65 @@ export default function Certifications() {
     }
 
     return (
-        <Section id="certifications" className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-gradient">
-                Certifications / Programs
+        <Section id="certifications" className="relative z-10 py-20 bg-secondary/5">
+            <h2 className="text-6xl md:text-8xl font-black mb-24 text-center text-transparent text-outline tracking-tighter hover:text-accent transition-colors cursor-default">
+                CERTS
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 overflow-visible">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
                 {certifications.map((cert, index) => (
-                    <Card
+                    <motion.div
                         key={index}
-                        className="flex items-start gap-4 p-6 hover:scale-105 transition-transform"
+                        initial={{ opacity: 0, scale: 0.8, rotate: index % 2 === 0 ? -2 : 2 }}
+                        whileInView={{ opacity: 1, scale: 1, rotate: index % 2 === 0 ? -1 : 1 }}
+                        whileHover={{ scale: 1.05, rotate: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 200,
+                            damping: 15,
+                            delay: index * 0.1
+                        }}
+                        className={`relative group bg-white border-4 border-black p-8 shadow-pop hover:shadow-pop-bold hover:-translate-y-2 transition-all duration-300 ${cert.type === "certification" ? "rounded-3xl" : "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl"
+                            }`}
                     >
-                        <div
-                            className={`p-3 rounded-full shadow-lg ${cert.type === "certification"
-                                ? "bg-secondary/20 text-secondary shadow-[0_0_10px_rgba(34,211,238,0.3)]"
-                                : "bg-primary/20 text-primary shadow-[0_0_10px_rgba(124,58,237,0.3)]"
-                                }`}
-                        >
-                            {cert.type === "certification" ? (
-                                <Award size={24} />
-                            ) : (
-                                <GraduationCap size={24} />
-                            )}
+                        {/* Sticker Overlay Effect */}
+                        <div className="absolute -top-4 -right-4 bg-accent text-white font-black text-xs px-4 py-2 rotate-12 border-2 border-black shadow-[2px_2px_0_#000]">
+                            {cert.date}
                         </div>
-                        <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-1">
-                                <span
-                                    className={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${cert.type === "certification"
-                                        ? "bg-secondary/20 text-secondary border border-secondary/30"
-                                        : "bg-primary/20 text-primary border border-primary/30"
-                                        }`}
-                                >
-                                    {cert.type === "certification" ? "Certification" : "Program"}
+
+                        <div className="flex items-start gap-4 mb-4">
+                            <div className={`p-4 rounded-2xl border-2 border-black shadow-[4px_4px_0_#000] ${cert.type === "certification" ? "bg-secondary text-black" : "bg-primary text-white"
+                                }`}>
+                                {cert.type === "certification" ? (
+                                    <Award size={32} strokeWidth={2.5} />
+                                ) : (
+                                    <GraduationCap size={32} strokeWidth={2.5} />
+                                )}
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-black text-black leading-tight mb-1">
+                                    {cert.title}
+                                </h3>
+                                <span className="text-sm font-bold text-gray-500 uppercase tracking-wider">
+                                    {cert.issuer}
                                 </span>
                             </div>
-                            <h3 className="text-lg font-bold text-white mb-1">{cert.title}</h3>
-                            <span className="text-sm text-gray-500 block mb-1">{cert.issuer}</span>
-                            <span className="text-xs text-gray-600 block mb-2">{cert.date}</span>
-                            {cert.desc && (
-                                <p className="text-gray-400 text-sm">{cert.desc}</p>
-                            )}
                         </div>
-                    </Card>
+
+                        {cert.desc && (
+                            <p className="text-gray-700 font-bold text-sm leading-relaxed border-t-2 border-black/10 pt-4">
+                                {cert.desc}
+                            </p>
+                        )}
+
+                        {/* Type Badge */}
+                        <div className="absolute bottom-4 right-4">
+                            <span className={`text-xs font-black uppercase px-2 py-1 border-2 border-black ${cert.type === "certification" ? "bg-white text-black" : "bg-black text-white"
+                                }`}>
+                                {cert.type}
+                            </span>
+                        </div>
+                    </motion.div>
                 ))}
             </div>
         </Section>
