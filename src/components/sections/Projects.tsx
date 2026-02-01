@@ -4,6 +4,7 @@ import Image from "next/image";
 import Section from "./Section";
 import { Card } from "../ui/Card";
 import { ExternalLink, Github } from "lucide-react";
+import { motion } from "framer-motion";
 
 const projects = [
     {
@@ -45,60 +46,80 @@ const projects = [
 
 export default function Projects() {
     return (
-        <Section id="projects" className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-gradient">
-                Projects
+        <Section id="projects" className="relative z-10 py-20 pb-40">
+            <h2 className="text-6xl md:text-8xl font-black mb-20 text-center text-transparent text-outline tracking-tighter hover:text-primary transition-colors cursor-default">
+                PROJECTS
             </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[400px]">
                 {projects.map((project, index) => (
-                    <Card key={index} className="group overflow-hidden hover:-translate-y-2 p-0 bg-surface border-white/5">
-                        <div className="aspect-[5/4] bg-white/5 flex items-center justify-center relative overflow-hidden">
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                        className={`group relative bg-white border-2 border-black shadow-pop rounded-3xl overflow-hidden hover:shadow-pop-bold hover:-translate-y-2 transition-all duration-300 ${index === 0 ? "md:col-span-2 md:row-span-1" :
+                            index === 3 ? "md:col-span-2 md:row-span-1" : "md:col-span-2 lg:col-span-1"
+                            }`}
+                    >
+                        {/* Image Area */}
+                        <div className="h-1/2 w-full relative overflow-hidden border-b-2 border-black">
                             {project.image && (
                                 <Image
                                     src={project.image}
                                     alt={project.title}
                                     fill
-                                    className="object-cover"
+                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                                 />
                             )}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                         </div>
-                        <div className="p-4">
-                            <h3 className="text-lg font-bold mb-2 text-white group-hover:text-primary transition-colors">
-                                {project.title}
-                            </h3>
-                            <div className="flex flex-wrap gap-1.5 mb-3">
-                                {project.tech.map((t) => (
-                                    <span
-                                        key={t}
-                                        className="text-[10px] px-2 py-0.5 bg-primary/10 text-primary rounded-full border border-primary/20"
-                                    >
-                                        {t}
-                                    </span>
-                                ))}
-                            </div>
-                            <p className="text-gray-400 text-xs mb-3">
-                                {project.desc}
-                            </p>
-                            <div className="flex justify-between items-center mt-auto pt-3 border-t border-white/10">
-                                <span className="text-[10px] text-gray-500">{project.role}</span>
+
+                        {/* Content Area */}
+                        <div className="p-6 flex flex-col h-1/2">
+                            <div className="flex justify-between items-start mb-2">
+                                <h3 className="text-2xl font-black text-black group-hover:text-primary transition-colors uppercase">
+                                    {project.title}
+                                </h3>
                                 <div className="flex gap-2">
                                     <a
                                         href={project.github}
-                                        className="text-gray-400 hover:text-white transition-colors"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-2 bg-white border-2 border-black rounded-full hover:bg-black hover:text-white transition-colors"
                                     >
-                                        <Github size={16} />
+                                        <Github size={18} />
                                     </a>
-                                    <a
-                                        href={project.link}
-                                        className="text-gray-400 hover:text-white transition-colors"
-                                    >
-                                        <ExternalLink size={16} />
-                                    </a>
+                                    {project.link && (
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-2 bg-white border-2 border-black rounded-full hover:bg-accent hover:text-white transition-colors"
+                                        >
+                                            <ExternalLink size={18} />
+                                        </a>
+                                    )}
                                 </div>
                             </div>
+
+                            <p className="text-sm font-bold text-gray-600 mb-4 line-clamp-3 leading-relaxed">
+                                {project.desc}
+                            </p>
+
+                            <div className="mt-auto flex flex-wrap gap-2">
+                                {project.tech.map((t, i) => (
+                                    <span
+                                        key={t}
+                                        className={`text-xs font-black px-3 py-1 rounded-full border border-black ${i % 2 === 0 ? "bg-secondary text-black" : "bg-pop-green text-white"
+                                            }`}
+                                    >
+                                        {t.toUpperCase()}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
-                    </Card>
+                    </motion.div>
                 ))}
             </div>
         </Section>
