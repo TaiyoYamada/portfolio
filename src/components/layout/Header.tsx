@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
     "About Me",
-    "Skills",
+    // "Skills",
     "Projects",
     "Research",
     "Experience",
