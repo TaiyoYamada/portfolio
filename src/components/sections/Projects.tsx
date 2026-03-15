@@ -10,7 +10,7 @@ const projects = [
     {
         title: "KUMATOMO",
         tech: ["Swift", "Laravel", "Vue.js", "TypeScript", "AWS Lambda", "RDS", "S3", "CloudFront", "Terraform"],
-        desc: "熊本県に特化した地域密着型SNSアプリ。（開発中）地元店舗やユーザー同士のつながりを促進することを目的に、モバイルアプリからバックエンドまで一貫して設計・開発。",
+        desc: "熊本県に特化した地域密着型SNSアプリ。（学習用）地元店舗やユーザー同士のつながりを促進することを目的に、モバイルアプリからバックエンドまで一貫して設計・開発。",
         role: "Frontend / Backend / Infra",
         github: "https://github.com/TaiyoYamada/kumatomo",
         image: "/kumatomo.png",

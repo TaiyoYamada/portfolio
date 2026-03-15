@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Section from "./Section";
 import { Trophy, Award } from "lucide-react";
 
-// The year is extracted for the giant background typography
 const awards = [
     {
         title: "SPAJAM 九州予選 2025・優秀賞",
