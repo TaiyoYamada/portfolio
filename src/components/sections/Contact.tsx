@@ -45,11 +45,11 @@ export default function Contact() {
                     ))}
                 </div>
 
-                <div className="mt-20">
+                {/* <div className="mt-20">
                     <p className="text-xs font-bold text-black opacity-50 uppercase tracking-widest">
                         Taiyo Yamada Portfolio © 2026
                     </p>
-                </div>
+                </div> */}
             </div>
         </Section>
     );

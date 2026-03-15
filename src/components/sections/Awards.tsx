@@ -93,15 +93,6 @@ export default function Awards() {
                 })}
             </div>
 
-            <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-                className="mt-32 md:mt-48 text-center text-gray-400 font-bold uppercase tracking-wide text-sm md:text-base"
-            >
-                End of Records. But the journey continues.
-            </motion.p>
         </Section>
     );
 }

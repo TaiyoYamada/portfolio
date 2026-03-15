@@ -8,6 +8,14 @@ import { motion } from "framer-motion";
 
 const projects = [
     {
+        title: "Qbitrun",
+        tech: ["SwiftUI", "UIKit", "SpriteKit", "SceneKit"],
+        desc: "Swift Student Challenge 2026 提出作品。単一量子ビットゲートを操作してブロッホ球上の状態ベクトルを目的の位置に合わせ、得点を稼ぐゲームアプリ。",
+        role: "Full Stack",
+        github: "https://github.com/TaiyoYamada/Qbitrun",
+        image: "/qbitrun.png",
+    },
+    {
         title: "KUMATOMO",
         tech: ["Swift", "Laravel", "Vue.js", "TypeScript", "AWS Lambda", "RDS", "S3", "CloudFront", "Terraform"],
         desc: "熊本県に特化した地域密着型SNSアプリ。（学習用）地元店舗やユーザー同士のつながりを促進することを目的に、モバイルアプリからバックエンドまで一貫して設計・開発。",
