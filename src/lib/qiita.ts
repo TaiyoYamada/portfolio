@@ -1,10 +1,11 @@
+import { env } from '$env/dynamic/private';
+
 /**
  * Qiita API v2 Service Layer
  * 
  * This module provides functions to interact with the Qiita API v2.
  * Documentation: https://qiita.com/api/v2/docs
  */
-
 const QIITA_API_BASE = "https://qiita.com/api/v2";
 
 // TypeScript interfaces for Qiita API responses
@@ -44,7 +45,7 @@ export interface QiitaUser {
  * @returns User information including Articles count
  */
 export async function getUser(userId: string): Promise<QiitaUser> {
-    const token = process.env.QIITA_API_TOKEN;
+    const token = env.QIITA_API_TOKEN;
 
     if (!token) {
         throw new Error("QIITA_API_TOKEN is not configured in environment variables");
@@ -53,8 +54,7 @@ export async function getUser(userId: string): Promise<QiitaUser> {
     const response = await fetch(`${QIITA_API_BASE}/users/${userId}`, {
         headers: {
             Authorization: `Bearer ${token}`,
-        },
-        next: { revalidate: 3600 }, // Cache for 1 hour
+        }
     });
 
     if (!response.ok) {
@@ -74,7 +74,7 @@ export async function getUserArticles(
     userId: string,
     perPage: number = 100
 ): Promise<QiitaArticle[]> {
-    const token = process.env.QIITA_API_TOKEN;
+    const token = env.QIITA_API_TOKEN;
 
     if (!token) {
         throw new Error("QIITA_API_TOKEN is not configured in environment variables");
@@ -90,8 +90,7 @@ export async function getUserArticles(
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
-                },
-                next: { revalidate: 3600 }, // Cache for 1 hour
+                }
             }
         );
 
