@@ -12,7 +12,7 @@
 	}
 
 	let { data }: Props = $props();
-	
+
 	let userData = $derived(data?.qiita?.user);
 	let topArticles = $derived(data?.qiita?.topArticles);
 
@@ -20,79 +20,115 @@
 </script>
 
 {#if !userData || !topArticles || topArticles.length === 0}
-	<Section id="articles" class="relative z-10 py-20 bg-white">
-		<h2 class="text-6xl md:text-8xl font-black mb-20 text-center text-transparent text-outline tracking-tighter uppercase">
+	<Section id="articles" class="relative z-10 bg-white py-20">
+		<h2
+			class="text-outline mb-20 text-center text-6xl font-black tracking-tighter text-transparent uppercase md:text-8xl"
+		>
 			Articles
 		</h2>
-		<div class="text-center font-bold text-xl">
+		<div class="text-center text-xl font-bold">
 			<p>Failed to load the latest edition.</p>
-			<a href={`https://qiita.com/${QIITA_USER_ID}`} class="text-primary underline mt-2 inline-block">
+			<a
+				href={`https://qiita.com/${QIITA_USER_ID}`}
+				class="mt-2 inline-block text-primary underline"
+			>
 				Check Qiita directly
 			</a>
 		</div>
 	</Section>
 {:else}
-	<Section id="articles" class="relative z-10 py-20 bg-white border-y-4 border-black">
-		<div class="max-w-6xl mx-auto px-4">
+	<Section id="articles" class="relative z-10 border-y-4 border-black bg-white py-20">
+		<div class="mx-auto max-w-6xl px-4">
 			<!-- Magazine Header -->
-			<div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 md:mb-16 border-b-4 border-black pb-4 md:pb-8 gap-4 md:gap-6">
+			<div
+				class="mb-8 flex flex-col items-start justify-between gap-4 border-b-4 border-black pb-4 md:mb-16 md:flex-row md:items-center md:gap-6 md:pb-8"
+			>
 				<div class="flex flex-col items-start">
-					<span class="text-[10px] md:text-xs font-black bg-black text-white px-2 py-1 mb-1 md:mb-2 uppercase tracking-widest">
+					<span
+						class="mb-1 bg-black px-2 py-1 text-[10px] font-black tracking-widest text-white uppercase md:mb-2 md:text-xs"
+					>
 						The Tech Chronicles
 					</span>
-					<h2 class="text-5xl sm:text-6xl md:text-8xl font-black text-black tracking-tighter hover:text-primary transition-colors cursor-default leading-none">
+					<h2
+						class="cursor-default text-5xl leading-none font-black tracking-tighter text-black transition-colors hover:text-primary sm:text-6xl md:text-8xl"
+					>
 						ARTICLES
 					</h2>
 				</div>
 
-				<div class="flex flex-row md:flex-col items-center md:items-end md:text-right gap-4 md:gap-0 w-full md:w-auto justify-between md:justify-end">
-					<div class="bg-primary text-white font-black text-xl md:text-3xl px-4 md:px-6 py-2 md:py-3 border-2 md:border-4 border-black shadow-[2px_2px_0_#000] md:shadow-[4px_4px_0_#000] rotate-2">
-						{userData.items_count} <span class="text-[10px] md:text-sm font-bold md:block inline ml-1 md:ml-0">POSTS</span>
+				<div
+					class="flex w-full flex-row items-center justify-between gap-4 md:w-auto md:flex-col md:items-end md:justify-end md:gap-0 md:text-right"
+				>
+					<div
+						class="rotate-2 border-2 border-black bg-primary px-4 py-2 text-xl font-black text-white shadow-[2px_2px_0_#000] md:border-4 md:px-6 md:py-3 md:text-3xl md:shadow-[4px_4px_0_#000]"
+					>
+						{userData.items_count}
+						<span class="ml-1 inline text-[10px] font-bold md:ml-0 md:block md:text-sm">POSTS</span>
 					</div>
-					<p class="mt-0 md:mt-4 font-bold text-gray-500 text-[11px] md:text-sm max-w-[180px] md:max-w-xs leading-tight text-right md:text-right">
+					<p
+						class="mt-0 max-w-[180px] text-right text-[11px] leading-tight font-bold text-gray-500 md:mt-4 md:max-w-xs md:text-right md:text-sm"
+					>
 						Latest technical insights, tutorials, and engineering journals from Taiyo Yamada.
 					</p>
 				</div>
 			</div>
 
 			<!-- Newspaper Grid -->
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+			<div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
 				{#each topArticles as article, index}
 					<a
 						href={article.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="group flex flex-col h-full"
+						class="group flex h-full flex-col"
 					>
-						<article class="h-full flex flex-col border-2 md:border-4 border-black p-5 md:p-8 bg-surface hover:bg-secondary hover:-translate-y-1 transition-all duration-300 shadow-[4px_4px_0_#000] md:shadow-none hover:shadow-[6px_6px_0_#000] md:hover:shadow-pop-bold relative overflow-hidden">
+						<article
+							class="relative flex h-full flex-col overflow-hidden border-2 border-black bg-surface p-5 shadow-[4px_4px_0_#000] transition-all duration-300 hover:-translate-y-1 hover:bg-secondary hover:shadow-[6px_6px_0_#000] md:border-4 md:p-8 md:shadow-none md:hover:shadow-pop-bold"
+						>
 							<!-- Corner Fold Effect -->
-							<div class="absolute top-0 right-0 border-t-[30px] border-r-[30px] md:border-t-[40px] md:border-r-[40px] border-t-white border-r-black/10 group-hover:border-t-white group-hover:border-r-black/20 transition-colors"></div>
+							<div
+								class="absolute top-0 right-0 border-t-[30px] border-r-[30px] border-t-white border-r-black/10 transition-colors group-hover:border-t-white group-hover:border-r-black/20 md:border-t-[40px] md:border-r-[40px]"
+							></div>
 
-							<div class="flex items-center justify-between mb-4 md:mb-6 mt-2 md:mt-0">
-								<span class="text-[10px] md:text-xs font-black border-2 border-black px-2 py-1 rounded bg-white text-black uppercase shadow-sm">
+							<div class="mt-2 mb-4 flex items-center justify-between md:mt-0 md:mb-6">
+								<span
+									class="rounded border-2 border-black bg-white px-2 py-1 text-[10px] font-black text-black uppercase shadow-sm md:text-xs"
+								>
 									{index === 0 ? 'Top Story' : 'Featured'}
 								</span>
-								<div class="flex items-center gap-1 font-black text-[10px] md:text-sm mr-4 md:mr-6">
-									<BookOpen size={14} class="md:w-4 md:h-4" />
+								<div class="mr-4 flex items-center gap-1 text-[10px] font-black md:mr-6 md:text-sm">
+									<BookOpen size={14} class="md:h-4 md:w-4" />
 									<span>READ</span>
 								</div>
 							</div>
 
-							<h3 class="font-black text-black leading-tight mb-4 group-hover:underline decoration-2 md:decoration-4 decoration-black underline-offset-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl line-clamp-3 md:line-clamp-none">
+							<h3
+								class="mb-4 line-clamp-3 text-xl leading-tight font-black text-black decoration-black decoration-2 underline-offset-4 group-hover:underline sm:text-2xl md:line-clamp-none md:text-3xl md:decoration-4 lg:text-4xl"
+							>
 								{article.title}
 							</h3>
 
-							<div class="mt-auto pt-4 md:pt-6 border-t-2 border-black border-dashed flex items-end md:items-center justify-between">
+							<div
+								class="mt-auto flex items-end justify-between border-t-2 border-dashed border-black pt-4 md:items-center md:pt-6"
+							>
 								<div class="flex flex-wrap gap-1.5 md:gap-2">
 									{#each article.tags.slice(0, 3) as tag}
-										<span class="text-[9px] md:text-xs font-bold text-gray-700 bg-black/5 px-2 py-0.5 rounded-full border border-black/10">
+										<span
+											class="rounded-full border border-black/10 bg-black/5 px-2 py-0.5 text-[9px] font-bold text-gray-700 md:text-xs"
+										>
 											#{tag.name}
 										</span>
 									{/each}
 								</div>
-								<div class="flex flex-col items-center leading-none shrink-0 border-2 border-black rounded-lg px-2 py-1 bg-white">
-									<span class="text-lg md:text-2xl font-black text-accent">{article.likes_count}</span>
-									<span class="text-[8px] md:text-[10px] font-bold uppercase tracking-wider">Likes</span>
+								<div
+									class="flex shrink-0 flex-col items-center rounded-lg border-2 border-black bg-white px-2 py-1 leading-none"
+								>
+									<span class="text-lg font-black text-accent md:text-2xl"
+										>{article.likes_count}</span
+									>
+									<span class="text-[8px] font-bold tracking-wider uppercase md:text-[10px]"
+										>Likes</span
+									>
 								</div>
 							</div>
 						</article>
@@ -104,7 +140,7 @@
 				<a
 					href={`https://qiita.com/${QIITA_USER_ID}`}
 					target="_blank"
-					class="inline-block px-12 py-4 bg-black text-white font-black text-xl border-2 border-transparent hover:bg-white hover:text-black hover:border-black hover:shadow-pop transition-all duration-300"
+					class="inline-block border-2 border-transparent bg-black px-12 py-4 text-xl font-black text-white transition-all duration-300 hover:border-black hover:bg-white hover:text-black hover:shadow-pop"
 				>
 					READ MORE ARTICLES &rarr;
 				</a>

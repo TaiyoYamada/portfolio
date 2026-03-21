@@ -20,7 +20,7 @@
 
 <button
 	class={cn(
-		'px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:-translate-y-1 active:scale-95',
+		'transform rounded-full px-6 py-3 font-medium transition-all duration-300 hover:-translate-y-1 active:scale-95',
 		variants[variant],
 		className
 	)}

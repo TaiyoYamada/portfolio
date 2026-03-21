@@ -23,48 +23,69 @@
 	];
 </script>
 
-<Section id="awards" class="relative z-10 py-24 pb-48 overflow-hidden">
+<Section id="awards" class="relative z-10 overflow-hidden py-24 pb-48">
 	<!-- Background elements to add some grid/texture if needed -->
-	<div class="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none"></div>
+	<div class="pointer-events-none absolute inset-0 bg-grid-pattern opacity-30"></div>
 
-	<h2 class="text-6xl md:text-8xl font-black mb-24 md:mb-32 text-center text-transparent text-outline tracking-tighter hover:text-secondary transition-colors cursor-default relative z-20">
+	<h2
+		class="text-outline relative z-20 mb-24 cursor-default text-center text-6xl font-black tracking-tighter text-transparent transition-colors hover:text-secondary md:mb-32 md:text-8xl"
+	>
 		AWARDS
 	</h2>
 
-	<div class="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 px-2 md:px-4 max-w-6xl mx-auto relative z-20 pb-20">
+	<div
+		class="relative z-20 mx-auto grid max-w-6xl grid-cols-2 gap-4 px-2 pb-20 md:grid-cols-2 md:gap-8 md:px-4"
+	>
 		{#each awards as award, index}
 			<div
 				in:fly={{ y: 80, duration: 800, delay: 100 + index * 100 }}
-				class="group relative bg-white border-2 md:border-4 border-black shadow-pop rounded-2xl md:rounded-3xl overflow-hidden hover:shadow-pop-bold transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 flex flex-col h-full"
+				class="group relative flex h-full flex-col overflow-hidden rounded-2xl border-2 border-black bg-white shadow-pop transition-all duration-300 hover:-translate-y-1 hover:shadow-pop-bold md:rounded-3xl md:border-4 md:hover:-translate-y-2"
 			>
 				<!-- Top Side: Icon & Date (Banner) -->
-				<div class={`w-full flex flex-col items-center justify-center p-4 md:p-8 border-b-2 md:border-b-4 border-black ${award.color} relative overflow-hidden shrink-0`}>
+				<div
+					class={`flex w-full flex-col items-center justify-center border-b-2 border-black p-4 md:border-b-4 md:p-8 ${award.color} relative shrink-0 overflow-hidden`}
+				>
 					<!-- Decorative strips -->
-					<div class="absolute -right-4 -top-4 w-12 h-12 md:w-16 md:h-16 bg-white/20 rotate-45 transform origin-center"></div>
-					<div class="absolute -left-4 -bottom-4 w-12 h-12 md:w-16 md:h-16 bg-white/20 rotate-45 transform origin-center"></div>
-					
+					<div
+						class="absolute -top-4 -right-4 h-12 w-12 origin-center rotate-45 transform bg-white/20 md:h-16 md:w-16"
+					></div>
+					<div
+						class="absolute -bottom-4 -left-4 h-12 w-12 origin-center rotate-45 transform bg-white/20 md:h-16 md:w-16"
+					></div>
+
 					<!-- Giant Background Year Typography -->
-					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[80px] md:text-[140px] font-black text-white/30 z-0 select-none tracking-tighter leading-none pointer-events-none">
+					<div
+						class="pointer-events-none absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 text-[80px] leading-none font-black tracking-tighter text-white/30 select-none md:text-[140px]"
+					>
 						{award.year}
 					</div>
 
-					<div class="relative z-10 bg-white border-2 md:border-4 border-black rounded-full p-2.5 md:p-4 shadow-pop group-hover:scale-110 transition-transform duration-300 mb-2 md:mb-4">
-						<award.Icon class="text-black w-6 h-6 md:w-10 md:h-10" strokeWidth={2.5} />
+					<div
+						class="relative z-10 mb-2 rounded-full border-2 border-black bg-white p-2.5 shadow-pop transition-transform duration-300 group-hover:scale-110 md:mb-4 md:border-4 md:p-4"
+					>
+						<award.Icon class="h-6 w-6 text-black md:h-10 md:w-10" strokeWidth={2.5} />
 					</div>
 
-					<div class="relative z-10 bg-white border-2 border-black px-3 py-1.5 md:px-5 md:py-2.5 rounded-full shadow-[2px_2px_0_#000] flex items-center justify-center leading-none">
-						<span class="font-black text-[10px] sm:text-[11px] md:text-sm text-black tracking-widest ml-[0.1em] inline-block translate-y-[1px]">{award.date}</span>
+					<div
+						class="relative z-10 flex items-center justify-center rounded-full border-2 border-black bg-white px-3 py-1.5 leading-none shadow-[2px_2px_0_#000] md:px-5 md:py-2.5"
+					>
+						<span
+							class="ml-[0.1em] inline-block translate-y-[1px] text-[10px] font-black tracking-widest text-black sm:text-[11px] md:text-sm"
+							>{award.date}</span
+						>
 					</div>
 				</div>
 
 				<!-- Bottom Side: Content -->
-				<div class="flex-1 p-3 sm:p-4 md:p-8 flex flex-col bg-white">
+				<div class="flex flex-1 flex-col bg-white p-3 sm:p-4 md:p-8">
 					<div class="mb-2 md:mb-4">
-						<h3 class="text-sm sm:text-base md:text-2xl lg:text-3xl font-black text-black leading-tight group-hover:text-primary transition-colors">
+						<h3
+							class="text-sm leading-tight font-black text-black transition-colors group-hover:text-primary sm:text-base md:text-2xl lg:text-3xl"
+						>
 							{award.title}
 						</h3>
 					</div>
-					<p class="text-[11px] sm:text-sm font-bold text-gray-600 leading-relaxed mt-auto">
+					<p class="mt-auto text-[11px] leading-relaxed font-bold text-gray-600 sm:text-sm">
 						{award.desc}
 					</p>
 				</div>

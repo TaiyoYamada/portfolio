@@ -20,7 +20,7 @@
 <section
 	{id}
 	use:inview={{ threshold: 0.1, once: true, onEnter: () => (visible = true) }}
-	class={cn('py-20 px-4 md:px-8 max-w-7xl mx-auto', className)}
+	class={cn('mx-auto max-w-7xl px-4 py-20 md:px-8', className)}
 	{...rest}
 >
 	{#if visible}

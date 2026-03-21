@@ -49,54 +49,66 @@
 </script>
 
 {#if certifications.length > 0}
-	<Section id="certifications" class="relative z-10 py-20 bg-secondary/5">
-		<h2 class="text-6xl md:text-8xl font-black mb-24 text-center text-transparent text-outline tracking-tighter hover:text-accent transition-colors cursor-default">
+	<Section id="certifications" class="relative z-10 bg-secondary/5 py-20">
+		<h2
+			class="text-outline mb-24 cursor-default text-center text-6xl font-black tracking-tighter text-transparent transition-colors hover:text-accent md:text-8xl"
+		>
 			CERTS
 		</h2>
-		<div class="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 max-w-6xl mx-auto px-2 md:px-4">
+		<div class="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-2 md:grid-cols-2 md:gap-8 md:px-4">
 			{#each certifications as cert, index}
 				<div
 					in:scale={{ duration: 800, start: 0.8, easing: elasticOut, delay: index * 100 }}
-					class={`relative group bg-white border-2 md:border-4 border-black p-4 md:p-8 flex flex-col h-full shadow-pop transition-all duration-300 hover:shadow-pop-bold hover:-translate-y-1 md:hover:-translate-y-2 hover:!rotate-0 ${
+					class={`group relative flex h-full flex-col border-2 border-black bg-white p-4 shadow-pop transition-all duration-300 hover:-translate-y-1 hover:!rotate-0 hover:shadow-pop-bold md:border-4 md:p-8 md:hover:-translate-y-2 ${
 						index % 2 === 0 ? 'rotate-[-2deg]' : 'rotate-[2deg]'
 					} ${
 						cert.type === 'certification'
 							? 'rounded-2xl md:rounded-3xl'
-							: 'rounded-tr-[2rem] rounded-bl-[2rem] md:rounded-tr-[3rem] md:rounded-bl-[3rem] rounded-tl-lg rounded-br-lg md:rounded-tl-xl md:rounded-br-xl'
+							: 'rounded-tl-lg rounded-tr-[2rem] rounded-br-lg rounded-bl-[2rem] md:rounded-tl-xl md:rounded-tr-[3rem] md:rounded-br-xl md:rounded-bl-[3rem]'
 					}`}
 				>
 					<!-- Sticker Overlay Effect -->
-					<div class="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-accent text-white font-black text-[10px] md:text-xs z-10 px-2.5 py-1.5 md:px-4 md:py-2 rotate-12 border-2 border-black shadow-[2px_2px_0_#000]">
+					<div
+						class="absolute -top-3 -right-3 z-10 rotate-12 border-2 border-black bg-accent px-2.5 py-1.5 text-[10px] font-black text-white shadow-[2px_2px_0_#000] md:-top-4 md:-right-4 md:px-4 md:py-2 md:text-xs"
+					>
 						{cert.date}
 					</div>
 
-					<div class="flex flex-col sm:flex-row items-start gap-3 md:gap-4 mb-3 md:mb-4">
-						<div class={`p-2.5 md:p-4 rounded-xl md:rounded-2xl border-2 border-black shadow-[2px_2px_0_#000] md:shadow-[4px_4px_0_#000] shrink-0 ${cert.type === 'certification' ? 'bg-secondary text-black' : 'bg-primary text-white'}`}>
+					<div class="mb-3 flex flex-col items-start gap-3 sm:flex-row md:mb-4 md:gap-4">
+						<div
+							class={`shrink-0 rounded-xl border-2 border-black p-2.5 shadow-[2px_2px_0_#000] md:rounded-2xl md:p-4 md:shadow-[4px_4px_0_#000] ${cert.type === 'certification' ? 'bg-secondary text-black' : 'bg-primary text-white'}`}
+						>
 							{#if cert.type === 'certification'}
-								<Award strokeWidth={2.5} class="w-6 h-6 md:w-8 md:h-8" />
+								<Award strokeWidth={2.5} class="h-6 w-6 md:h-8 md:w-8" />
 							{:else}
-								<GraduationCap strokeWidth={2.5} class="w-6 h-6 md:w-8 md:h-8" />
+								<GraduationCap strokeWidth={2.5} class="h-6 w-6 md:h-8 md:w-8" />
 							{/if}
 						</div>
 						<div class="mt-1 md:mt-0">
-							<h3 class="text-sm md:text-xl font-black text-black leading-tight mb-1 md:mb-2">
+							<h3 class="mb-1 text-sm leading-tight font-black text-black md:mb-2 md:text-xl">
 								{cert.title}
 							</h3>
-							<span class="text-[9px] md:text-sm font-bold text-gray-500 uppercase tracking-widest block leading-tight">
+							<span
+								class="block text-[9px] leading-tight font-bold tracking-widest text-gray-500 uppercase md:text-sm"
+							>
 								{cert.issuer}
 							</span>
 						</div>
 					</div>
 
 					{#if cert.desc}
-						<p class="text-gray-600 font-bold text-[11px] sm:text-sm leading-relaxed border-t-2 border-black/10 pt-3 md:pt-4 mb-4 md:mb-0">
+						<p
+							class="mb-4 border-t-2 border-black/10 pt-3 text-[11px] leading-relaxed font-bold text-gray-600 sm:text-sm md:mb-0 md:pt-4"
+						>
 							{cert.desc}
 						</p>
 					{/if}
 
 					<!-- Type Badge -->
 					<div class="mt-auto pt-2 text-right">
-						<span class={`inline-block text-[8px] md:text-xs font-black uppercase px-2 py-0.5 md:py-1 border-2 border-black ${cert.type === 'certification' ? 'bg-white text-black' : 'bg-black text-white'}`}>
+						<span
+							class={`inline-block border-2 border-black px-2 py-0.5 text-[8px] font-black uppercase md:py-1 md:text-xs ${cert.type === 'certification' ? 'bg-white text-black' : 'bg-black text-white'}`}
+						>
 							{cert.type}
 						</span>
 					</div>

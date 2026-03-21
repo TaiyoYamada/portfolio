@@ -1,7 +1,13 @@
 /**
  * A Svelte action that triggers an 'intersect' event when the node enters the viewport.
  */
-export function inview(node: HTMLElement, options: { threshold?: number, once?: boolean, onEnter?: () => void } = { threshold: 0.1, once: true }) {
+export function inview(
+	node: HTMLElement,
+	options: { threshold?: number; once?: boolean; onEnter?: () => void } = {
+		threshold: 0.1,
+		once: true
+	}
+) {
 	let observer: IntersectionObserver;
 
 	function setup() {

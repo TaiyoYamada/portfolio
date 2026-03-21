@@ -12,7 +12,7 @@ export const load: PageServerLoad = async ({ setHeaders }) => {
 
 		const [userData, topArticles] = await Promise.all([
 			getUser(userId),
-			getTopArticlesByLikes(userId, limit),
+			getTopArticlesByLikes(userId, limit)
 		]);
 
 		return {
@@ -22,7 +22,7 @@ export const load: PageServerLoad = async ({ setHeaders }) => {
 			}
 		};
 	} catch (error) {
-		console.error("Error fetching Qiita data:", error);
+		console.error('Error fetching Qiita data:', error);
 		// Return empty data gracefully if API fails (e.g., rate limit, or missing token)
 		return {
 			qiita: {

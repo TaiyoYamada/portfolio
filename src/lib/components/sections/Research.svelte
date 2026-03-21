@@ -15,68 +15,101 @@
 	];
 </script>
 
-<Section id="research" class="relative z-10 py-20 bg-primary/5">
-	<h2 class="text-6xl md:text-8xl font-black mb-20 text-center text-transparent text-outline tracking-tighter hover:text-secondary transition-colors cursor-default">
+<Section id="research" class="relative z-10 bg-primary/5 py-20">
+	<h2
+		class="text-outline mb-20 cursor-default text-center text-6xl font-black tracking-tighter text-transparent transition-colors hover:text-secondary md:text-8xl"
+	>
 		RESEARCH
 	</h2>
 	<div class="flex flex-col items-center space-y-12">
 		{#each researches as item, index}
 			<div
 				in:fly={{ y: 50, duration: 500, delay: index * 100 }}
-				class={`relative w-full max-w-4xl bg-white border-2 md:border-4 border-black shadow-[4px_4px_0_#000] md:shadow-pop p-5 sm:p-8 md:p-12 transition-all duration-300 hover:shadow-[6px_6px_0_#000] md:hover:shadow-pop-bold hover:scale-[1.02] hover:!rotate-0 ${
+				class={`relative w-full max-w-4xl border-2 border-black bg-white p-5 shadow-[4px_4px_0_#000] transition-all duration-300 hover:scale-[1.02] hover:!rotate-0 hover:shadow-[6px_6px_0_#000] sm:p-8 md:border-4 md:p-12 md:shadow-pop md:hover:shadow-pop-bold ${
 					index % 2 === 0 ? 'rotate-[-2deg]' : 'rotate-[2deg]'
 				}`}
 			>
 				<!-- Decorative 'Paper Clip' or 'Tape' -->
-				<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-5 md:w-32 md:h-6 bg-secondary/80 -rotate-1 border-2 border-black/20"></div>
+				<div
+					class="absolute -top-3 left-1/2 h-5 w-24 -translate-x-1/2 -rotate-1 border-2 border-black/20 bg-secondary/80 md:h-6 md:w-32"
+				></div>
 
-				<div class="flex items-start justify-between mb-4 md:mb-6">
+				<div class="mb-4 flex items-start justify-between md:mb-6">
 					<div class="flex items-center gap-2 md:gap-3">
-						<div class="p-2 md:p-3 bg-primary text-white border-2 border-black shadow-[2px_2px_0px_#000] md:shadow-[4px_4px_0px_#000] rounded-lg">
-							<FileText size={18} class="md:w-6 md:h-6" />
+						<div
+							class="rounded-lg border-2 border-black bg-primary p-2 text-white shadow-[2px_2px_0px_#000] md:p-3 md:shadow-[4px_4px_0px_#000]"
+						>
+							<FileText size={18} class="md:h-6 md:w-6" />
 						</div>
 						{#if item.status === 'ongoing'}
-							<span class="text-[9px] md:text-xs font-black uppercase tracking-wider px-2 md:px-3 py-0.5 md:py-1 bg-accent text-white border-2 border-black rounded-full animate-pulse">
+							<span
+								class="animate-pulse rounded-full border-2 border-black bg-accent px-2 py-0.5 text-[9px] font-black tracking-wider text-white uppercase md:px-3 md:py-1 md:text-xs"
+							>
 								Ongoing
 							</span>
 						{/if}
 					</div>
-					<span class="text-[9px] md:text-xs font-bold text-gray-400 uppercase tracking-widest border-b-2 border-gray-200 pb-1 mt-1 md:mt-0">
+					<span
+						class="mt-1 border-b-2 border-gray-200 pb-1 text-[9px] font-bold tracking-widest text-gray-400 uppercase md:mt-0 md:text-xs"
+					>
 						Research Paper
 					</span>
 				</div>
 
-				<h3 class="text-lg sm:text-2xl md:text-3xl font-black mb-3 md:mb-4 text-black leading-tight">
+				<h3
+					class="mb-3 text-lg leading-tight font-black text-black sm:text-2xl md:mb-4 md:text-3xl"
+				>
 					{item.title}
 				</h3>
 
-				<p class="text-gray-700 text-xs sm:text-sm md:text-lg font-bold md:font-medium mb-5 md:mb-8 leading-relaxed border-l-2 md:border-l-4 border-secondary pl-3 md:pl-4">
+				<p
+					class="mb-5 border-l-2 border-secondary pl-3 text-xs leading-relaxed font-bold text-gray-700 sm:text-sm md:mb-8 md:border-l-4 md:pl-4 md:text-lg md:font-medium"
+				>
 					{item.desc}
 				</p>
 
-				<div class="flex flex-wrap gap-1.5 md:gap-2 mb-5 md:mb-8">
+				<div class="mb-5 flex flex-wrap gap-1.5 md:mb-8 md:gap-2">
 					{#each item.tech as t}
-						<span class="text-[9px] md:text-xs font-bold px-2 py-0.5 md:px-3 md:py-1 bg-white border border-black rounded-full md:rounded-md shadow-[1px_1px_0px_#000] md:shadow-[2px_2px_0px_#000] text-black tracking-tight">
+						<span
+							class="rounded-full border border-black bg-white px-2 py-0.5 text-[9px] font-bold tracking-tight text-black shadow-[1px_1px_0px_#000] md:rounded-md md:px-3 md:py-1 md:text-xs md:shadow-[2px_2px_0px_#000]"
+						>
 							#{t}
 						</span>
 					{/each}
 				</div>
 
-				<div class="flex items-center justify-between border-t-2 border-black/10 pt-3 md:pt-4 mt-auto w-full">
+				<div
+					class="mt-auto flex w-full items-center justify-between border-t-2 border-black/10 pt-3 md:pt-4"
+				>
 					{#if item.link}
-						<a href={item.link} target="_blank" rel="noopener noreferrer" class="flex flex-1 items-center justify-between w-full group">
-							<span class="text-sm sm:text-base md:text-xl font-bold text-black flex items-center gap-1.5 md:gap-2 group-hover:text-secondary transition-colors group-hover:underline decoration-2 underline-offset-4">
-								<span class="w-2 h-2 md:w-2.5 md:h-2.5 bg-success rounded-full border border-black shrink-0"></span>
-								<span class="line-clamp-2 md:line-clamp-none leading-tight">{item.output}</span>
+						<a
+							href={item.link}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group flex w-full flex-1 items-center justify-between"
+						>
+							<span
+								class="flex items-center gap-1.5 text-sm font-bold text-black decoration-2 underline-offset-4 transition-colors group-hover:text-secondary group-hover:underline sm:text-base md:gap-2 md:text-xl"
+							>
+								<span
+									class="h-2 w-2 shrink-0 rounded-full border border-black bg-success md:h-2.5 md:w-2.5"
+								></span>
+								<span class="line-clamp-2 leading-tight md:line-clamp-none">{item.output}</span>
 							</span>
-							<ArrowUpRight class="text-black w-5 h-5 md:w-7 md:h-7 group-hover:text-secondary group-hover:scale-110 transition-all shrink-0 ml-2" />
+							<ArrowUpRight
+								class="ml-2 h-5 w-5 shrink-0 text-black transition-all group-hover:scale-110 group-hover:text-secondary md:h-7 md:w-7"
+							/>
 						</a>
 					{:else}
-						<span class="text-sm sm:text-base md:text-xl font-bold text-black flex items-center gap-1.5 md:gap-2">
-							<span class="w-2 h-2 md:w-2.5 md:h-2.5 bg-success rounded-full border border-black shrink-0"></span>
-							<span class="line-clamp-2 md:line-clamp-none leading-tight">{item.output}</span>
+						<span
+							class="flex items-center gap-1.5 text-sm font-bold text-black sm:text-base md:gap-2 md:text-xl"
+						>
+							<span
+								class="h-2 w-2 shrink-0 rounded-full border border-black bg-success md:h-2.5 md:w-2.5"
+							></span>
+							<span class="line-clamp-2 leading-tight md:line-clamp-none">{item.output}</span>
 						</span>
-						<ArrowUpRight class="text-black w-5 h-5 md:w-7 md:h-7 shrink-0 ml-2" />
+						<ArrowUpRight class="ml-2 h-5 w-5 shrink-0 text-black md:h-7 md:w-7" />
 					{/if}
 				</div>
 			</div>
