@@ -31,47 +31,42 @@
 		AWARDS
 	</h2>
 
-	<div class="flex flex-col items-center px-4 md:px-8 max-w-6xl mx-auto space-y-24 md:space-y-40 relative z-20">
+	<div class="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 px-2 md:px-4 max-w-6xl mx-auto relative z-20 pb-20">
 		{#each awards as award, index}
-			{@const isEven = index % 2 === 0}
 			<div
 				in:fly={{ y: 80, duration: 800, delay: 100 + index * 100 }}
-				class={`relative w-full flex flex-col ${isEven ? 'md:items-start' : 'md:items-end'}`}
+				class="group relative bg-white border-2 md:border-4 border-black shadow-pop rounded-2xl md:rounded-3xl overflow-hidden hover:shadow-pop-bold transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 flex flex-col h-full"
 			>
-				<!-- Giant Background Year Typography -->
-				<div class={`absolute top-1/2 -translate-y-1/2 ${isEven ? 'left-0 md:left-12' : 'right-0 md:right-12'} text-[120px] md:text-[200px] lg:text-[280px] font-black text-black/5 -z-10 select-none tracking-tighter leading-none`}>
-					{award.year}
+				<!-- Top Side: Icon & Date (Banner) -->
+				<div class={`w-full flex flex-col items-center justify-center p-4 md:p-8 border-b-2 md:border-b-4 border-black ${award.color} relative overflow-hidden shrink-0`}>
+					<!-- Decorative strips -->
+					<div class="absolute -right-4 -top-4 w-12 h-12 md:w-16 md:h-16 bg-white/20 rotate-45 transform origin-center"></div>
+					<div class="absolute -left-4 -bottom-4 w-12 h-12 md:w-16 md:h-16 bg-white/20 rotate-45 transform origin-center"></div>
+					
+					<!-- Giant Background Year Typography -->
+					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[80px] md:text-[140px] font-black text-white/30 z-0 select-none tracking-tighter leading-none pointer-events-none">
+						{award.year}
+					</div>
+
+					<div class="relative z-10 bg-white border-2 md:border-4 border-black rounded-full p-2.5 md:p-4 shadow-pop group-hover:scale-110 transition-transform duration-300 mb-2 md:mb-4">
+						<award.Icon class="text-black w-6 h-6 md:w-10 md:h-10" strokeWidth={2.5} />
+					</div>
+
+					<div class="relative z-10 bg-white border-2 border-black px-3 py-1.5 md:px-5 md:py-2.5 rounded-full shadow-[2px_2px_0_#000] flex items-center justify-center leading-none">
+						<span class="font-black text-[10px] sm:text-[11px] md:text-sm text-black tracking-widest ml-[0.1em] inline-block translate-y-[1px]">{award.date}</span>
+					</div>
 				</div>
 
-				<!-- Main Award Card -->
-				<div class={`group relative w-full md:w-[85%] lg:w-[75%] flex flex-col md:flex-row bg-white border-4 border-black shadow-pop rounded-2xl md:rounded-3xl overflow-hidden hover:shadow-pop-bold transition-all duration-300 ${isEven ? 'hover:-translate-y-2 hover:-translate-x-2' : 'hover:-translate-y-2 hover:translate-x-2'}`}>
-					
-					<!-- Left/Top Side: Icon & Date Array -->
-					<div class={`w-full md:w-1/3 flex flex-row md:flex-col items-center justify-between md:justify-center p-6 md:p-8 border-b-4 md:border-b-0 md:border-r-4 border-black ${award.color} relative overflow-hidden`}>
-						<!-- Decorative strips -->
-						<div class="absolute -right-4 -top-4 w-16 h-16 bg-white/20 rotate-45 transform origin-center"></div>
-						<div class="absolute -left-4 -bottom-4 w-16 h-16 bg-white/20 rotate-45 transform origin-center"></div>
-
-						<div class="relative z-10 bg-white border-4 border-black rounded-full p-4 shadow-pop group-hover:scale-110 transition-transform duration-300">
-							<award.Icon size={40} class="text-black" strokeWidth={2.5} />
-						</div>
-
-						<div class="relative z-10 mt-0 md:mt-6 bg-white border-2 border-black px-4 py-2 rounded-full shadow-sm">
-							<span class="font-black text-sm md:text-base text-black tracking-widest">{award.date}</span>
-						</div>
+				<!-- Bottom Side: Content -->
+				<div class="flex-1 p-3 sm:p-4 md:p-8 flex flex-col bg-white">
+					<div class="mb-2 md:mb-4">
+						<h3 class="text-sm sm:text-base md:text-2xl lg:text-3xl font-black text-black leading-tight group-hover:text-primary transition-colors">
+							{award.title}
+						</h3>
 					</div>
-
-					<!-- Right/Bottom Side: Content -->
-					<div class="w-full md:w-2/3 p-6 md:p-10 lg:p-12 flex flex-col justify-center bg-white">
-						<div class="mb-4">
-							<h3 class="text-2xl md:text-3xl lg:text-4xl font-black text-black leading-tight group-hover:text-primary transition-colors">
-								{award.title}
-							</h3>
-						</div>
-						<p class="text-base md:text-lg font-bold text-gray-700 leading-relaxed">
-							{award.desc}
-						</p>
-					</div>
+					<p class="text-[11px] sm:text-sm font-bold text-gray-600 leading-relaxed mt-auto">
+						{award.desc}
+					</p>
 				</div>
 			</div>
 		{/each}

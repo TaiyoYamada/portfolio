@@ -44,51 +44,51 @@
 		EXPERIENCE
 	</h2>
 
-	<div class="max-w-4xl mx-auto relative px-4">
+	<div class="max-w-4xl mx-auto relative px-2 sm:px-4">
 		<!-- Subway Line -->
-		<div class="absolute left-[32px] md:left-1/2 top-0 bottom-0 w-4 -translate-x-1/2 md:-translate-x-1/2 bg-black rounded-full"></div>
+		<div class="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-2 md:w-4 -translate-x-1/2 md:-translate-x-1/2 bg-black rounded-full"></div>
 
-		<div class="space-y-24">
+		<div class="space-y-16 md:space-y-24">
 			{#each experiences as exp, index}
 				<div
 					in:fly={{ x: index % 2 === 0 ? -50 : 50, duration: 600, delay: index * 100 }}
-					class={`relative flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+					class={`relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
 				>
 					<!-- Station Node -->
-					<div class="absolute left-[10px] md:left-1/2 -translate-x-1/2 md:-translate-x-1/2 top-6 md:top-1/2 md:-translate-y-1/2 w-14 h-14 rounded-full border-4 border-black bg-white z-20 flex items-center justify-center hover:scale-125 transition-transform duration-300 shadow-pop">
-						<div class={`w-6 h-6 rounded-full ${exp.color} border-2 border-black`}></div>
+					<div class="absolute left-[24px] md:left-1/2 -translate-x-1/2 md:-translate-x-1/2 top-6 md:top-1/2 md:-translate-y-1/2 w-10 h-10 md:w-14 md:h-14 rounded-full border-2 md:border-4 border-black bg-white z-20 flex items-center justify-center hover:scale-125 transition-transform duration-300 shadow-[4px_4px_0_#000] md:shadow-pop">
+						<div class={`w-4 h-4 md:w-6 md:h-6 rounded-full ${exp.color} border-2 border-black`}></div>
 					</div>
 
 					<!-- Content Side -->
-					<div class={`w-full md:w-1/2 min-w-0 pl-[72px] md:pl-0 ${index % 2 === 0 ? 'md:pl-20 md:pr-10' : 'md:pr-20 md:pl-10'}`}>
-						<div class="bg-white border-2 border-black shadow-pop p-6 rounded-2xl relative group hover:shadow-pop-bold hover:-translate-y-1 transition-all duration-300 text-left">
-							<div class="flex flex-col gap-2 mb-4 items-start">
-								<span class={`px-4 py-1 text-xs font-black text-white ${exp.color} border-2 border-black rounded-full inline-block shadow-[2px_2px_0_#000]`}>
+					<div class={`w-full md:w-1/2 min-w-0 pl-[56px] md:pl-0 ${index % 2 === 0 ? 'md:pl-16 lg:pl-24 md:pr-6 lg:pr-8' : 'md:pr-16 lg:pr-24 md:pl-6 lg:pl-8'}`}>
+						<div class="bg-white border-2 md:border-4 border-black shadow-[4px_4px_0_#000] md:shadow-pop p-4 md:p-8 rounded-2xl md:rounded-3xl relative group hover:shadow-[6px_6px_0_#000] md:hover:shadow-pop-bold hover:-translate-y-1 md:hover:-translate-y-2 transition-all duration-300 text-left">
+							<div class="flex flex-col gap-2 md:gap-3 mb-4 items-start">
+								<span class={`px-3 py-1 md:px-4 md:py-1 text-[10px] md:text-sm font-black text-white ${exp.color} border-2 border-black rounded-full inline-block shadow-[2px_2px_0_#000]`}>
 									{exp.period}
 								</span>
-								<h3 class="text-2xl font-black text-black leading-tight">
+								<h3 class="text-[17px] sm:text-xl md:text-3xl font-black text-black leading-tight">
 									{exp.company}
 								</h3>
-								<div class="flex items-center gap-2 text-gray-700 font-bold">
-									<Briefcase size={16} />
+								<div class="flex items-center gap-1.5 md:gap-2 text-[11px] sm:text-xs md:text-base text-gray-700 font-bold bg-primary/5 px-2 py-1 md:px-3 md:py-1.5 rounded-full border border-black/10">
+									<Briefcase size={14} class="md:w-5 md:h-5" />
 									{exp.role}
 								</div>
 							</div>
 
 							{#if exp.details.length > 0}
-								<ul class="text-sm font-medium text-gray-600 space-y-1 mb-4 text-left list-disc pl-5">
+								<ul class="text-[11px] sm:text-xs md:text-[15px] font-bold text-gray-600 space-y-1.5 md:space-y-2 mb-4 text-left list-disc pl-4 md:pl-6 leading-relaxed">
 									{#each exp.details as d}
-										<li class="leading-relaxed pl-1">{d}</li>
+										<li class="pl-1 tracking-tight sm:tracking-normal">{d}</li>
 									{/each}
 								</ul>
 							{/if}
 
 							{#if exp.growth}
-								<div class="mt-4 pt-4 border-t-2 border-gray-100 text-left">
-									<span class="text-xs font-black text-primary uppercase tracking-wider block mb-1">
+								<div class="mt-4 pt-4 border-t-2 border-black/10 text-left">
+									<span class="text-[10px] md:text-xs font-black text-primary uppercase tracking-wider block mb-1 md:mb-2">
 										Key Takeaways
 									</span>
-									<p class="text-xs font-bold text-gray-500 leading-relaxed">
+									<p class="text-[10px] sm:text-[11px] md:text-sm font-bold text-gray-500 leading-relaxed tracking-tight sm:tracking-normal">
 										{exp.growth}
 									</p>
 								</div>

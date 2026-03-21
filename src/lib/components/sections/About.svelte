@@ -89,7 +89,7 @@
 									<Briefcase size={20} strokeWidth={2.5} />
 								</div>
 								<span class="w-full text-[17px] leading-snug font-black sm:text-base md:text-xl"
-									>松尾研究所 共同研究 インターン</span
+									>松尾研究所 共同研究インターン</span
 								>
 							</li>
 							<li class="flex items-center gap-3 md:gap-4">
@@ -105,7 +105,7 @@
 						</ul>
 					</div>
 
-					<p class="pt-2 text-center text-lg md:text-left">
+					<p class="pt-2 text-center text-lg font-medium md:text-left">
 						大学では法律・経済・情報を学びながら、研究室では <span
 							class="border-b-4 border-primary px-1 font-bold">量子アルゴリズム</span
 						>

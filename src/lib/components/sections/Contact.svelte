@@ -24,21 +24,21 @@
 			LET'S<br />TALK?
 		</h2>
 
-		<p class="text-xl md:text-2xl font-bold text-black mb-16 max-w-2xl mx-auto leading-relaxed">
+		<p class="text-base sm:text-xl md:text-2xl font-bold text-black mb-10 md:mb-16 max-w-2xl mx-auto leading-relaxed px-4 md:px-0">
 			Always open to new opportunities, collaborations, and fun projects. Drop a message!
 		</p>
-		<div class="flex flex-wrap justify-center gap-6 md:gap-10">
+		<div class="flex justify-center gap-3 sm:gap-6 md:gap-10">
 			{#each links as { Icon, href, label }}
 				<a
 					{href}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="group relative"
+					class="group relative shrink-0"
 				>
-					<div class="w-20 h-20 md:w-24 md:h-24 bg-white border-4 border-black shadow-pop flex items-center justify-center rounded-2xl group-hover:-translate-y-2 group-hover:shadow-pop-bold transition-all duration-300">
-						<Icon class="w-8 h-8 md:w-10 md:h-10 text-black group-hover:scale-110 transition-transform" />
+					<div class="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-white border-2 md:border-4 border-black shadow-[2px_2px_0_#000] md:shadow-pop flex items-center justify-center rounded-xl md:rounded-2xl md:group-hover:-translate-y-2 group-hover:-translate-y-1 hover:shadow-[4px_4px_0_#000] md:group-hover:shadow-pop-bold transition-all duration-300">
+						<Icon class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-black group-hover:scale-110 transition-transform" />
 					</div>
-					<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm font-black text-black opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap bg-white px-2 border-2 border-black">
+					<span class="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 text-[10px] md:text-sm font-black text-black opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap bg-white px-1.5 md:px-2 border-2 border-black z-20 pointer-events-none shadow-sm">
 						{label}
 					</span>
 				</a>

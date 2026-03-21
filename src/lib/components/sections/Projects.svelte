@@ -22,7 +22,7 @@
 		},
 		{
 			title: 'Portfolio',
-			tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+			tech: ['SvelteKit', 'Svelte', 'TypeScript', 'Tailwind CSS'],
 			desc: '山田大陽のポートフォリオサイト。これまでに取り組んできたプロジェクトや技術スタックを整理し、自身の関心領域や開発スタイルが伝わるよう設計。',
 			role: 'Frontend / Backend / Infra',
 			link: 'https://taiyoyamada.com/',
@@ -54,14 +54,14 @@
 	<h2 class="text-6xl md:text-8xl font-black mb-20 text-center text-transparent text-outline tracking-tighter hover:text-primary transition-colors cursor-default">
 		PROJECTS
 	</h2>
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+	<div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 px-2 md:px-0">
 		{#each projects as project, index}
 			<div
 				in:fly={{ y: 50, duration: 800, delay: index * 100 }}
-				class="group relative bg-white border-2 border-black shadow-pop rounded-3xl overflow-hidden hover:shadow-pop-bold hover:-translate-y-2 transition-all duration-300 h-full flex flex-col"
+				class="group relative bg-white border-2 border-black shadow-pop rounded-2xl md:rounded-3xl overflow-hidden hover:shadow-pop-bold hover:-translate-y-2 transition-all duration-300 h-full flex flex-col"
 			>
 				<!-- Image Area -->
-				<div class="h-48 w-full relative overflow-hidden border-b-2 border-black shrink-0">
+				<div class="h-28 sm:h-36 md:h-48 w-full relative overflow-hidden border-b-2 border-black shrink-0">
 					{#if project.image}
 						<img
 							src={project.image}
@@ -73,20 +73,20 @@
 				</div>
 
 				<!-- Content Area -->
-				<div class="p-6 flex flex-col flex-1">
-					<div class="flex justify-between items-start mb-2">
-						<h3 class="text-2xl font-black text-black group-hover:text-primary transition-colors uppercase">
+				<div class="p-3 sm:p-4 md:p-6 flex flex-col flex-1">
+					<div class="flex flex-col xl:flex-row justify-between items-start mb-2 gap-2">
+						<h3 class="text-base sm:text-lg md:text-2xl font-black text-black group-hover:text-primary transition-colors uppercase leading-tight">
 							{project.title}
 						</h3>
-						<div class="flex gap-2 shrink-0">
+						<div class="flex gap-1.5 shrink-0">
 							{#if project.github}
 								<a
 									href={project.github}
 									target="_blank"
 									rel="noopener noreferrer"
-									class="p-2 bg-white border-2 border-black rounded-full hover:bg-black hover:text-white transition-colors"
+									class="p-1.5 md:p-2 bg-white border-2 border-black rounded-full hover:bg-black hover:text-white transition-colors"
 								>
-									<Github size={18} />
+									<Github class="w-4 h-4 md:w-[18px] md:h-[18px]" />
 								</a>
 							{/if}
 							{#if project.link}
@@ -94,21 +94,21 @@
 									href={project.link}
 									target="_blank"
 									rel="noopener noreferrer"
-									class="p-2 bg-white border-2 border-black rounded-full hover:bg-accent hover:text-white transition-colors"
+									class="p-1.5 md:p-2 bg-white border-2 border-black rounded-full hover:bg-accent hover:text-white transition-colors"
 								>
-									<ExternalLink size={18} />
+									<ExternalLink class="w-4 h-4 md:w-[18px] md:h-[18px]" />
 								</a>
 							{/if}
 						</div>
 					</div>
 
-					<p class="text-sm font-bold text-gray-600 mb-4 leading-relaxed">
+					<p class="text-xs sm:text-sm font-bold text-gray-600 mb-3 md:mb-4 leading-relaxed">
 						{project.desc}
 					</p>
 
-					<div class="mt-auto flex flex-wrap gap-2">
+					<div class="mt-auto flex flex-wrap gap-1 md:gap-2">
 						{#each project.tech as t}
-							<span class="text-[10px] font-black px-2 py-1 rounded-full border border-black bg-secondary text-black">
+							<span class="text-[9px] sm:text-[10px] font-black px-1.5 md:px-2 py-0.5 md:py-1 rounded-full border border-black bg-secondary text-black whitespace-nowrap">
 								{t.toUpperCase()}
 							</span>
 						{/each}
