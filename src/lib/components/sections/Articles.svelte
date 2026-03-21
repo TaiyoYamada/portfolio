@@ -2,11 +2,13 @@
 	import Section from './Section.svelte';
 	import { BookOpen } from 'lucide-svelte';
 
+	import type { QiitaUser, QiitaArticle } from '$lib/qiita';
+
 	interface Props {
 		data: {
 			qiita: {
-				user: any;
-				topArticles: any[];
+				user: QiitaUser | null;
+				topArticles: QiitaArticle[];
 			};
 		};
 	}

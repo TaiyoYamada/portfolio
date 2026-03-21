@@ -74,7 +74,7 @@
 	/>
 
 	<!-- JSON-LD -->
-	{@html `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify(jsonLd)}</` + `script>`}
 </svelte:head>
 
 <Header />

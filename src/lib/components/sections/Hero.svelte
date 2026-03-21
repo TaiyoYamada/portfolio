@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { fade, fly, scale } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	import { Github, Mail, ArrowDown } from 'lucide-svelte';
 	import QiitaIcon from '$lib/components/icons/QiitaIcon.svelte';
 	import XIcon from '$lib/components/icons/XIcon.svelte';
 	import { draggable } from '$lib/actions/draggable';
-	import { spring } from 'svelte/motion';
 	import { onMount } from 'svelte';
 
 	let mounted = $state(false);
@@ -12,22 +11,6 @@
 	onMount(() => {
 		mounted = true;
 	});
-
-	// For complex spring entries:
-	function springScale(node: HTMLElement, { delay = 0 }: { delay?: number }) {
-		return {
-			delay,
-			duration: 800,
-			css: (t: number) => {
-				const eased = Math.sin((t * Math.PI) / 2);
-				// A slight overshoot spring approximation
-				const scaleVal = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-				// For real spring we just use builtin or simplier css easing. Svelte's easing 'elasticOut' or similar is good.
-				// But we'll just use simple scale here.
-				return `transform: scale(${eased}) rotate(${-10 + 8 * eased}deg); opacity: ${eased};`;
-			}
-		};
-	}
 
 	import { elasticOut } from 'svelte/easing';
 
