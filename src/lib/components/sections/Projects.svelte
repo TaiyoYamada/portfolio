@@ -8,6 +8,7 @@
 			title: 'Qbitrun',
 			tech: ['SwiftUI', 'UIKit', 'SpriteKit', 'SceneKit'],
 			desc: 'Swift Student Challenge 2026 提出作品。単一量子ビットゲートを操作してブロッホ球上の状態ベクトルを目的の位置に合わせ、得点を稼ぐゲームアプリ。',
+			shortDesc: 'Swift Student Challenge 2026 提出作品。',
 			role: 'Full Stack',
 			github: 'https://github.com/TaiyoYamada/Qbitrun',
 			image: '/qbitrun.png'
@@ -16,6 +17,7 @@
 			title: 'KUMATOMO',
 			tech: ['Swift', 'Laravel', 'Vue.js', 'TypeScript', 'AWS Lambda', 'RDS', 'S3', 'CloudFront', 'Terraform'],
 			desc: '熊本県に特化した地域密着型SNSアプリ。（学習用）地元店舗やユーザー同士のつながりを促進することを目的に、モバイルアプリからバックエンドまで一貫して設計・開発。',
+			shortDesc: '熊本県に特化した地域密着型SNSアプリ。（学習用）',
 			role: 'Frontend / Backend / Infra',
 			github: 'https://github.com/TaiyoYamada/kumatomo',
 			image: '/kumatomo.png'
@@ -24,6 +26,7 @@
 			title: 'Portfolio',
 			tech: ['SvelteKit', 'Svelte', 'TypeScript', 'Tailwind CSS'],
 			desc: '山田大陽のポートフォリオサイト。これまでに取り組んできたプロジェクトや技術スタックを整理し、自身の関心領域や開発スタイルが伝わるよう設計。',
+			shortDesc: 'これまでの実績や開発スタイルをまとめたポートフォリオサイト。',
 			role: 'Frontend / Backend / Infra',
 			link: 'https://taiyoyamada.com/',
 			github: 'https://github.com/TaiyoYamada/portfolio',
@@ -33,6 +36,7 @@
 			title: 'SeatCraft',
 			tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'AWS Lambda', 'DynamoDB', 'API Gateway'],
 			desc: '飲み会の席決めをテーマにしたWebアプリ。友人とハッカソンで対決し、5時間程度で開発。',
+			shortDesc: '飲み会席決めWebアプリ。',
 			role: 'Frontend / Backend / Infra',
 			link: 'https://seat-craft.vercel.app/',
 			github: 'https://github.com/TaiyoYamada/SeatCraft',
@@ -42,6 +46,7 @@
 			title: 'GiraMatch',
 			tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express', 'AWS Lambda', 'API Gateway', 'DynamoDB'],
 			desc: 'ギラヴァンツ北九州のファンが試合観戦の同行者を見つけるマッチングWebアプリ。2日間のハッカソンで友人と2人で開発。インフラとバックエンドを担当。',
+			shortDesc: 'ハッカソンで開発した、ギラヴァンツファン用マッチングアプリ。',
 			role: 'Backend / Infra',
 			link: 'https://hakkutsu-app.vercel.app',
 			github: 'https://github.com/TaiyoYamada/GiraMatch',
@@ -102,8 +107,14 @@
 						</div>
 					</div>
 
-					<p class="text-xs sm:text-sm font-bold text-gray-600 mb-3 md:mb-4 leading-relaxed">
+					<!-- Desktop: Full Description -->
+					<p class="hidden md:block text-sm font-bold text-gray-600 mb-4 leading-relaxed">
 						{project.desc}
+					</p>
+					
+					<!-- Mobile: Short Description -->
+					<p class="md:hidden text-[11px] sm:text-xs font-bold text-gray-600 mb-3 leading-relaxed">
+						{project.shortDesc || project.desc}
 					</p>
 
 					<div class="mt-auto flex flex-wrap gap-1 md:gap-2">
