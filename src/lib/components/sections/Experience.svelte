@@ -61,7 +61,7 @@
 				>
 					<!-- Station Node -->
 					<div
-						class="absolute top-6 left-[24px] z-20 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border-2 border-black bg-white shadow-[4px_4px_0_#000] transition-transform duration-300 hover:scale-125 md:top-1/2 md:left-1/2 md:h-14 md:w-14 md:-translate-x-1/2 md:-translate-y-1/2 md:border-4 md:shadow-pop"
+						class="absolute top-6 left-[-11px] z-20 flex h-10 w-10 items-center justify-center rounded-full border-2 border-black bg-white shadow-[4px_4px_0_#000] transition-transform duration-300 hover:scale-125 md:top-1/2 md:left-1/2 md:h-14 md:w-14 md:-translate-x-1/2 md:-translate-y-1/2 md:border-4 md:shadow-pop"
 					>
 						<div
 							class={`h-4 w-4 rounded-full md:h-6 md:w-6 ${exp.color} border-2 border-black`}
