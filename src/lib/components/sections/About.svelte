@@ -85,7 +85,7 @@
 									<School class="h-4 w-4 md:h-5 md:w-5" strokeWidth={2.5} />
 								</div>
 								<span class="w-full text-xs leading-snug font-black sm:text-[15px] md:text-xl"
-									>熊本県立大学 総合管理学部 B2</span
+									>熊本県立大学 総合管理学部 B3</span
 								>
 							</li>
 							<li class="flex items-center gap-2.5 md:gap-4">
