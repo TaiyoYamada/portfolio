@@ -57,7 +57,7 @@
 				class={`${index === 0 ? 'md:col-span-2 md:mx-auto md:max-w-2xl' : ''}`}
 			>
 				<div
-					class={`group relative rounded-2xl border-2 border-black bg-white p-5 text-left shadow-[4px_4px_0_#000] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0_#000] md:rounded-3xl md:border-4 md:p-8 md:shadow-pop md:hover:-translate-y-2 md:hover:shadow-pop-bold border-l-[6px] md:border-l-8 ${exp.borderColor}`}
+					class={`group relative rounded-2xl border-2 border-l-[6px] border-black bg-white p-5 text-left shadow-[4px_4px_0_#000] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0_#000] md:rounded-3xl md:border-4 md:border-l-8 md:p-8 md:shadow-pop md:hover:-translate-y-2 md:hover:shadow-pop-bold ${exp.borderColor}`}
 				>
 					<div class="mb-4 flex flex-col items-start gap-2 md:gap-3">
 						<div class="flex w-full items-center justify-between gap-2">
@@ -66,9 +66,7 @@
 							>
 								{exp.period}
 							</span>
-							<span
-								class="text-3xl font-black text-black/5 md:text-5xl"
-							>
+							<span class="text-3xl font-black text-black/5 md:text-5xl">
 								{String(index + 1).padStart(2, '0')}
 							</span>
 						</div>
