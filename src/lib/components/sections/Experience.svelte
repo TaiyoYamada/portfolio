@@ -50,18 +50,18 @@
 	<div class="relative mx-auto max-w-4xl px-2 sm:px-4">
 		<!-- Subway Line -->
 		<div
-			class="absolute top-0 bottom-0 left-[24px] w-2 -translate-x-1/2 rounded-full bg-black md:left-1/2 md:w-4 md:-translate-x-1/2"
+			class="absolute top-0 bottom-0 left-[28px] w-2 -translate-x-1/2 rounded-full bg-black sm:left-[36px] md:left-1/2 md:w-4 md:-translate-x-1/2"
 		></div>
 
 		<div class="space-y-16 md:space-y-24">
 			{#each experiences as exp, index}
 				<div
 					in:fly={{ x: index % 2 === 0 ? -50 : 50, duration: 600, delay: index * 100 }}
-					class={`relative flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+					class={`relative flex flex-row items-start gap-4 md:items-center md:gap-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
 				>
 					<!-- Station Node -->
 					<div
-						class="absolute top-6 left-[-11px] z-20 flex h-10 w-10 items-center justify-center rounded-full border-2 border-black bg-white shadow-[4px_4px_0_#000] transition-transform duration-300 hover:scale-125 md:top-1/2 md:left-1/2 md:h-14 md:w-14 md:-translate-x-1/2 md:-translate-y-1/2 md:border-4 md:shadow-pop"
+						class="relative z-20 shrink-0 flex h-10 w-10 items-center justify-center rounded-full border-2 border-black bg-white shadow-[4px_4px_0_#000] transition-transform duration-300 hover:scale-125 md:absolute md:top-1/2 md:left-1/2 md:h-14 md:w-14 md:-translate-x-1/2 md:-translate-y-1/2 md:border-4 md:shadow-pop"
 					>
 						<div
 							class={`h-4 w-4 rounded-full md:h-6 md:w-6 ${exp.color} border-2 border-black`}
@@ -70,7 +70,7 @@
 
 					<!-- Content Side -->
 					<div
-						class={`w-full min-w-0 pl-[56px] md:w-1/2 md:pl-0 ${index % 2 === 0 ? 'md:pr-6 md:pl-16 lg:pr-8 lg:pl-24' : 'md:pr-16 md:pl-6 lg:pr-24 lg:pl-8'}`}
+						class={`min-w-0 flex-1 md:flex-none md:w-1/2 ${index % 2 === 0 ? 'md:pr-6 md:pl-16 lg:pr-8 lg:pl-24' : 'md:pr-16 md:pl-6 lg:pr-24 lg:pl-8'}`}
 					>
 						<div
 							class="group relative rounded-2xl border-2 border-black bg-white p-4 text-left shadow-[4px_4px_0_#000] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0_#000] md:rounded-3xl md:border-4 md:p-8 md:shadow-pop md:hover:-translate-y-2 md:hover:shadow-pop-bold"
