@@ -48,7 +48,6 @@
 			desc: '飲み会の席決めをテーマにしたWebアプリ。友人とハッカソンで対決し、5時間程度で開発。',
 			shortDesc: '飲み会席決めWebアプリ。',
 			role: 'Frontend / Backend / Infra',
-			link: 'https://seat-craft.vercel.app/',
 			github: 'https://github.com/TaiyoYamada/SeatCraft',
 			image: '/seatcraft.png'
 		},
@@ -67,7 +66,6 @@
 			desc: 'ギラヴァンツ北九州のファンが試合観戦の同行者を見つけるマッチングWebアプリ。2日間のハッカソンで友人と2人で開発。インフラとバックエンドを担当。',
 			shortDesc: 'ハッカソンで開発した、ギラヴァンツファン用マッチングアプリ。',
 			role: 'Backend / Infra',
-			link: 'https://hakkutsu-app.vercel.app',
 			github: 'https://github.com/TaiyoYamada/GiraMatch',
 			image: '/giramatch.png'
 		}
