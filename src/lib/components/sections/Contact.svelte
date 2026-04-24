@@ -1,51 +1,228 @@
 <script lang="ts">
-	import { Github, Mail } from 'lucide-svelte';
+	import { Github, Mail, ArrowUpRight } from 'lucide-svelte';
 	import QiitaIcon from '$lib/components/icons/QiitaIcon.svelte';
 	import XIcon from '$lib/components/icons/XIcon.svelte';
-	import Section from './Section.svelte';
+	import { env } from '$env/dynamic/public';
 
-	const links = [
+	const WEB3FORMS_KEY = env.PUBLIC_WEB3FORMS_KEY ?? '';
+
+	const socials = [
 		{ Icon: Github, href: 'https://github.com/TaiyoYamada', label: 'GitHub' },
 		{ Icon: QiitaIcon, href: 'https://qiita.com/TaiyoYamada', label: 'Qiita' },
-		{ Icon: XIcon, href: 'https://x.com/taiyo_sunsun05', label: 'X / Twitter' },
-		{ Icon: Mail, href: 'mailto:t-yamada@ilab.pu-kumamoto.ac.jp', label: 'Email' }
+		{ Icon: XIcon, href: 'https://x.com/taiyo_sunsun05', label: 'X' },
+		{
+			Icon: Mail,
+			href: 'mailto:t-yamada@ilab.pu-kumamoto.ac.jp',
+			label: 'Email'
+		}
 	];
+
+	let name = $state('');
+	let email = $state('');
+	let message = $state('');
+	let status = $state<'idle' | 'submitting' | 'success' | 'error'>('idle');
+	let errorMsg = $state('');
+
+	async function onSubmit(e: Event) {
+		e.preventDefault();
+		if (status === 'submitting') return;
+		if (!WEB3FORMS_KEY) {
+			status = 'error';
+			errorMsg = 'フォームが未設定です (Access Key が必要)。';
+			return;
+		}
+
+		status = 'submitting';
+		errorMsg = '';
+
+		try {
+			const res = await fetch('https://api.web3forms.com/submit', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					Accept: 'application/json'
+				},
+				body: JSON.stringify({
+					access_key: WEB3FORMS_KEY,
+					from_name: 'Portfolio Contact',
+					subject: `Contact from ${name || 'anonymous'}`,
+					name,
+					email,
+					message
+				})
+			});
+			const data = await res.json();
+			if (data.success) {
+				status = 'success';
+				name = '';
+				email = '';
+				message = '';
+			} else {
+				status = 'error';
+				errorMsg = data.message || '送信に失敗しました。';
+			}
+		} catch (err) {
+			status = 'error';
+			errorMsg = err instanceof Error ? err.message : 'ネットワークエラー';
+		}
+	}
+
+	function resetStatus() {
+		if (status !== 'idle') status = 'idle';
+	}
 </script>
 
-<Section id="contact" class="relative z-10 overflow-hidden bg-secondary py-32 text-center">
-	<!-- Background Decoration -->
-	<div
-		class="absolute inset-0 opacity-10"
-		style="background-image: radial-gradient(#000 2px, transparent 2px); background-size: 30px 30px;"
-	></div>
+<section id="contact" class="bg-white py-20 md:py-28">
+	<div class="mx-auto max-w-5xl px-5 md:px-8">
+		<header class="mb-14 md:mb-20">
+			<p class="mb-3 text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
+				Say hello
+			</p>
+			<h1 class="text-5xl font-medium tracking-tight text-black md:text-7xl">Contact</h1>
+		</header>
 
-	<div class="relative z-10 mx-auto max-w-4xl px-4">
-		<h2 class="mb-12 text-6xl leading-none font-black tracking-tighter text-black md:text-9xl">
-			LET'S<br />TALK?
-		</h2>
+		<div class="grid grid-cols-1 gap-16 md:grid-cols-[1fr_340px] md:gap-20">
+			<!-- Left: form -->
+			<div>
+				<p class="mb-10 text-base leading-[1.8] text-neutral-700 md:text-lg">
+					共同プロジェクト、インターン、雑談、何でもお気軽に。
+					<br class="hidden md:block" />
+					基本的にすべてのメッセージに返信しています。
+				</p>
 
-		<p
-			class="mx-auto mb-10 max-w-2xl px-4 text-base leading-relaxed font-bold text-black sm:text-xl md:mb-16 md:px-0 md:text-2xl"
-		>
-			Always open to new opportunities, collaborations, and fun projects. Drop a message!
-		</p>
-		<div class="flex justify-center gap-3 sm:gap-6 md:gap-10">
-			{#each links as { Icon, href, label }}
-				<a {href} target="_blank" rel="noopener noreferrer" class="group relative shrink-0">
+				{#if status === 'success'}
 					<div
-						class="flex h-14 w-14 items-center justify-center rounded-xl border-2 border-black bg-white shadow-[2px_2px_0_#000] transition-all duration-300 group-hover:-translate-y-1 hover:shadow-[4px_4px_0_#000] sm:h-20 sm:w-20 md:h-24 md:w-24 md:rounded-2xl md:border-4 md:shadow-pop md:group-hover:-translate-y-2 md:group-hover:shadow-pop-bold"
+						class="border-t border-b border-black/10 py-12 text-center"
 					>
-						<Icon
-							class="h-6 w-6 text-black transition-transform group-hover:scale-110 sm:h-8 sm:w-8 md:h-10 md:w-10"
-						/>
+						<p class="text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
+							Thanks
+						</p>
+						<p class="mt-3 text-xl font-medium tracking-tight text-black md:text-2xl">
+							受信しました。
+						</p>
+						<p class="mt-3 text-sm text-neutral-500">
+							内容を確認して、できるだけ早めに返信します。
+						</p>
+						<button
+							type="button"
+							onclick={() => (status = 'idle')}
+							class="mt-8 text-xs font-medium tracking-tight text-neutral-500 underline-offset-4 hover:text-black hover:underline"
+						>
+							もう一度送る
+						</button>
 					</div>
-					<span
-						class="pointer-events-none absolute -bottom-6 left-1/2 z-20 -translate-x-1/2 border-2 border-black bg-white px-1.5 text-[10px] font-black whitespace-nowrap text-black opacity-0 shadow-sm transition-opacity group-hover:opacity-100 md:-bottom-8 md:px-2 md:text-sm"
-					>
-						{label}
-					</span>
-				</a>
-			{/each}
+				{:else}
+					<form onsubmit={onSubmit} class="space-y-8" novalidate>
+						<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+							<div class="flex flex-col gap-2">
+								<label
+									for="cf-name"
+									class="text-[11px] font-medium tracking-[0.18em] text-neutral-500 uppercase"
+								>
+									Name
+								</label>
+								<input
+									id="cf-name"
+									type="text"
+									bind:value={name}
+									oninput={resetStatus}
+									required
+									class="border-0 border-b border-black/15 bg-transparent px-0 py-2.5 text-base font-medium tracking-tight text-black placeholder:text-neutral-300 focus:border-black focus:outline-none"
+									placeholder="山田 太郎"
+									autocomplete="name"
+								/>
+							</div>
+
+							<div class="flex flex-col gap-2">
+								<label
+									for="cf-email"
+									class="text-[11px] font-medium tracking-[0.18em] text-neutral-500 uppercase"
+								>
+									Email
+								</label>
+								<input
+									id="cf-email"
+									type="email"
+									bind:value={email}
+									oninput={resetStatus}
+									required
+									class="border-0 border-b border-black/15 bg-transparent px-0 py-2.5 text-base font-medium tracking-tight text-black placeholder:text-neutral-300 focus:border-black focus:outline-none"
+									placeholder="you@example.com"
+									autocomplete="email"
+								/>
+							</div>
+						</div>
+
+						<div class="flex flex-col gap-2">
+							<label
+								for="cf-message"
+								class="text-[11px] font-medium tracking-[0.18em] text-neutral-500 uppercase"
+							>
+								Message
+							</label>
+							<textarea
+								id="cf-message"
+								bind:value={message}
+								oninput={resetStatus}
+								required
+								rows="6"
+								class="resize-none border-0 border-b border-black/15 bg-transparent px-0 py-2.5 text-base font-medium tracking-tight text-black placeholder:text-neutral-300 focus:border-black focus:outline-none"
+								placeholder="ご用件をどうぞ"
+							></textarea>
+						</div>
+
+						<!-- Honeypot -->
+						<input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+
+						<div class="flex flex-wrap items-center gap-6 pt-2">
+							<button
+								type="submit"
+								disabled={status === 'submitting'}
+								class="group inline-flex items-center gap-3 bg-black px-7 py-3.5 text-sm font-medium tracking-tight text-white transition-all hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 md:text-base"
+							>
+								{status === 'submitting' ? 'Sending…' : 'Send message'}
+								<ArrowUpRight
+									size={16}
+									strokeWidth={2}
+									class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+								/>
+							</button>
+
+							{#if status === 'error'}
+								<p class="text-sm text-accent">{errorMsg}</p>
+							{/if}
+						</div>
+					</form>
+				{/if}
+			</div>
+
+			<!-- Right: other channels -->
+			<aside class="md:pt-2">
+				<p class="text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
+					Elsewhere
+				</p>
+				<ul class="mt-5 divide-y divide-black/10 border-t border-b border-black/10">
+					{#each socials as { Icon, href, label }}
+						<li>
+							<a
+								{href}
+								target={href.startsWith('mailto') ? undefined : '_blank'}
+								rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+								class="group flex items-center justify-between py-4 transition-colors hover:text-black"
+							>
+								<span class="flex items-center gap-3 text-[15px] font-medium text-neutral-700 group-hover:text-black">
+									<Icon class="h-4 w-4" />
+									{label}
+								</span>
+								<ArrowUpRight
+									size={14}
+									class="text-neutral-300 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-black"
+								/>
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</aside>
 		</div>
 	</div>
-</Section>
+</section>

@@ -1,7 +1,5 @@
 <script lang="ts">
-	import Section from './Section.svelte';
-	import { BookOpen } from 'lucide-svelte';
-
+	import { ArrowUpRight, Heart } from 'lucide-svelte';
 	import type { QiitaUser, QiitaArticle } from '$lib/qiita';
 
 	interface Props {
@@ -21,132 +19,99 @@
 	const QIITA_USER_ID = 'TaiyoYamada';
 </script>
 
-{#if !userData || !topArticles || topArticles.length === 0}
-	<Section id="articles" class="relative z-10 bg-white py-20">
-		<h2
-			class="text-outline mb-20 text-center text-6xl font-black tracking-tighter text-transparent uppercase md:text-8xl"
-		>
-			Articles
-		</h2>
-		<div class="text-center text-xl font-bold">
-			<p>Failed to load the latest edition.</p>
-			<a
-				href={`https://qiita.com/${QIITA_USER_ID}`}
-				class="mt-2 inline-block text-primary underline"
-			>
-				Check Qiita directly
-			</a>
-		</div>
-	</Section>
-{:else}
-	<Section id="articles" class="relative z-10 border-y-4 border-black bg-white py-20">
-		<div class="mx-auto max-w-6xl px-4">
-			<!-- Magazine Header -->
-			<div
-				class="mb-8 flex flex-col items-start justify-between gap-4 border-b-4 border-black pb-4 md:mb-16 md:flex-row md:items-center md:gap-6 md:pb-8"
-			>
-				<div class="flex flex-col items-start">
-					<span
-						class="mb-1 bg-black px-2 py-1 text-[10px] font-black tracking-widest text-white uppercase md:mb-2 md:text-xs"
-					>
-						The Tech Chronicles
-					</span>
-					<h2
-						class="cursor-default text-5xl leading-none font-black tracking-tighter text-black transition-colors hover:text-primary sm:text-6xl md:text-8xl"
-					>
-						ARTICLES
-					</h2>
-				</div>
-
-				<div
-					class="flex w-full flex-row items-center justify-between gap-4 md:w-auto md:flex-col md:items-end md:justify-end md:gap-0 md:text-right"
-				>
-					<div
-						class="rotate-2 border-2 border-black bg-primary px-4 py-2 text-xl font-black text-white shadow-[2px_2px_0_#000] md:border-4 md:px-6 md:py-3 md:text-3xl md:shadow-[4px_4px_0_#000]"
-					>
-						{userData.items_count}
-						<span class="ml-1 inline text-[10px] font-bold md:ml-0 md:block md:text-sm">POSTS</span>
-					</div>
-					<p
-						class="mt-0 max-w-[180px] text-right text-[11px] leading-tight font-bold text-gray-500 md:mt-4 md:max-w-xs md:text-right md:text-sm"
-					>
-						Latest technical insights, tutorials, and engineering journals from Taiyo Yamada.
-					</p>
-				</div>
+<section id="articles" class="bg-white py-20 md:py-28">
+	<div class="mx-auto max-w-5xl px-5 md:px-8">
+		<header class="mb-14 flex flex-col gap-6 md:mb-20 md:flex-row md:items-end md:justify-between">
+			<div>
+				<p class="mb-3 text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
+					Writing
+				</p>
+				<h1 class="text-5xl font-medium tracking-tight text-black md:text-7xl">Articles</h1>
 			</div>
+			{#if userData}
+				<p class="text-sm text-neutral-500">
+					{userData.items_count}
+					<span class="text-neutral-400">posts on</span>
+					Qiita
+				</p>
+			{/if}
+		</header>
 
-			<!-- Newspaper Grid -->
-			<div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
-				{#each topArticles as article, index}
-					<a
-						href={article.url}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="group flex h-full flex-col"
-					>
-						<article
-							class="relative flex h-full flex-col overflow-hidden border-2 border-black bg-surface p-5 shadow-[4px_4px_0_#000] transition-all duration-300 hover:-translate-y-1 hover:bg-secondary hover:shadow-[6px_6px_0_#000] md:border-4 md:p-8 md:shadow-none md:hover:shadow-pop-bold"
-						>
-							<!-- Corner Fold Effect -->
-							<div
-								class="absolute top-0 right-0 border-t-[30px] border-r-[30px] border-t-white border-r-black/10 transition-colors group-hover:border-t-white group-hover:border-r-black/20 md:border-t-[40px] md:border-r-[40px]"
-							></div>
-
-							<div class="mt-2 mb-4 flex items-center justify-between md:mt-0 md:mb-6">
-								<span
-									class="rounded border-2 border-black bg-white px-2 py-1 text-[10px] font-black text-black uppercase shadow-sm md:text-xs"
-								>
-									{index === 0 ? 'Top Story' : 'Featured'}
-								</span>
-								<div class="mr-4 flex items-center gap-1 text-[10px] font-black md:mr-6 md:text-sm">
-									<BookOpen size={14} class="md:h-4 md:w-4" />
-									<span>READ</span>
-								</div>
-							</div>
-
-							<h3
-								class="mb-4 line-clamp-3 text-xl leading-tight font-black text-black decoration-black decoration-2 underline-offset-4 group-hover:underline sm:text-2xl md:line-clamp-none md:text-3xl md:decoration-4 lg:text-4xl"
-							>
-								{article.title}
-							</h3>
-
-							<div
-								class="mt-auto flex items-end justify-between border-t-2 border-dashed border-black pt-4 md:items-center md:pt-6"
-							>
-								<div class="flex flex-wrap gap-1.5 md:gap-2">
-									{#each article.tags.slice(0, 3) as tag}
-										<span
-											class="rounded-full border border-black/10 bg-black/5 px-2 py-0.5 text-[9px] font-bold text-gray-700 md:text-xs"
-										>
-											#{tag.name}
-										</span>
-									{/each}
-								</div>
-								<div
-									class="flex shrink-0 flex-col items-center rounded-lg border-2 border-black bg-white px-2 py-1 leading-none"
-								>
-									<span class="text-lg font-black text-accent md:text-2xl"
-										>{article.likes_count}</span
-									>
-									<span class="text-[8px] font-bold tracking-wider uppercase md:text-[10px]"
-										>Likes</span
-									>
-								</div>
-							</div>
-						</article>
-					</a>
-				{/each}
-			</div>
-
-			<div class="mt-16 text-center">
+		{#if !topArticles || topArticles.length === 0}
+			<div class="border-t border-black/10 py-16 text-center">
+				<p class="text-sm text-neutral-500">記事を読み込めませんでした。</p>
 				<a
 					href={`https://qiita.com/${QIITA_USER_ID}`}
 					target="_blank"
-					class="inline-block border-2 border-transparent bg-black px-12 py-4 text-xl font-black text-white transition-all duration-300 hover:border-black hover:bg-white hover:text-black hover:shadow-pop"
+					rel="noopener noreferrer"
+					class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-black underline-offset-4 hover:underline"
 				>
-					READ MORE ARTICLES &rarr;
+					Qiita で直接見る
+					<ArrowUpRight size={14} />
 				</a>
 			</div>
-		</div>
-	</Section>
-{/if}
+		{:else}
+			<ul class="divide-y divide-black/10 border-y border-black/10">
+				{#each topArticles as article}
+					<li>
+						<a
+							href={article.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group -mx-4 grid grid-cols-[1fr_auto] gap-4 px-4 py-8 transition-colors hover:bg-black/[0.02] md:-mx-6 md:grid-cols-[1fr_auto_auto] md:gap-8 md:px-6 md:py-10"
+						>
+							<div class="min-w-0">
+								<h2
+									class="text-lg leading-snug font-semibold tracking-tight text-black md:text-xl"
+								>
+									{article.title}
+								</h2>
+								<div
+									class="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-neutral-500 md:text-sm"
+								>
+									{#each article.tags.slice(0, 4) as tag, i}
+										<span>{tag.name}</span>
+										{#if i < Math.min(article.tags.length, 4) - 1}
+											<span class="text-neutral-300">·</span>
+										{/if}
+									{/each}
+								</div>
+							</div>
+
+							<div
+								class="flex items-center gap-1.5 self-start text-xs text-neutral-500 md:self-center"
+							>
+								<Heart size={12} strokeWidth={2} />
+								<span class="font-mono">{article.likes_count}</span>
+							</div>
+
+							<div class="hidden self-center md:block">
+								<ArrowUpRight
+									size={16}
+									class="text-neutral-300 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-black"
+								/>
+							</div>
+						</a>
+					</li>
+				{/each}
+			</ul>
+
+			<div class="mt-10 flex justify-center">
+				<a
+					href={`https://qiita.com/${QIITA_USER_ID}`}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group inline-flex items-center gap-2 text-sm font-medium text-neutral-500 transition-colors hover:text-black"
+				>
+					<span class="border-b border-neutral-300 pb-0.5 transition-colors group-hover:border-black"
+						>View all on Qiita</span
+					>
+					<ArrowUpRight
+						size={14}
+						class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+					/>
+				</a>
+			</div>
+		{/if}
+	</div>
+</section>

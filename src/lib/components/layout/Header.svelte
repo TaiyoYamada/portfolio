@@ -1,19 +1,31 @@
 <script lang="ts">
 	import { fly, fade } from 'svelte/transition';
 	import { Menu, X } from 'lucide-svelte';
+	import { page } from '$app/state';
+	import { onMount } from 'svelte';
 
-	const navItems = [
-		'About Me',
-		'Projects',
-		'Research',
-		'Experience',
-		'Certifications',
-		'Awards',
-		'Articles',
-		'Contact'
+	const navItems: { label: string; href: string }[] = [
+		{ label: 'News', href: '/news' },
+		{ label: 'About', href: '/about' },
+		{ label: 'Articles', href: '/articles' },
+		{ label: 'Contact', href: '/contact' }
 	];
 
 	let isOpen = $state(false);
+	let scrolledPastHero = $state(false);
+
+	onMount(() => {
+		const check = () => {
+			scrolledPastHero = window.scrollY > window.innerHeight - 80;
+		};
+		check();
+		window.addEventListener('scroll', check, { passive: true });
+		window.addEventListener('resize', check);
+		return () => {
+			window.removeEventListener('scroll', check);
+			window.removeEventListener('resize', check);
+		};
+	});
 
 	function toggleMenu() {
 		isOpen = !isOpen;
@@ -21,77 +33,105 @@
 	function closeMenu() {
 		isOpen = false;
 	}
+
+	function isActive(href: string) {
+		const path = page.url.pathname;
+		if (href === '/') return path === '/';
+		return path === href || path.startsWith(href + '/');
+	}
+
+	const onDark = $derived(page.url.pathname === '/' && !scrolledPastHero);
 </script>
 
-<!-- Desktop / Header Bar -->
-<header
-	in:fly={{ y: -100, duration: 800 }}
-	class="fixed top-4 right-0 left-0 z-50 mx-auto max-w-5xl px-4"
->
+<header class="fixed inset-x-0 top-0 z-50">
 	<div
-		class="relative z-50 flex h-16 items-center justify-between rounded-full border-2 border-black bg-white px-6 shadow-pop"
+		class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:h-20 md:px-8"
 	>
-		<!-- Logo / Name -->
+		<!-- Logo monogram -->
 		<a
 			href="/"
-			class="flex items-center gap-2 text-lg font-black tracking-tight text-black transition-colors hover:text-primary md:text-xl"
+			aria-label="Home"
+			class={`flex h-9 w-9 items-center justify-center rounded-full text-[11px] font-semibold tracking-[0.05em] transition-all hover:-translate-y-0.5 md:h-10 md:w-10 md:text-xs ${
+				onDark
+					? 'bg-white text-black hover:bg-white/90'
+					: 'bg-black text-white hover:bg-black/90'
+			}`}
 		>
-			<span class="h-3 w-3 rounded-full border border-black bg-accent"></span>
-			TaiyoYamada
+			TY
 		</a>
 
-		<!-- Desktop Navigation -->
-		<nav class="hidden items-center gap-1 xl:flex">
-			{#each navItems as item, index}
-				<a
-					href={`#${item.toLowerCase().replace(' ', '-')}`}
-					style="--hover-rot: {((index % 5) - 2) * 2}deg;"
-					class="rounded-full border border-transparent px-3 py-2 text-xs font-bold text-black transition-all hover:[transform:scale(1.1)_rotate(var(--hover-rot))] hover:border-black hover:bg-secondary hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-				>
-					{item}
-				</a>
-			{/each}
-		</nav>
+		<!-- Right: nav + mobile button -->
+		<div class="flex items-center">
+			<!-- Desktop Navigation -->
+			<nav class="hidden items-center gap-10 lg:flex">
+				{#each navItems as item}
+					<a
+						href={item.href}
+						class={`relative text-[15px] font-medium tracking-tight transition-colors md:text-base ${
+							isActive(item.href)
+								? onDark
+									? 'text-white'
+									: 'text-black'
+								: onDark
+									? 'text-white/75 hover:text-white'
+									: 'text-neutral-600 hover:text-black'
+						}`}
+					>
+						{item.label}
+						{#if isActive(item.href)}
+							<span
+								class={`absolute -bottom-1.5 left-0 h-px w-full ${onDark ? 'bg-white' : 'bg-black'}`}
+							></span>
+						{/if}
+					</a>
+				{/each}
+			</nav>
 
-		<!-- Mobile Menu Button -->
-		<button
-			onclick={toggleMenu}
-			class="rounded-full border border-transparent p-2 text-black transition-all hover:border-black hover:bg-secondary xl:hidden"
-			aria-label={isOpen ? 'Close menu' : 'Open menu'}
-		>
-			{#if isOpen}
-				<X size={24} />
-			{:else}
-				<Menu size={24} />
-			{/if}
-		</button>
+			<!-- Mobile Menu Button -->
+			<button
+				onclick={toggleMenu}
+				class={`inline-flex h-10 w-10 items-center justify-center rounded-md transition-colors lg:hidden ${
+					onDark
+						? 'text-white hover:bg-white/10'
+						: 'text-black hover:bg-black/5'
+				}`}
+				aria-label={isOpen ? 'Close menu' : 'Open menu'}
+			>
+				{#if isOpen}
+					<X size={22} strokeWidth={2} />
+				{:else}
+					<Menu size={22} strokeWidth={2} />
+				{/if}
+			</button>
+		</div>
 	</div>
 </header>
 
 <!-- Mobile Navigation Overlay -->
 {#if isOpen}
-	<div
-		in:fade={{ duration: 200 }}
-		out:fade={{ duration: 200 }}
-		class="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm xl:hidden"
+	<button
+		type="button"
+		tabindex="-1"
+		aria-label="Close menu"
+		in:fade={{ duration: 150 }}
+		out:fade={{ duration: 150 }}
+		class="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm lg:hidden"
 		onclick={closeMenu}
-		role="presentation"
-	></div>
+	></button>
 
 	<nav
-		in:fly={{ y: -20, duration: 300 }}
-		out:fly={{ y: -20, duration: 300 }}
-		class="fixed top-24 right-4 left-4 z-50 max-h-[80vh] overflow-y-auto rounded-2xl border-2 border-black bg-white p-4 shadow-pop xl:hidden"
+		in:fly={{ y: -8, duration: 200 }}
+		out:fly={{ y: -8, duration: 150 }}
+		class="fixed inset-x-4 top-20 z-50 overflow-hidden rounded-xl border border-black/10 bg-white shadow-lg lg:hidden"
 	>
-		<div class="flex flex-col gap-2">
-			{#each navItems as item, index}
+		<div class="flex flex-col p-2">
+			{#each navItems as item}
 				<a
-					href={`#${item.toLowerCase().replace(' ', '-')}`}
+					href={item.href}
 					onclick={closeMenu}
-					in:fly={{ x: -20, duration: 300, delay: index * 50 }}
-					class="rounded-xl border-2 border-transparent p-3 text-lg font-bold text-black transition-all hover:border-black hover:bg-primary hover:text-white hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+					class={`rounded-lg px-4 py-3 text-sm font-medium transition-colors ${isActive(item.href) ? 'bg-black/5 text-black' : 'text-neutral-600 hover:bg-black/5 hover:text-black'}`}
 				>
-					{item}
+					{item.label}
 				</a>
 			{/each}
 		</div>

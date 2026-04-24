@@ -2,42 +2,35 @@
 
 @theme {
 	--color-background: #ffffff;
-	--color-surface: #f9f9f9;
-	--color-text: #202020;
+	--color-surface: #f1f1ef;
+	--color-text: #0a0a0a;
 	--color-primary: #007cc7;
 	--color-secondary: #ffdd44;
 	--color-accent: #de354c;
 	--color-success: #4caf50;
-	--color-muted: #9ca3af;
+	--color-muted: #737373;
+	--color-line: #e5e5e5;
 
 	--font-sans: var(--font-inter), sans-serif;
-	--font-heading: var(--font-outfit), sans-serif;
+	--font-heading: var(--font-inter), sans-serif;
 
 	--shadow-pop: 4px 4px 0px 0px #202020;
 	--shadow-pop-hover: 6px 6px 0px 0px #202020;
 	--shadow-pop-bold: 8px 8px 0px 0px #202020;
-
-	--background-image-grid-pattern:
-		linear-gradient(to right, #f0f0f0 1px, transparent 1px),
-		linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
 
 	--animate-bounce-slow: bounce 3s infinite;
 	--animate-float: float 6s ease-in-out infinite;
 }
 
 :root {
-	--foreground-rgb: 32, 32, 32;
+	--foreground-rgb: 10, 10, 10;
 	--font-inter: 'Inter', sans-serif;
-	--font-outfit: 'Outfit', sans-serif;
 }
 
 @layer base {
 	body {
-		@apply bg-background text-text antialiased selection:bg-secondary selection:text-black;
-		background-size: 40px 40px;
-		background-image:
-			linear-gradient(to right, #f2f2f2 1px, transparent 1px),
-			linear-gradient(to bottom, #f2f2f2 1px, transparent 1px);
+		@apply bg-background text-text antialiased selection:bg-black selection:text-white;
+		font-feature-settings: 'ss01', 'cv11';
 	}
 
 	h1,
@@ -46,20 +39,6 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-heading font-black tracking-tight;
-	}
-}
-
-@layer utilities {
-	.text-outline {
-		text-shadow: 2px 2px 0px #000;
-	}
-
-	.text-pop {
-		@apply bg-gradient-to-r from-primary to-accent bg-clip-text font-black text-transparent drop-shadow-[2px_2px_0px_rgba(0,0,0,1)];
-	}
-
-	.card-pop {
-		@apply border-2 border-black bg-white shadow-pop transition-all duration-200 hover:-translate-y-1 hover:shadow-pop-hover;
+		@apply font-medium tracking-tight;
 	}
 }
