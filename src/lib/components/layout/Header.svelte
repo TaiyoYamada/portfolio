@@ -44,17 +44,13 @@
 </script>
 
 <header class="fixed inset-x-0 top-0 z-50">
-	<div
-		class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:h-20 md:px-8"
-	>
+	<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:h-20 md:px-8">
 		<!-- Logo monogram -->
 		<a
 			href="/"
 			aria-label="Home"
 			class={`flex h-9 w-9 items-center justify-center rounded-full text-[11px] font-semibold tracking-[0.05em] transition-all hover:-translate-y-0.5 md:h-10 md:w-10 md:text-xs ${
-				onDark
-					? 'bg-white text-black hover:bg-white/90'
-					: 'bg-black text-white hover:bg-black/90'
+				onDark ? 'bg-white text-black hover:bg-white/90' : 'bg-black text-white hover:bg-black/90'
 			}`}
 		>
 			TY
@@ -91,9 +87,7 @@
 			<button
 				onclick={toggleMenu}
 				class={`inline-flex h-10 w-10 items-center justify-center rounded-md transition-colors lg:hidden ${
-					onDark
-						? 'text-white hover:bg-white/10'
-						: 'text-black hover:bg-black/5'
+					onDark ? 'text-white hover:bg-white/10' : 'text-black hover:bg-black/5'
 				}`}
 				aria-label={isOpen ? 'Close menu' : 'Open menu'}
 			>

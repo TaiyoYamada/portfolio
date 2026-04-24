@@ -10,10 +10,7 @@
 
 <svelte:head>
 	<title>About | Taiyo Yamada</title>
-	<meta
-		name="description"
-		content="山田大陽のプロフィール、経歴、研究活動、保有資格、受賞歴。"
-	/>
+	<meta name="description" content="山田大陽のプロフィール、経歴、研究活動、保有資格、受賞歴。" />
 </svelte:head>
 
 <main class="relative min-h-screen pt-28 md:pt-32">

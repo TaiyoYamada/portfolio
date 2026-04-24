@@ -49,10 +49,7 @@
 			href="/news"
 			class="group inline-flex items-center gap-1.5 text-sm text-neutral-500 transition-colors hover:text-black"
 		>
-			<ArrowLeft
-				size={14}
-				class="transition-transform group-hover:-translate-x-0.5"
-			/>
+			<ArrowLeft size={14} class="transition-transform group-hover:-translate-x-0.5" />
 			News
 		</a>
 
@@ -66,22 +63,14 @@
 		</div>
 
 		<!-- Title -->
-		<h1
-			class="mt-5 text-3xl leading-[1.15] font-medium tracking-tight text-black md:text-5xl"
-		>
+		<h1 class="mt-5 text-3xl leading-[1.15] font-medium tracking-tight text-black md:text-5xl">
 			{item.title}
 		</h1>
 
 		<!-- Hero image -->
 		{#if item.image}
-			<div
-				class="mt-10 aspect-[3/2] overflow-hidden rounded-xl bg-neutral-100 md:mt-14"
-			>
-				<img
-					src={item.image}
-					alt={item.title}
-					class="h-full w-full object-cover"
-				/>
+			<div class="mt-10 aspect-[3/2] overflow-hidden rounded-xl bg-neutral-100 md:mt-14">
+				<img src={item.image} alt={item.title} class="h-full w-full object-cover" />
 			</div>
 		{/if}
 
@@ -120,10 +109,7 @@
 				href="/news"
 				class="group inline-flex items-center gap-1.5 text-sm text-neutral-500 transition-colors hover:text-black"
 			>
-				<ArrowLeft
-					size={14}
-					class="transition-transform group-hover:-translate-x-0.5"
-				/>
+				<ArrowLeft size={14} class="transition-transform group-hover:-translate-x-0.5" />
 				All news
 			</a>
 		</div>

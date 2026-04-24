@@ -22,9 +22,7 @@
 <section class="bg-surface py-14 md:py-20">
 	<div class="mx-auto max-w-5xl px-5 md:px-8">
 		<header class="mb-10 md:mb-14">
-			<p class="mb-3 text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
-				Stack
-			</p>
+			<p class="mb-3 text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">Stack</p>
 			<h2 class="text-3xl font-medium tracking-tight text-black md:text-4xl">Tools &amp; Tech</h2>
 		</header>
 

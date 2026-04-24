@@ -1,11 +1,6 @@
 <script lang="ts">
 	import { ArrowUpRight } from 'lucide-svelte';
-	import {
-		getAllNews,
-		CATEGORY_LABEL,
-		type NewsCategory,
-		type NewsItem
-	} from '$lib/news';
+	import { getAllNews, CATEGORY_LABEL, type NewsCategory, type NewsItem } from '$lib/news';
 	import Footer from '$lib/components/layout/Footer.svelte';
 
 	const all = getAllNews();
@@ -17,7 +12,20 @@
 		filter === 'all' ? all : all.filter((n: NewsItem) => n.category === filter)
 	);
 
-	const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+	const MONTHS = [
+		'Jan',
+		'Feb',
+		'Mar',
+		'Apr',
+		'May',
+		'Jun',
+		'Jul',
+		'Aug',
+		'Sep',
+		'Oct',
+		'Nov',
+		'Dec'
+	];
 
 	function formatDate(date: string) {
 		const [y, m, d] = date.split('-');

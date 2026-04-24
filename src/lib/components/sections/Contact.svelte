@@ -91,9 +91,7 @@
 				</p>
 
 				{#if status === 'success'}
-					<div
-						class="border-t border-b border-black/10 py-12 text-center"
-					>
+					<div class="border-t border-b border-black/10 py-12 text-center">
 						<p class="text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
 							Thanks
 						</p>
@@ -172,7 +170,13 @@
 						</div>
 
 						<!-- Honeypot -->
-						<input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+						<input
+							type="checkbox"
+							name="botcheck"
+							class="hidden"
+							tabindex="-1"
+							autocomplete="off"
+						/>
 
 						<div class="flex flex-wrap items-center gap-6 pt-2">
 							<button
@@ -198,9 +202,7 @@
 
 			<!-- Right: other channels -->
 			<aside class="md:pt-2">
-				<p class="text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
-					Elsewhere
-				</p>
+				<p class="text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">Elsewhere</p>
 				<ul class="mt-5 divide-y divide-black/10 border-t border-b border-black/10">
 					{#each socials as { Icon, href, label }}
 						<li>
@@ -210,7 +212,9 @@
 								rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
 								class="group flex items-center justify-between py-4 transition-colors hover:text-black"
 							>
-								<span class="flex items-center gap-3 text-[15px] font-medium text-neutral-700 group-hover:text-black">
+								<span
+									class="flex items-center gap-3 text-[15px] font-medium text-neutral-700 group-hover:text-black"
+								>
 									<Icon class="h-4 w-4" />
 									{label}
 								</span>

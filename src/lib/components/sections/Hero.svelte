@@ -226,9 +226,7 @@
 	{/each}
 
 	<!-- Gradient overlays for legibility -->
-	<div
-		class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/30"
-	></div>
+	<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/30"></div>
 	<div class="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-transparent"></div>
 
 	<!-- Bloch sphere (qubit state) -->
@@ -239,15 +237,10 @@
 	></canvas>
 
 	<!-- Content -->
-	<div
-		class="relative z-10 flex h-full flex-col justify-end px-6 pb-20 md:px-16 md:pb-28 lg:px-24"
-	>
+	<div class="relative z-10 flex h-full flex-col justify-end px-6 pb-20 md:px-16 md:pb-28 lg:px-24">
 		<div class="max-w-3xl">
 			{#if mounted}
-				<div
-					in:fly={{ y: 20, duration: 700, delay: 200 }}
-					class="mb-6 flex items-center gap-3"
-				>
+				<div in:fly={{ y: 20, duration: 700, delay: 200 }} class="mb-6 flex items-center gap-3">
 					<span class="h-px w-8 bg-white/60"></span>
 					<span
 						class="text-[10px] font-medium tracking-[0.28em] text-white/80 uppercase md:text-[11px]"
@@ -311,10 +304,7 @@
 	</div>
 
 	<!-- Scroll Indicator -->
-	<div
-		class="float-arrow absolute bottom-6 left-1/2 z-10 -translate-x-1/2"
-		aria-hidden="true"
-	>
+	<div class="float-arrow absolute bottom-6 left-1/2 z-10 -translate-x-1/2" aria-hidden="true">
 		<ArrowDown class="h-6 w-6 text-white/70" strokeWidth={2} />
 	</div>
 </section>

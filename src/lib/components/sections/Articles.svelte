@@ -61,9 +61,7 @@
 							class="group -mx-4 grid grid-cols-[1fr_auto] gap-4 px-4 py-8 transition-colors hover:bg-black/[0.02] md:-mx-6 md:grid-cols-[1fr_auto_auto] md:gap-8 md:px-6 md:py-10"
 						>
 							<div class="min-w-0">
-								<h2
-									class="text-lg leading-snug font-semibold tracking-tight text-black md:text-xl"
-								>
+								<h2 class="text-lg leading-snug font-semibold tracking-tight text-black md:text-xl">
 									{article.title}
 								</h2>
 								<div
@@ -103,7 +101,8 @@
 					rel="noopener noreferrer"
 					class="group inline-flex items-center gap-2 text-sm font-medium text-neutral-500 transition-colors hover:text-black"
 				>
-					<span class="border-b border-neutral-300 pb-0.5 transition-colors group-hover:border-black"
+					<span
+						class="border-b border-neutral-300 pb-0.5 transition-colors group-hover:border-black"
 						>View all on Qiita</span
 					>
 					<ArrowUpRight

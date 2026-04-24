@@ -36,9 +36,7 @@
 <section id="experience" class="bg-white py-14 md:py-20">
 	<div class="mx-auto max-w-5xl px-5 md:px-8">
 		<header class="mb-10 md:mb-14">
-			<p class="mb-3 text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
-				Work
-			</p>
+			<p class="mb-3 text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">Work</p>
 			<h2 class="text-3xl font-medium tracking-tight text-black md:text-5xl">Experience</h2>
 		</header>
 
@@ -49,17 +47,13 @@
 						<p class="font-mono text-[11px] text-neutral-500 md:text-xs">{exp.period}</p>
 					</div>
 					<div>
-						<h2
-							class="text-xl leading-tight font-semibold tracking-tight text-black md:text-2xl"
-						>
+						<h2 class="text-xl leading-tight font-semibold tracking-tight text-black md:text-2xl">
 							{exp.company}
 						</h2>
 						<p class="mt-1 text-sm text-neutral-500 md:text-[15px]">{exp.role}</p>
 
 						{#if exp.details.length > 0}
-							<ul
-								class="mt-5 space-y-2 text-sm leading-relaxed text-neutral-600 md:text-[15px]"
-							>
+							<ul class="mt-5 space-y-2 text-sm leading-relaxed text-neutral-600 md:text-[15px]">
 								{#each exp.details as d}
 									<li class="flex gap-3">
 										<span class="mt-[0.65em] h-px w-3 shrink-0 bg-neutral-300"></span>

@@ -22,9 +22,7 @@
 	<div class="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-16">
 		<dl class="divide-y divide-white/10 border-t border-b border-white/10">
 			<div class="flex flex-col gap-3 py-5 md:grid md:grid-cols-[160px_1fr] md:gap-4">
-				<dt class="text-[11px] font-medium tracking-[0.2em] text-white/40 uppercase">
-					Explore
-				</dt>
+				<dt class="text-[11px] font-medium tracking-[0.2em] text-white/40 uppercase">Explore</dt>
 				<dd class="flex flex-wrap gap-x-6 gap-y-2">
 					{#each navItems as item}
 						<a
@@ -38,9 +36,7 @@
 			</div>
 
 			<div class="flex flex-col gap-3 py-5 md:grid md:grid-cols-[160px_1fr] md:gap-4">
-				<dt class="text-[11px] font-medium tracking-[0.2em] text-white/40 uppercase">
-					Elsewhere
-				</dt>
+				<dt class="text-[11px] font-medium tracking-[0.2em] text-white/40 uppercase">Elsewhere</dt>
 				<dd class="flex flex-wrap gap-x-5 gap-y-2">
 					{#each socials as { Icon, href, label }}
 						<a

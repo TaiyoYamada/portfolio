@@ -61,16 +61,12 @@
 					<li class="grid grid-cols-1 gap-3 py-7 md:grid-cols-[140px_1fr] md:gap-10 md:py-8">
 						<div>
 							<p class="font-mono text-[11px] text-neutral-500 md:text-xs">{cert.date}</p>
-							<p
-								class="mt-1 text-[10px] font-medium tracking-[0.15em] text-neutral-400 uppercase"
-							>
+							<p class="mt-1 text-[10px] font-medium tracking-[0.15em] text-neutral-400 uppercase">
 								{typeLabel[cert.type]}
 							</p>
 						</div>
 						<div>
-							<h2
-								class="text-base leading-snug font-semibold tracking-tight text-black md:text-lg"
-							>
+							<h2 class="text-base leading-snug font-semibold tracking-tight text-black md:text-lg">
 								{cert.title}
 							</h2>
 							<p class="mt-1 text-sm text-neutral-500 md:text-[15px]">{cert.issuer}</p>

@@ -20,13 +20,11 @@
 			<!-- Photo -->
 			<div class="order-1 md:order-none">
 				<div class="aspect-[4/5] w-full overflow-hidden rounded-2xl bg-neutral-100">
-					<img
-						src="/me.png"
-						alt="Taiyo Yamada"
-						class="h-full w-full object-cover"
-					/>
+					<img src="/me.png" alt="Taiyo Yamada" class="h-full w-full object-cover" />
 				</div>
-				<p class="mt-3 font-mono text-[11px] text-neutral-400">— ヒッチハイク（福岡 - 東京）, 2025</p>
+				<p class="mt-3 font-mono text-[11px] text-neutral-400">
+					— ヒッチハイク（福岡 - 東京）, 2025
+				</p>
 			</div>
 
 			<!-- Content -->
@@ -40,12 +38,10 @@
 
 				<div class="mt-8 space-y-5 text-[15px] leading-[1.8] text-neutral-700 md:text-base">
 					<p>
-						大学では法律・経済・情報を横断的に学びながら、研究室では量子アルゴリズムの研究、並行して Swift
-						を中心としたアプリ・ライブラリの開発を行っています。
+						大学では法律・経済・情報を横断的に学びながら、研究室では量子アルゴリズムの研究、並行して
+						Swift を中心としたアプリ・ライブラリの開発を行っています。
 					</p>
-					<p>
-						衝動で動くタイプで、面白そうと思ったらだいたい手を出しています。
-					</p>
+					<p>衝動で動くタイプで、面白そうと思ったらだいたい手を出しています。</p>
 				</div>
 
 				<!-- Facts -->

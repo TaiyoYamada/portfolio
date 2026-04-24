@@ -29,9 +29,7 @@
 						<p class="font-mono text-[11px] text-neutral-500 md:text-xs">{a.date}</p>
 					</div>
 					<div>
-						<h2
-							class="text-lg leading-snug font-semibold tracking-tight text-black md:text-xl"
-						>
+						<h2 class="text-lg leading-snug font-semibold tracking-tight text-black md:text-xl">
 							{a.title}
 						</h2>
 						<p class="mt-3 max-w-3xl text-sm leading-relaxed text-neutral-600 md:text-[15px]">
