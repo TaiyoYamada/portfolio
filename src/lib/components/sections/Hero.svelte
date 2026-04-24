@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
-	import { Github, Mail, ArrowDown } from 'lucide-svelte';
+	import { Github, Mail } from 'lucide-svelte';
 	import QiitaIcon from '$lib/components/icons/QiitaIcon.svelte';
 	import XIcon from '$lib/components/icons/XIcon.svelte';
 	import { onMount } from 'svelte';
@@ -237,7 +237,9 @@
 	></canvas>
 
 	<!-- Content -->
-	<div class="relative z-10 flex h-full flex-col justify-end px-6 pb-20 md:px-16 md:pb-28 lg:px-24">
+	<div
+		class="relative z-10 flex h-full flex-col justify-center px-6 pt-24 pb-16 md:justify-end md:px-16 md:pt-0 md:pb-28 lg:px-24"
+	>
 		<div class="max-w-3xl">
 			{#if mounted}
 				<div in:fly={{ y: 20, duration: 700, delay: 200 }} class="mb-6 flex items-center gap-3">
@@ -302,11 +304,6 @@
 			{/if}
 		</div>
 	</div>
-
-	<!-- Scroll Indicator -->
-	<div class="float-arrow absolute bottom-6 left-1/2 z-10 -translate-x-1/2" aria-hidden="true">
-		<ArrowDown class="h-6 w-6 text-white/70" strokeWidth={2} />
-	</div>
 </section>
 
 <style>
@@ -323,22 +320,8 @@
 		}
 	}
 
-	.float-arrow {
-		animation: floatArrow 2s ease-in-out infinite;
-	}
-	@keyframes floatArrow {
-		0%,
-		100% {
-			transform: translate(-50%, 0);
-		}
-		50% {
-			transform: translate(-50%, 8px);
-		}
-	}
-
 	@media (prefers-reduced-motion: reduce) {
-		.kenburns,
-		.float-arrow {
+		.kenburns {
 			animation: none;
 		}
 	}
