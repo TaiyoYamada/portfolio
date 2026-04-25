@@ -13,7 +13,7 @@
 	];
 </script>
 
-<section id="awards" class="bg-surface py-14 md:py-20">
+<section id="awards" class="bg-white py-14 md:py-20">
 	<div class="mx-auto max-w-5xl px-5 md:px-8">
 		<header class="mb-10 md:mb-14">
 			<p class="mb-3 text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">

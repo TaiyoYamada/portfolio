@@ -4,7 +4,7 @@
 
 	let { children } = $props();
 
-	const siteUrl = 'https://taiyoyamada.dev';
+	const siteUrl = 'https://taiyoyamada.com';
 	const siteName = 'Taiyo Yamada';
 	const siteDescription =
 		'山田大陽のホームページ。量子アルゴリズムの研究と、iOS / Web アプリの開発をしています。';

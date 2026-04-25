@@ -12,7 +12,7 @@
 		{ Icon: XIcon, href: 'https://x.com/taiyo_sunsun05', label: 'X' },
 		{
 			Icon: Mail,
-			href: 'mailto:t-yamada@ilab.pu-kumamoto.ac.jp',
+			href: 'mailto:tai09to06y@gmail.com',
 			label: 'Email'
 		}
 	];

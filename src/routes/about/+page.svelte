@@ -3,8 +3,8 @@
 	// import Skills from '$lib/components/sections/Skills.svelte';
 	import Experience from '$lib/components/sections/Experience.svelte';
 	import Research from '$lib/components/sections/Research.svelte';
-	import Certifications from '$lib/components/sections/Certifications.svelte';
 	import Awards from '$lib/components/sections/Awards.svelte';
+	import Certifications from '$lib/components/sections/Certifications.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 </script>
 
@@ -18,7 +18,7 @@
 	<!-- <Skills /> -->
 	<Experience />
 	<Research />
-	<Certifications />
 	<Awards />
+	<Certifications />
 	<Footer />
 </main>
