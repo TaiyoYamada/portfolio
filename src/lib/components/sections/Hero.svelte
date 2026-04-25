@@ -5,7 +5,7 @@
 	import XIcon from '$lib/components/icons/XIcon.svelte';
 	import { onMount } from 'svelte';
 
-	const images = ['/hero-night.jpg', '/hero-night-2.jpg', '/hero-night-3.jpg'];
+	const images = ['/hero.jpg', '/hero-2.jpg', '/hero-3.jpg'];
 	const HOLD_MS = 6500;
 
 	const titleChars = "Hi, I'm Taiyo.".split('');
