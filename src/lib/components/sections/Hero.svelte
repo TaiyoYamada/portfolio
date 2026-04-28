@@ -82,9 +82,9 @@
 				class="font-medium leading-[0.92] tracking-[-0.03em] text-black"
 				style="font-size: clamp(3rem, 11vw, 10rem);"
 			>
-				THE FULL<br />
-				STACK<br />
-				ENGINEER
+				WRITING<br />
+				NATURE<br />
+				IN CODE.
 			</h1>
 
 			<!-- Subtitle stack -->
@@ -92,31 +92,11 @@
 				in:fly={{ y: 20, duration: 600, delay: 550 }}
 				class="mt-5 flex flex-col text-xs font-medium tracking-[0.2em] text-black/70 md:mt-8 md:ml-4 md:text-sm"
 			>
-				<span>ENGINEER</span>
-				<span>DESIGNER</span>
-				<span>&amp; CREATOR</span>
+				<span>AI</span>
+				<span>QUANTUM</span>
 			</div>
 		{/if}
 
-		<!-- Bottom section teaser -->
-		{#if mounted}
-			<div in:fly={{ y: 20, duration: 600, delay: 950 }} class="mt-auto">
-				<div class="flex items-end gap-3">
-					<span
-						class="font-medium leading-none tracking-tight text-black"
-						style="font-size: clamp(3rem, 8vw, 7rem);"
-					>
-						01
-					</span>
-					<div
-						class="flex flex-col pb-2 text-[10px] font-medium tracking-[0.22em] text-black/60 md:text-xs"
-					>
-						<span>NEWS</span>
-						<span class="opacity-70">お知らせ</span>
-					</div>
-				</div>
-			</div>
-		{/if}
 	</div>
 </section>
 
