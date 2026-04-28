@@ -45,9 +45,7 @@
 					<a
 						href={item.href}
 						class={`relative text-[15px] font-medium tracking-tight transition-colors md:text-base ${
-							isActive(item.href)
-								? 'text-black'
-								: 'text-neutral-600 hover:text-black'
+							isActive(item.href) ? 'text-black' : 'text-neutral-600 hover:text-black'
 						}`}
 					>
 						{item.label}

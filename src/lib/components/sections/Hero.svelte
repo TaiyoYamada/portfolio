@@ -39,7 +39,7 @@
 </script>
 
 <section class="relative h-screen w-full overflow-hidden bg-white">
-	<!-- Floating gradient orbs -->
+	<!-- Floating gradient orbs (monochrome layered) -->
 	<div aria-hidden="true" class="orb orb-pink absolute"></div>
 	<div aria-hidden="true" class="orb orb-rainbow absolute"></div>
 	<div aria-hidden="true" class="orb orb-red absolute"></div>
@@ -50,13 +50,13 @@
 		<a
 			href="/about"
 			in:fly={{ y: 20, duration: 700, delay: 800 }}
-			class="badge group absolute top-[42%] right-6 z-20 flex h-28 w-28 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-white md:top-[46%] md:right-[8%] md:h-44 md:w-44 lg:h-52 lg:w-52"
+			class="badge group absolute top-[42%] right-6 z-20 flex h-28 w-28 -translate-y-1/2 items-center justify-center rounded-full bg-black text-white md:top-[46%] md:right-[8%] md:h-44 md:w-44 lg:h-52 lg:w-52"
 		>
 			<div class="flex flex-col items-center text-center">
 				<span class="text-[10px] font-medium tracking-[0.22em] md:text-xs">ABOUT ME</span>
-				<span class="mt-0.5 text-[9px] tracking-[0.15em] opacity-80 md:text-[10px]">自己紹介</span>
+				<span class="mt-0.5 text-[9px] tracking-[0.15em] opacity-70 md:text-[10px]">自己紹介</span>
 				<ArrowUpRight
-					class="mt-1.5 h-3.5 w-3.5 opacity-80 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 md:h-4 md:w-4"
+					class="mt-1.5 h-3.5 w-3.5 opacity-80 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 md:h-4 md:w-4"
 				/>
 			</div>
 		</a>
@@ -71,7 +71,7 @@
 		{#if mounted}
 			<!-- Top label -->
 			<div in:fly={{ y: 20, duration: 600, delay: 200 }} class="mb-3">
-				<span class="text-sm font-medium tracking-[0.2em] text-accent md:text-base">
+				<span class="text-sm font-medium tracking-[0.2em] text-neutral-500 md:text-base">
 					TAIYO YAMADA
 				</span>
 			</div>
@@ -79,7 +79,7 @@
 			<!-- Massive headline -->
 			<h1
 				in:fly={{ y: 30, duration: 800, delay: 350 }}
-				class="font-medium leading-[0.92] tracking-[-0.03em] text-black"
+				class="leading-[0.92] font-medium tracking-[-0.03em] text-black"
 				style="font-size: clamp(3rem, 11vw, 10rem);"
 			>
 				WRITING<br />
@@ -96,7 +96,6 @@
 				<span>QUANTUM</span>
 			</div>
 		{/if}
-
 	</div>
 </section>
 
@@ -107,69 +106,85 @@
 		will-change: transform;
 	}
 
+	/* Large smoky orb top-right: deepest tone, atmospheric anchor */
 	.orb-pink {
-		top: -12%;
-		right: -6%;
-		width: 60vw;
-		height: 60vw;
-		max-width: 720px;
-		max-height: 720px;
+		top: -14%;
+		right: -8%;
+		width: 62vw;
+		height: 62vw;
+		max-width: 740px;
+		max-height: 740px;
 		background: radial-gradient(
 			circle at 35% 30%,
-			#ffd1d9 0%,
-			#ff7a8e 30%,
-			#ff2d5f 62%,
-			transparent 92%
+			rgba(20, 20, 20, 0.55) 0%,
+			rgba(40, 40, 40, 0.32) 28%,
+			rgba(90, 90, 90, 0.16) 55%,
+			rgba(140, 140, 140, 0.06) 78%,
+			transparent 95%
 		);
-		filter: blur(50px);
+		filter: blur(55px);
 		animation: float 14s ease-in-out infinite;
 	}
 
+	/* Conic tonal swirl bottom-left: movement, mid-greys */
 	.orb-rainbow {
-		bottom: -18%;
-		left: -10%;
-		width: 55vw;
-		height: 55vw;
-		max-width: 650px;
-		max-height: 650px;
+		bottom: -20%;
+		left: -12%;
+		width: 56vw;
+		height: 56vw;
+		max-width: 660px;
+		max-height: 660px;
 		background: conic-gradient(
 			from 200deg,
-			#ff6b6b,
-			#ffb84d,
-			#6bcf63,
-			#4dabf7,
-			#d96bff,
-			#ff6b6b
+			rgba(30, 30, 30, 0.55),
+			rgba(170, 170, 170, 0.18),
+			rgba(60, 60, 60, 0.45),
+			rgba(200, 200, 200, 0.12),
+			rgba(40, 40, 40, 0.5),
+			rgba(140, 140, 140, 0.22),
+			rgba(30, 30, 30, 0.55)
 		);
-		filter: blur(70px);
-		opacity: 0.85;
+		filter: blur(75px);
+		opacity: 0.7;
 		animation: float 18s ease-in-out infinite reverse;
 		animation-delay: -4s;
 	}
 
+	/* Small dense ink drop: focal accent */
 	.orb-red {
-		top: 38%;
+		top: 40%;
 		right: 30%;
-		width: 14vw;
-		height: 14vw;
-		max-width: 200px;
-		max-height: 200px;
-		background: radial-gradient(circle at 40% 40%, #ff7a8e 0%, #c9184a 70%, transparent 100%);
-		filter: blur(20px);
-		opacity: 0.85;
+		width: 12vw;
+		height: 12vw;
+		max-width: 180px;
+		max-height: 180px;
+		background: radial-gradient(
+			circle at 40% 40%,
+			rgba(30, 30, 30, 0.42) 0%,
+			rgba(70, 70, 70, 0.2) 55%,
+			transparent 100%
+		);
+		filter: blur(28px);
+		opacity: 0.6;
 		animation: float 10s ease-in-out infinite;
 		animation-delay: -6s;
 	}
 
+	/* Pale highlight: lifts the upper-mid space */
 	.orb-soft {
-		top: 10%;
-		left: 38%;
-		width: 9vw;
-		height: 9vw;
-		max-width: 130px;
-		max-height: 130px;
-		background: radial-gradient(circle, #ffd6e0 0%, #ffaec0 70%, transparent 100%);
-		filter: blur(30px);
+		top: 12%;
+		left: 36%;
+		width: 11vw;
+		height: 11vw;
+		max-width: 160px;
+		max-height: 160px;
+		background: radial-gradient(
+			circle,
+			rgba(120, 120, 120, 0.32) 0%,
+			rgba(180, 180, 180, 0.16) 60%,
+			transparent 100%
+		);
+		filter: blur(35px);
 		animation: float 16s ease-in-out infinite;
 		animation-delay: -9s;
 	}
@@ -188,7 +203,7 @@
 	}
 
 	.badge {
-		box-shadow: 0 24px 50px -16px rgba(222, 53, 76, 0.5);
+		box-shadow: 0 24px 55px -18px rgba(0, 0, 0, 0.55);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

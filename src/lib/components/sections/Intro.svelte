@@ -81,8 +81,14 @@
 {#if show}
 	<div class="intro-root fixed inset-0 z-[100]" aria-hidden="true">
 		<!-- Curtains (split open at end) -->
-		<div class="curtain curtain-top absolute inset-x-0 top-0 bg-black" class:open={phase === 'opening' || phase === 'done'}></div>
-		<div class="curtain curtain-bottom absolute inset-x-0 bottom-0 bg-black" class:open={phase === 'opening' || phase === 'done'}></div>
+		<div
+			class="curtain curtain-top absolute inset-x-0 top-0 bg-black"
+			class:open={phase === 'opening' || phase === 'done'}
+		></div>
+		<div
+			class="curtain curtain-bottom absolute inset-x-0 bottom-0 bg-black"
+			class:open={phase === 'opening' || phase === 'done'}
+		></div>
 
 		<!-- Content: centered morphing word only -->
 		<div
@@ -139,5 +145,4 @@
 			filter: blur(0);
 		}
 	}
-
 </style>
