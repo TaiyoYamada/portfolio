@@ -116,7 +116,7 @@
 									rel="noopener noreferrer"
 									class="rounded-full border-2 border-black bg-white p-1.5 transition-colors hover:bg-black hover:text-white md:p-2"
 								>
-									<Github class="h-4 w-4 md:h-[18px] md:w-[18px]" />
+									<Github class="h-4 w-4 md:h-4.5 md:w-4.5" />
 								</a>
 							{/if}
 							{#if project.link}
@@ -126,7 +126,7 @@
 									rel="noopener noreferrer"
 									class="rounded-full border-2 border-black bg-white p-1.5 transition-colors hover:bg-accent hover:text-white md:p-2"
 								>
-									<ExternalLink class="h-4 w-4 md:h-[18px] md:w-[18px]" />
+									<ExternalLink class="h-4 w-4 md:h-4.5 md:w-4.5" />
 								</a>
 							{/if}
 						</div>
