@@ -44,19 +44,22 @@
 	<div aria-hidden="true" class="orb orb-rainbow absolute"></div>
 	<div aria-hidden="true" class="orb orb-red absolute"></div>
 	<div aria-hidden="true" class="orb orb-soft absolute"></div>
+	<!-- Mobile-only fills for the lower half -->
+	<div aria-hidden="true" class="orb orb-m-bottom absolute md:hidden"></div>
+	<div aria-hidden="true" class="orb orb-m-corner absolute md:hidden"></div>
 
 	<!-- About badge (right) -->
 	{#if mounted}
 		<a
 			href="/about"
 			in:fly={{ y: 20, duration: 700, delay: 800 }}
-			class="badge group absolute top-[42%] right-6 z-20 flex h-28 w-28 -translate-y-1/2 items-center justify-center rounded-full bg-black text-white md:top-[46%] md:right-[8%] md:h-44 md:w-44 lg:h-52 lg:w-52"
+			class="badge group absolute top-[76%] right-6 z-20 flex h-36 w-36 -translate-y-1/2 items-center justify-center rounded-full bg-black text-white md:top-[64%] md:right-[8%] md:h-44 md:w-44 lg:h-52 lg:w-52"
 		>
 			<div class="flex flex-col items-center text-center">
-				<span class="text-[10px] font-medium tracking-[0.22em] md:text-xs">ABOUT ME</span>
-				<span class="mt-0.5 text-[9px] tracking-[0.15em] opacity-70 md:text-[10px]">自己紹介</span>
+				<span class="text-xs font-medium tracking-[0.22em]">ABOUT ME</span>
+				<span class="mt-0.5 text-[11px] tracking-[0.15em] opacity-70 md:text-[10px]">自己紹介</span>
 				<ArrowUpRight
-					class="mt-1.5 h-3.5 w-3.5 opacity-80 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 md:h-4 md:w-4"
+					class="mt-2 h-4 w-4 opacity-80 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
 				/>
 			</div>
 		</a>
@@ -65,13 +68,13 @@
 	<!-- Content -->
 	<div
 		bind:this={contentEl}
-		class="relative z-10 flex h-full flex-col px-6 pt-24 pb-12 will-change-transform md:px-12 md:pt-28 md:pb-16 lg:px-20"
+		class="relative z-10 flex h-full flex-col justify-start px-6 pt-40 pb-12 will-change-transform md:px-12 md:pt-28 md:pb-16 lg:px-20"
 		style="transform-origin: 0% 50%;"
 	>
 		{#if mounted}
 			<!-- Top label -->
-			<div in:fly={{ y: 20, duration: 600, delay: 200 }} class="mb-3">
-				<span class="text-sm font-medium tracking-[0.2em] text-neutral-500 md:text-base">
+			<div in:fly={{ y: 20, duration: 600, delay: 200 }} class="mb-4 md:mb-3">
+				<span class="text-base font-medium tracking-[0.2em] text-neutral-500 md:text-base">
 					TAIYO YAMADA
 				</span>
 			</div>
@@ -79,8 +82,7 @@
 			<!-- Massive headline -->
 			<h1
 				in:fly={{ y: 30, duration: 800, delay: 350 }}
-				class="leading-[0.92] font-medium tracking-[-0.03em] text-black"
-				style="font-size: clamp(3rem, 11vw, 10rem);"
+				class="hero-headline leading-[0.92] font-medium tracking-[-0.03em] text-black"
 			>
 				WRITING<br />
 				NATURE<br />
@@ -90,7 +92,7 @@
 			<!-- Subtitle stack -->
 			<div
 				in:fly={{ y: 20, duration: 600, delay: 550 }}
-				class="mt-5 flex flex-col text-xs font-medium tracking-[0.2em] text-black/70 md:mt-8 md:ml-4 md:text-sm"
+				class="mt-6 flex flex-col text-sm font-medium tracking-[0.2em] text-black/70 md:mt-8 md:ml-4 md:text-sm"
 			>
 				<span>AI</span>
 				<span>QUANTUM</span>
@@ -104,6 +106,16 @@
 		border-radius: 50%;
 		pointer-events: none;
 		will-change: transform;
+	}
+
+	/* Mobile gets a bigger headline; desktop stays at original scale */
+	.hero-headline {
+		font-size: clamp(4rem, 14vw, 10rem);
+	}
+	@media (min-width: 768px) {
+		.hero-headline {
+			font-size: clamp(3rem, 11vw, 10rem);
+		}
 	}
 
 	/* Large smoky orb top-right: deepest tone, atmospheric anchor */
@@ -187,6 +199,45 @@
 		filter: blur(35px);
 		animation: float 16s ease-in-out infinite;
 		animation-delay: -9s;
+	}
+
+	/* Mobile-only: mid-bottom diffuse fill */
+	.orb-m-bottom {
+		bottom: 8%;
+		left: 30%;
+		width: 70vw;
+		height: 70vw;
+		max-width: 360px;
+		max-height: 360px;
+		background: radial-gradient(
+			circle at 45% 50%,
+			rgba(35, 35, 35, 0.4) 0%,
+			rgba(80, 80, 80, 0.18) 50%,
+			transparent 92%
+		);
+		filter: blur(55px);
+		animation: float 13s ease-in-out infinite;
+		animation-delay: -2s;
+	}
+
+	/* Mobile-only: small dense bottom-right ink drop */
+	.orb-m-corner {
+		bottom: 18%;
+		right: 12%;
+		width: 28vw;
+		height: 28vw;
+		max-width: 150px;
+		max-height: 150px;
+		background: radial-gradient(
+			circle at 50% 50%,
+			rgba(20, 20, 20, 0.5) 0%,
+			rgba(60, 60, 60, 0.22) 55%,
+			transparent 100%
+		);
+		filter: blur(30px);
+		opacity: 0.85;
+		animation: float 11s ease-in-out infinite reverse;
+		animation-delay: -5s;
 	}
 
 	@keyframes float {
