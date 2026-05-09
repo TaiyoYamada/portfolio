@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Github, Mail } from 'lucide-svelte';
+	import { Github, Mail, Facebook } from 'lucide-svelte';
 	import QiitaIcon from '$lib/components/icons/QiitaIcon.svelte';
 	import XIcon from '$lib/components/icons/XIcon.svelte';
 
@@ -15,6 +15,11 @@
 		{ Icon: Github, href: 'https://github.com/TaiyoYamada', label: 'GitHub' },
 		{ Icon: QiitaIcon, href: 'https://qiita.com/TaiyoYamada', label: 'Qiita' },
 		{ Icon: XIcon, href: 'https://x.com/taiyo_sunsun05', label: 'X' },
+		{
+			Icon: Facebook,
+			href: 'https://www.facebook.com/people/%E5%B1%B1%E7%94%B0%E5%A4%A7%E9%99%BD/pfbid02TDXn3CA5oSQbCA7gJKXQgGtKgzU2ENDkte8fcU2YKXKgPNbdKaK3eig4U6zo9j9Pl/',
+			label: 'Facebook'
+		},
 		{ Icon: Mail, href: 'mailto:tai09to06y@gmail.com', label: 'Email' }
 	];
 </script>

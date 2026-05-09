@@ -79,7 +79,7 @@
 </script>
 
 {#if show}
-	<div class="intro-root fixed inset-0 z-[100]" aria-hidden="true">
+	<div class="intro-root fixed inset-0 z-100" aria-hidden="true">
 		<!-- Curtains (split open at end) -->
 		<div
 			class="curtain curtain-top absolute inset-x-0 top-0 bg-black"
@@ -92,7 +92,7 @@
 
 		<!-- Content: centered morphing word only -->
 		<div
-			class="content pointer-events-none absolute inset-0 z-[1] flex items-center justify-center text-white"
+			class="content pointer-events-none absolute inset-0 z-1 flex items-center justify-center text-white"
 			class:fade-out={phase === 'opening' || phase === 'done'}
 		>
 			<span

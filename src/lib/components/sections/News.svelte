@@ -78,11 +78,11 @@
 									>
 										{item.title}
 									</h3>
-									{#if item.body}
+									{#if item.excerpt}
 										<p
 											class="mt-2 line-clamp-2 text-sm leading-relaxed text-neutral-500 md:text-[15px]"
 										>
-											{item.body}
+											{item.excerpt}
 										</p>
 									{/if}
 								</div>

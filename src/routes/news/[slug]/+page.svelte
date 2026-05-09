@@ -25,18 +25,11 @@
 		const [y, m, d] = date.split('-');
 		return `${MONTHS[parseInt(m, 10) - 1]} ${parseInt(d, 10)}, ${y}`;
 	}
-
-	const paragraphs = $derived(
-		item.body
-			.split(/\n{2,}/)
-			.map((p) => p.trim())
-			.filter(Boolean)
-	);
 </script>
 
 <svelte:head>
 	<title>{item.title} | News · Taiyo Yamada</title>
-	<meta name="description" content={item.body.slice(0, 140)} />
+	<meta name="description" content={item.excerpt} />
 	{#if item.image}
 		<meta property="og:image" content={item.image} />
 	{/if}
@@ -75,11 +68,23 @@
 		{/if}
 
 		<!-- Body -->
-		{#if paragraphs.length > 0}
-			<div class="mt-10 space-y-5 text-[15px] leading-[1.9] text-neutral-700 md:mt-14 md:text-base">
-				{#each paragraphs as p}
-					<p>{p}</p>
-				{/each}
+		{#if item.bodyHtml}
+			<div
+				class="prose mt-10 max-w-none text-[15px] leading-[1.9] text-neutral-700 prose-neutral md:mt-14 md:text-base
+				prose-headings:font-medium prose-headings:tracking-tight prose-headings:text-black
+				prose-h2:mt-12 prose-h2:mb-4 prose-h2:text-2xl md:prose-h2:text-3xl
+				prose-h3:mt-10 prose-h3:mb-3 prose-h3:text-xl md:prose-h3:text-2xl
+				prose-p:my-5 prose-p:leading-[1.9]
+				prose-a:border-b prose-a:border-black/30 prose-a:font-medium prose-a:text-black prose-a:no-underline hover:prose-a:border-black
+				prose-blockquote:border-l-2 prose-blockquote:border-black/20
+				prose-blockquote:pl-5 prose-blockquote:text-neutral-500 prose-blockquote:not-italic prose-strong:font-medium prose-strong:text-black
+				prose-code:rounded prose-code:bg-black/[0.04] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[0.9em] prose-code:font-normal prose-code:before:content-none prose-code:after:content-none
+				prose-pre:rounded-lg prose-pre:bg-neutral-950 prose-pre:text-neutral-100
+				prose-img:rounded-xl
+				prose-hr:border-black/10"
+			>
+				<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+				{@html item.bodyHtml}
 			</div>
 		{/if}
 

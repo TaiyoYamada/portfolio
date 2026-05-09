@@ -1,3 +1,5 @@
+import { marked } from 'marked';
+
 export type NewsCategory = 'talk' | 'award' | 'release' | 'media' | 'note';
 
 export interface NewsItem {
@@ -8,6 +10,25 @@ export interface NewsItem {
 	link?: string;
 	image?: string;
 	body: string;
+	bodyHtml: string;
+	excerpt: string;
+}
+
+marked.setOptions({ gfm: true, breaks: false });
+
+function stripMarkdown(md: string): string {
+	return md
+		.replace(/```[\s\S]*?```/g, '')
+		.replace(/`([^`]+)`/g, '$1')
+		.replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+		.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+		.replace(/^#{1,6}\s+/gm, '')
+		.replace(/[*_~]{1,3}([^*_~]+)[*_~]{1,3}/g, '$1')
+		.replace(/^\s*[-*+]\s+/gm, '')
+		.replace(/^\s*\d+\.\s+/gm, '')
+		.replace(/^\s*>\s?/gm, '')
+		.replace(/\s+/g, ' ')
+		.trim();
 }
 
 const FRONTMATTER_RE = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/;
@@ -52,6 +73,9 @@ function toNewsItem(path: string, raw: string): NewsItem | null {
 	const filename = path.split('/').pop() ?? '';
 	const slug = filename.replace(/\.md$/, '');
 
+	const bodyHtml = marked.parse(body, { async: false }) as string;
+	const excerpt = stripMarkdown(body).slice(0, 160);
+
 	return {
 		slug,
 		title: data.title,
@@ -59,7 +83,9 @@ function toNewsItem(path: string, raw: string): NewsItem | null {
 		category,
 		link: data.link || undefined,
 		image: data.image || undefined,
-		body
+		body,
+		bodyHtml,
+		excerpt
 	};
 }
 
