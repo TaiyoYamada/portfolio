@@ -1,6 +1,5 @@
 <div align="center">
 
-
 # Portfolio - Taiyo Yamada
 
 **山田大陽 のポートフォリオサイト**
