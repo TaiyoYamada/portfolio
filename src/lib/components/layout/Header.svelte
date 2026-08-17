@@ -32,9 +32,9 @@
 		<a
 			href="/"
 			aria-label="Home"
-			class="flex h-9 w-9 items-center justify-center rounded-full bg-black text-[11px] font-semibold tracking-[0.05em] text-white transition-all hover:-translate-y-0.5 hover:bg-black/90 md:h-10 md:w-10 md:text-xs"
+			class="block h-9 w-9 overflow-hidden rounded-full transition-transform hover:-translate-y-0.5 md:h-10 md:w-10"
 		>
-			TY
+			<img src="/favicon.jpg" alt="" class="h-full w-full object-cover" />
 		</a>
 
 		<!-- Right: nav + mobile button -->
