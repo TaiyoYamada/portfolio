@@ -11,6 +11,13 @@
 
 	const certifications: Certification[] = [
 		{
+			title: 'GCI グローバル消費インテリジェンス寄付講座 2026 Summer（Advanced修了）',
+			issuer: '東京大学 松尾・岩澤研究室',
+			date: '2026.08',
+			type: 'program',
+			desc: 'Pythonによるデータ加工・可視化から、教師あり/なし学習、モデル評価、SQL、ビジネス活用までを体系的に習得'
+		},
+		{
 			title: '大規模言語モデル講座 2025 基礎編',
 			issuer: '東京大学 松尾・岩澤研究室',
 			date: '2025.12',
