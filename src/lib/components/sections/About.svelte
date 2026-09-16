@@ -1,7 +1,6 @@
 <script lang="ts">
 	const facts = [
 		{ label: 'University', value: '熊本県立大学 総合管理学部 飯村研究室 B3' },
-		{ label: 'Internship', value: '松尾研究所 共同研究インターン' },
 		{ label: 'Community', value: '日本量子コンピューティング協会 熊本支部' }
 	];
 </script>

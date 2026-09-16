@@ -2,10 +2,13 @@
 	const experiences = [
 		{
 			company: '株式会社松尾研究所',
-			period: '2026.02 — Present',
+			period: '2026.02 — 2026.08',
 			role: 'AI Engineer (Intern)',
-			details: [] as string[],
-			growth: ''
+			details: [
+				'業務内容は秘密保持契約（NDA）により非公開',
+				'プロジェクトの計画から実装・報告まで、裁量を持って主体的に推進'
+			],
+			growth: '大きな裁量のもとで自ら課題を設定し、プロジェクトを前に進める推進力が身についた。'
 		},
 		{
 			company: '株式会社ゆめみ',
