@@ -1,6 +1,16 @@
 <script lang="ts">
 	const experiences = [
 		{
+			company: '熊本版未踏的プロジェクト IPPO',
+			period: '2026.08 — Present',
+			role: '2026年度 採択クリエータ',
+			details: [
+				'経済産業省「地方版未踏的プロジェクト（AKATSUKIプロジェクト）」の補助を受けて熊日デジタルが運営する若手IT人材育成事業に採択',
+				'テーマ「心のそろばんを実現する、物理とデジタルを融合したフィジタルラーニングアプリケーションの開発」'
+			],
+			growth: ''
+		},
+		{
 			company: '株式会社松尾研究所',
 			period: '2026.02 — 2026.08',
 			role: 'AI Engineer (Intern)',
