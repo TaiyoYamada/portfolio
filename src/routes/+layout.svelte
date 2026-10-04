@@ -50,13 +50,15 @@
 	<meta property="og:title" content={siteName} />
 	<meta property="og:description" content={siteDescription} />
 	<meta property="og:site_name" content={siteName} />
-	<meta property="og:image" content="{siteUrl}/portfolio.png" />
+	<meta property="og:image" content="{siteUrl}/og.png" />
+	<meta property="og:image:width" content="2400" />
+	<meta property="og:image:height" content="1260" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={siteName} />
 	<meta name="twitter:description" content={siteDescription} />
-	<meta name="twitter:image" content="{siteUrl}/portfolio.png" />
+	<meta name="twitter:image" content="{siteUrl}/og.png" />
 
 	<link rel="canonical" href={siteUrl} />
 
