@@ -1,6 +1,13 @@
 <script lang="ts">
 	const experiences = [
 		{
+			company: '株式会社もみじAI',
+			period: '2026.10 — Present',
+			role: 'AI Engineer',
+			details: [],
+			growth: ''
+		},
+		{
 			company: '熊本版未踏的プロジェクト IPPO',
 			period: '2026.08 — Present',
 			role: '2026年度 採択クリエータ',

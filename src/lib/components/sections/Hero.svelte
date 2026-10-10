@@ -53,7 +53,7 @@
 		<a
 			href="/about"
 			in:fly={{ y: 20, duration: 700, delay: 800 }}
-			class="badge group absolute top-[76%] right-6 z-20 flex h-36 w-36 -translate-y-1/2 items-center justify-center rounded-full bg-black text-white md:top-[64%] md:right-[8%] md:h-44 md:w-44 lg:h-52 lg:w-52"
+			class="badge group absolute top-[min(max(76%,35.5rem),calc(100%-5.5rem))] right-6 z-20 flex h-36 w-36 -translate-y-1/2 items-center justify-center rounded-full bg-black text-white md:top-[64%] md:right-[8%] md:h-44 md:w-44 lg:h-52 lg:w-52"
 		>
 			<div class="flex flex-col items-center text-center">
 				<span class="text-xs font-medium tracking-[0.22em]">ABOUT ME</span>
@@ -96,6 +96,8 @@
 			>
 				<span>AI</span>
 				<span>QUANTUM</span>
+				<span>SWARM INTELLIGENCE</span>
+				<span>EVOLUTIONARY COMPUTATION</span>
 			</div>
 		{/if}
 	</div>
