@@ -1,0 +1,32 @@
+name: 不具合の報告
+description: 表示の崩れ、リンク切れ、動かないところを知らせる
+title: 'fix: '
+labels:
+  - bug
+body:
+  - type: input
+    id: page
+    attributes:
+      label: ページ
+      description: 不具合が起きたページの URL
+      placeholder: https://taiyoyamada.com/news
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 起きたこと
+      description: 何をしたら、どうなったか。期待していた動きも書いてください。
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 環境
+      description: 端末、OS、ブラウザ
+      placeholder: iPhone 15 / iOS 26 / Safari
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: スクリーンショット
+      description: あれば画像を貼ってください。

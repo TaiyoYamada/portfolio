@@ -1,0 +1,26 @@
+name: 内容の追加・修正
+description: News、経歴、受賞、資格、制作物などの中身を足す・直す
+title: 'feat: '
+body:
+  - type: dropdown
+    id: section
+    attributes:
+      label: 場所
+      options:
+        - News
+        - 経歴（Experience）
+        - 受賞（Awards）
+        - 資格（Certifications）
+        - 制作物（Projects）
+        - 研究（Research）
+        - スキル（Skills）
+        - その他
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: 内容
+      description: 足す・直す中身。News なら、タイトル、日付、カテゴリ、本文、写真の有無を書いてください。
+    validations:
+      required: true

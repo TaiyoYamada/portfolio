@@ -1,0 +1,20 @@
+name: 機能の追加・変更
+description: ページや機能を足す、見た目や動きを変える
+title: 'feat: '
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: why
+    attributes:
+      label: なぜ要るか
+      description: 今どこが困っていて、変えると何がよくなるか
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 何を変えるか
+      description: 変えたいページやコンポーネントと、変えたあとの形
+    validations:
+      required: true
