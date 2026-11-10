@@ -96,7 +96,6 @@
 			>
 				<span>AI</span>
 				<span>QUANTUM</span>
-				<span>SWARM INTELLIGENCE</span>
 				<span>EVOLUTIONARY COMPUTATION</span>
 			</div>
 		{/if}
