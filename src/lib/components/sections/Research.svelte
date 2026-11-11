@@ -3,6 +3,21 @@
 
 	const researches = [
 		{
+			title:
+				'A Propose of Cooperative Co-evolutionary Search Method Using Differential Grouping-Augmented Artificial Bee Colony and Covariance Matrix Adaptation Evolution Strategy',
+			desc: "NCSP'27 で発表予定のため、内容はまだ未公開です。",
+			tech: [
+				'Python',
+				'Black-box Optimization',
+				'ABC Algorithm',
+				'CMA-ES',
+				'Cooperative Co-evolution',
+				'Differential Grouping'
+			],
+			kind: 'Talk',
+			venue: "NCSP'27"
+		},
+		{
 			title: 'ABCアルゴリズムをオプティマイザとするVQEのノイズ環境下におけるロバスト性初期評価',
 			desc: '量子コンピューティングにおける変分量子固有値法（VQE）の精度向上を目的とした研究。人工蜂コロニー（ABC）アルゴリズムを活用した最適化手法により、ノイズ環境下での初期探索のロバスト性を評価・改善するアプローチを提案。',
 			tech: ['Python', 'Qiskit', 'Quantum Computing', 'VQE', 'ABC Algorithm'],
